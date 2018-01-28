@@ -28,19 +28,19 @@
                     <i-input v-model="formItem.confirmPassword"></i-input>
                 </form-item>
                 <form-item label="性别">
-                    <radio-group v-model="ifSex">
+                    <radio-group v-model="sex">
                         <radio label="男">男</radio>
                         <radio label="女">女</radio>
                     </radio-group>
                 </form-item>
                  <form-item label="是否可用">
-                    <radio-group v-model="ifUser">
+                    <radio-group v-model="use">
                         <radio label="是">是</radio>
                         <radio label="否">否</radio>
                     </radio-group>
                 </form-item>
                  <form-item label="是否为管理员">
-                    <radio-group v-model="ifAdministrator">
+                    <radio-group v-model="administrator">
                         <radio label="是">是</radio>
                         <radio label="否">否</radio>
                     </radio-group>
@@ -70,7 +70,7 @@
             </div>
         </modal>
         <div class="table-name">
-            <Table width="800" :data="tableData1" :columns="tableColumns1" stripe></Table>
+            <Table :data="tableData1" :columns="tableColumns1" stripe></Table>
             <div class="page">
                 <div class="page-show">
                     <Page show-total :total="total" :current="pageSize" @on-change="changePage"></Page>
@@ -90,9 +90,9 @@ export default {
             pageSize:1,
             modal: false,
             title: '增加资产信息',
-            ifAdministrator:'是',
-            ifUser:'是',
-            ifSex:'男',
+            administrator:'是',
+            use:'是',
+            sex:'男',
             tableColumns1: [
                 {
                     title: '用户名',
@@ -158,9 +158,9 @@ export default {
                 {
                     title: '操作',
                     key: 'action',
-                    width: 120,
+                    width: 140,
                     align: 'center',
-                    fixed: 'right',
+                    // fixed: 'right',
                     render: (h, params) => {
                         return h('div', [
                         h('Button', {
@@ -206,20 +206,69 @@ export default {
             ],
             tableData1: [
                 {
-                    name:'qtqt',
-                    china:'admin',
-                    english:'addd',
+                    name:'用户名',
+                    china:'中文名',
+                    english:'英文名',
                     sex:'女',
-                    administrator:'fou',
+                    administrator:'否',
                     phone:'123456789012',
                     email:'123.com',
-                    use:'lala',
-                    post:'333',
-                    section:'3333',
+                    use:'否',
+                    post:'前端',
+                    section:'研发',
                     born:'1990-01-01',
-                    address:'66666666666666666666666666666',
-                    passwords: 'maxiaopang'
-                }
+                    address:'上海',
+                    password: '123456',
+                    confirmPassword:'123456'
+                },
+                {
+                    name:'用户名',
+                    china:'中文名',
+                    english:'英文名',
+                    sex:'女',
+                    administrator:'否',
+                    phone:'123456789012',
+                    email:'123.com',
+                    use:'否',
+                    post:'前端',
+                    section:'研发',
+                    born:'1990-01-01',
+                    address:'上海',
+                    password: '123456',
+                    confirmPassword:'123456'
+                },
+                {
+                    name:'用户名',
+                    china:'中文名',
+                    english:'英文名',
+                    sex:'女',
+                    administrator:'否',
+                    phone:'123456789012',
+                    email:'123.com',
+                    use:'否',
+                    post:'前端',
+                    section:'研发',
+                    born:'1990-01-01',
+                    address:'上海',
+                    password: '123456',
+                    confirmPassword:'123456'
+                },
+                {
+                    name:'用户名',
+                    china:'中文名',
+                    english:'英文名',
+                    sex:'女',
+                    administrator:'否',
+                    phone:'123456789012',
+                    email:'123.com',
+                    use:'否',
+                    post:'前端',
+                    section:'研发',
+                    born:'1990-01-01',
+                    address:'上海',
+                    password: '123456',
+                    confirmPassword:'123456'
+                },
             ],
             formItem: 
             {
@@ -292,7 +341,31 @@ export default {
                         message:'请填写您的邮箱！',
                         trigger:'blur'
                     }
-                ]
+                ],
+                sex:[
+                    {
+                        required: true, 
+                        type: 'date', 
+                        message: '请选择资产类型', 
+                        trigger: 'change' 
+                    }
+                ],
+                use:[
+                    {
+                        required: true, 
+                        type: 'date', 
+                        message: '请选择资产类型', 
+                        trigger: 'change' 
+                    }
+                ],
+                administrator:[
+                    {
+                        required: true, 
+                        type: 'date', 
+                        message: '请选择资产类型', 
+                        trigger: 'change' 
+                    }
+                ],
             }
         }
     },

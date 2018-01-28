@@ -66,7 +66,7 @@
             </div>
         </modal>
         <div style="margin-top:10px">
-           <i-table width="80%" border :columns="tableHeader" :data="tableData"></i-table>
+           <i-table width="80%" height="400" border :columns="tableHeader" :data="tableData"></i-table>
         </div>
     </div>
 </template>
@@ -153,15 +153,10 @@ export default {
                 },
                 {
                     title: '操作',
-                    key: 'remarks',
-                    width:100
-                },
-                {
-                    title: '操作',
                     key: 'action',
-                    width: 120,
-                    align: 'center',
-                    fixed: 'right',
+                    width: 140,
+                    // align: 'center',
+                    // fixed: 'right',
                     render: (h, params) => {
                         return h('div', [
                         h('Button', {

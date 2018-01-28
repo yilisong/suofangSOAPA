@@ -10,7 +10,7 @@
             </Button>
         </div>
 
-        <Table width="800" :data="tableData1" :columns="tableColumns1" stripe></Table>
+        <Table :data="tableData1" :columns="tableColumns1" stripe></Table>
         <div class="page">
             <div class="page-show">
                 <Page show-total :total="total" :current="pageSize" @on-change="changePage"></Page>
@@ -104,14 +104,17 @@ export default {
             ],
             tableData1: [
                 {
+                    ID:'1',
                     postName:'eee',
                     describe:'eeee'
                 },
                  {
+                    ID:'2',
                     postName:'eee',
                     describe:'eeee'
                 },
                  {
+                    ID:'3',
                     postName:'eee',
                     describe:'eeee'
                 },
@@ -157,13 +160,13 @@ export default {
             addProperty() {
                 // console.log('add')
                  this.$refs['formItem'].resetFields();
-                this.title = '添加职位信息'
+                this.title = '添加岗位信息'
                 this.modal = true
             },
             editPlan(params) {
-                this.$refs['formItem'].resetFields();
+                // this.$refs['formItem'].resetFields();
                 // console.log(params)
-                this.title = '修改职位信息'
+                this.title = '修改岗位信息'
                 this.formItem = params.row
                 this.modal = true
             },
@@ -171,6 +174,7 @@ export default {
                 this.$refs[name].validate((valid) => {
                     if (valid) {
                         this.$Message.success('Success!');
+                        this.modal = false
                     } else {
                         this.$Message.error('Fail!');
                     }

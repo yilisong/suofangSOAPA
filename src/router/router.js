@@ -130,27 +130,39 @@ export const appRouter = [
             },
         ]
     },
-    // {
-    //     path: '/access-test',
-    //     icon: 'lock-combination',
-    //     title: '权限测试页',
-    //     name: 'accesstest',
-    //     access: 0,
-    //     component: Main,
-    //     children: [
-    //         { path: 'index', title: '权限测试页', name: 'accesstest_index', access: 0, component: () => import('@/views/access/access-test.vue') }
-    //     ]
-    // },
-    // {
-    //     path: '/international',
-    //     icon: 'earth',
-    //     title: {i18n: 'international'},
-    //     name: 'international',
-    //     component: Main,
-    //     children: [
-    //         { path: 'index', title: {i18n: 'international'}, name: 'international_index', component: () => import('@/views/international/international.vue') }
-    //     ]
-    // },
+    {
+        path: '/vocation',
+        icon: 'key',
+        name: 'vocation',
+        title: '行业合规检测子系统',
+        component: Main,
+        children: [
+            {
+                path: '/gradeProtectaion',
+                title: '等级保护', 
+                name: 'gradeProtectaion', 
+                component: () => import('@/views/vocation/grade-protectaion/gradeProtectaion.vue') 
+            },
+            {
+                path: '/networkSafe',
+                title: '网络安全法', 
+                name: 'networkSafe', 
+                component: () => import('@/views/vocation/network-safe/networkSafe.vue') 
+            },
+            {
+                path: '/keyBasics',
+                title: '关键基础设施', 
+                name: 'keyBasics', 
+                component: () => import('@/views/vocation/key-basics/keyBasics.vue') 
+            },
+            {
+                path: '/mainframe',
+                title: 'windows主机安全', 
+                name: 'mainframe', 
+                component: () => import('@/views/vocation/windows-mainframe/mainframe.vue') 
+            },
+        ]
+    }
     // {
     //     path: '/component',
     //     icon: 'social-buffer',
