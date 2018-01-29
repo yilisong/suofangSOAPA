@@ -79,7 +79,7 @@ export default {
     },
     data () {
         return {
-            value: '',
+            // value: '',
             modal: false,
             title: '增加资产信息',
             tableHeader: [

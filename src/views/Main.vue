@@ -12,8 +12,8 @@
                 :open-names="openedSubmenuArr"
                 :menu-list="menuList">
                 <div slot="top" class="logo-con">
-                    <img v-show="!shrink"  src="../images/logo.jpg" key="max-logo" />
-                    <img v-show="shrink" src="../images/logo-min.jpg" key="min-logo" />
+                    <img v-show="!shrink"  src="../images/logo.png" key="max-logo" />
+                    <img v-show="shrink" src="../images/logo-min.png" key="min-logo" />
                 </div>
             </shrinkable-menu>
         </div>
@@ -33,7 +33,7 @@
                     <full-screen v-model="isFullScreen" @on-change="fullscreenChange"></full-screen>
                     <lock-screen></lock-screen>
                     <message-tip v-model="mesCount"></message-tip>
-                    <theme-switch></theme-switch>
+                    <!-- <theme-switch></theme-switch> -->
                     
                     <div class="user-dropdown-menu-con">
                         <Row type="flex" justify="end" align="middle" class="user-dropdown-innercon">
