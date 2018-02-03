@@ -178,7 +178,7 @@
                             <i-col span="2" class="content-hr br">1</i-col>
                             <i-col span="5" class="content-hr br">安全专用产品</i-col>
                             <i-col span="3" class="content-hr br">
-                                <i-input v-model="safeValue" style="margin-top:-2px;"></i-input>
+                                <i-input v-model="safeValue" style="margin-top:-3px;"></i-input>
                             </i-col>
                             <i-col span="14">
                                 <row>
@@ -192,7 +192,7 @@
                                             </i-col>
                                             <i-col span="10" class="employ-china-num">
                                                 <checkbox v-model="portion"></checkbox>
-                                                <span><i-input v-model="portionValue" style="width: 30px;margin-top:-2px"></i-input></span>%
+                                                <span><i-input v-model="portionValue" class="input-num"></i-input></span>%
                                             </i-col>
                                         </row>
                                     </i-col>
@@ -204,7 +204,9 @@
                          <row>
                             <i-col span="2" class="content-hr br">2</i-col>
                             <i-col span="5" class="content-hr br">网络产品</i-col>
-                            <i-col span="3" class="content-hr br">138</i-col>
+                            <i-col span="3" class="content-hr br">
+                                <i-input v-model="safeValue" style="margin-top:-3px;"></i-input>
+                            </i-col>
                             <i-col span="14">
                                 <row>
                                     <i-col span="24">
@@ -217,7 +219,7 @@
                                             </i-col>
                                             <i-col span="10" class="employ-china-num">
                                                 <checkbox v-model="portion"></checkbox>
-                                                <span><i-input v-model="portionValue" style="width: 30px;margin-top:-2px"></i-input></span>%
+                                                <span><i-input v-model="portionValue" class="input-num"></i-input></span>%
                                             </i-col>
                                         </row>
                                     </i-col>
@@ -229,7 +231,9 @@
                          <row>
                             <i-col span="2" class="content-hr br">3</i-col>
                             <i-col span="5" class="content-hr br">操作系统</i-col>
-                            <i-col span="3" class="content-hr br">138</i-col>
+                            <i-col span="3" class="content-hr br">
+                                <i-input v-model="safeValue" style="margin-top:-3px;"></i-input>
+                            </i-col>
                             <i-col span="14">
                                 <row>
                                     <i-col span="24">
@@ -242,7 +246,7 @@
                                             </i-col>
                                             <i-col span="10" class="employ-china-num">
                                                 <checkbox v-model="portion"></checkbox>
-                                                <span><i-input v-model="portionValue" style="width: 30px;margin-top:-2px"></i-input></span>%
+                                                <span><i-input v-model="portionValue" class="input-num"></i-input></span>%
                                             </i-col>
                                         </row>
                                     </i-col>
@@ -254,7 +258,9 @@
                          <row>
                             <i-col span="2" class="content-hr br">4</i-col>
                             <i-col span="5" class="content-hr br">数据库</i-col>
-                            <i-col span="3" class="content-hr br">138</i-col>
+                            <i-col span="3" class="content-hr br">
+                                <i-input v-model="safeValue" style="margin-top:-3px;"></i-input>
+                            </i-col>
                             <i-col span="14">
                                 <row>
                                     <i-col span="24">
@@ -267,7 +273,7 @@
                                             </i-col>
                                             <i-col span="10" class="employ-china-num">
                                                 <checkbox v-model="portion"></checkbox>
-                                                <span><i-input v-model="portionValue" style="width: 30px;margin-top:-2px"></i-input></span>%
+                                                <span><i-input v-model="portionValue" class="input-num"></i-input></span>%
                                             </i-col>
                                         </row>
                                     </i-col>
@@ -279,7 +285,9 @@
                          <row>
                             <i-col span="2" class="content-hr br">1</i-col>
                             <i-col span="5" class="content-hr br">安全专用产品</i-col>
-                            <i-col span="3" class="content-hr br">138</i-col>
+                            <i-col span="3" class="content-hr br">
+                                <i-input v-model="safeValue" style="margin-top:-3px;"></i-input>
+                            </i-col>
                             <i-col span="14">
                                 <row>
                                     <i-col span="24">
@@ -292,7 +300,7 @@
                                             </i-col>
                                             <i-col span="10" class="employ-china-num">
                                                 <checkbox v-model="portion"></checkbox>
-                                                <span><i-input v-model="portionValue" style="width: 30px;margin-top:-2px"></i-input></span>%
+                                                <span><i-input v-model="portionValue" class="input-num"></i-input></span>%
                                             </i-col>
                                         </row>
                                     </i-col>
@@ -304,7 +312,9 @@
                          <row>
                             <i-col span="2" class="content-hr br">5</i-col>
                             <i-col span="5" class="content-hr br">服务器</i-col>
-                            <i-col span="3" class="content-hr br">138</i-col>
+                            <i-col span="3" class="content-hr br">
+                                <i-input v-model="safeValue" style="margin-top:-3px;"></i-input>
+                            </i-col>
                             <i-col span="14">
                                 <row>
                                     <i-col span="24">
@@ -317,7 +327,7 @@
                                             </i-col>
                                             <i-col span="10" class="employ-china-num">
                                                 <checkbox v-model="portion"></checkbox>
-                                                <span><i-input v-model="portionValue" style="width: 30px;"></i-input></span>%
+                                                <span><i-input v-model="portionValue" class="input-num"></i-input></span>%
                                             </i-col>
                                         </row>
                                     </i-col>
@@ -329,7 +339,9 @@
                          <row>
                             <i-col span="2" class="content-hr br">6</i-col>
                             <i-col span="5" class="content-hr br">其它</i-col>
-                            <i-col span="3" class="content-hr br">138</i-col>
+                            <i-col span="3" class="content-hr br">
+                                <i-input v-model="safeValue" style="margin-top:-3px;"></i-input>
+                            </i-col>
                             <i-col span="14">
                                 <row>
                                     <i-col span="24">
@@ -342,7 +354,7 @@
                                             </i-col>
                                             <i-col span="10" class="employ-china-num">
                                                 <checkbox v-model="portion"></checkbox>
-                                                <span><i-input v-model="portionValue" style="width: 30px;margin-top:-2px"></i-input></span>%
+                                                <span><i-input v-model="portionValue" class="input-num"></i-input></span>%
                                             </i-col>
                                         </row>
                                     </i-col>
@@ -352,6 +364,45 @@
                     </i-col>
                </row>
             </i-col>
+        </row>
+        <row class="gradetest-name system">
+            <i-col span="4" class="system-name br">09 等级测评单位名称</i-col>
+            <i-col span="20" class="system-name">
+                <i-input v-model="gradeValue"></i-input>
+            </i-col>
+        </row>
+        <row class="operation-when system">
+            <i-col span="4" class="system-name br">10 何时投入运行</i-col>
+            <i-col span="20" class="system-name">
+                <span><i-input v-model="operationValue1" style="width:100px"></i-input>年</span>
+                <span style="padding-left:20px;"><i-input v-model="operationValue2" style="width:30px"></i-input>月</span>
+                <span style="padding-left:20px;"><i-input v-model="operationValue3" style="width:30px"></i-input>日</span>
+            </i-col>
+        </row>
+        <row class="subsystem-if system">
+            <i-col span="4" class="system-name br">11 系统是否为分系统</i-col>
+            <i-col span="20" class="system-name">
+                <radio-group v-model="subsystemGroup">
+                    <radio label="是"></radio>
+                    <radio label="否"></radio>
+                </radio-group>
+                （如选择是请填下两项）
+            </i-col>
+        </row>
+        <row class="superior-name system">
+            <i-col span="4" class="system-name br">12 上级系统名称</i-col>
+            <i-col span="20" class="system-name">
+                <i-input v-model="superiorValue"></i-input>
+            </i-col>
+        </row>
+        <row class="superior-unit-name system">
+            <i-col span="4" class="system-name br">13 上级系统所属单位名称</i-col>
+            <i-col span="20" class="system-name">
+                <i-input v-model="unitValue"></i-input>
+            </i-col>
+        </row>
+        <row class="system-button">
+            <i-button type="primary">保&nbsp;&nbsp;&nbsp;存</i-button>
         </row>
     </div>
 </template>
@@ -366,6 +417,13 @@ export default {
             all:'',
             portion:'',
             portionValue:'',
+            gradeValue:'',
+            operationValue1:'',
+            operationValue2:'',
+            operationValue3:'',
+            subsystemGroup:'',
+            superiorValue:'',
+            unitValue:'',
             value: '',
             type: ['生产作业'],
             range:[''],
