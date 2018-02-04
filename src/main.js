@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import iView from 'iview';
+import ElementUI from 'element-ui'
 import {router} from './router/index';
 import {appRouter} from './router/router';
 import store from './store';
@@ -10,6 +11,7 @@ import VueI18n from 'vue-i18n';
 import util from './libs/util';
 
 Vue.use(VueI18n);
+Vue.use(ElementUI);
 Vue.use(iView);
 
 new Vue({

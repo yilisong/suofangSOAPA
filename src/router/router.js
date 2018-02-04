@@ -138,6 +138,12 @@ export const appRouter = [
         component: Main,
         children: [
             {
+                path: '/protectaionList',
+                title: '等级保护列表', 
+                name: 'protectaionList', 
+                component: () => import('@/views/vocation/list/list.vue') 
+            },
+            {
                 path: '/gradeProtectaion',
                 title: '等级保护', 
                 name: 'gradeProtectaion', 

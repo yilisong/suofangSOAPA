@@ -340,7 +340,7 @@ export default {
             }
             axios({
                 method:'get',
-                url: this.url + '/v1.0/assets',
+                url: this.url + '/asset/api/v1.0/assets',
                 params:params
             })
             .then(response => {
@@ -356,7 +356,7 @@ export default {
         },
         deletelist (params) {
             console.log(params)
-            const url = this.url + '/v1.0/assets/' + params.row.id
+            const url = this.url + '/asset/api/v1.0/assets/' + params.row.id
             axios({
                 method:'delete',
                 url: url
@@ -391,7 +391,7 @@ export default {
                     let url
                     const params = this.formValidate
                     if(this.title === '增加资产信息') {
-                        url = this.url + '/v1.0/assets'
+                        url = this.url + '/asset/api/v1.0/assets'
                         axios({
                             method:'post',
                             url: url,
@@ -405,7 +405,7 @@ export default {
                             }
                         })
                     } else {
-                        url = this.url + '/v1.0/assets/' + this.formValidate.id
+                        url = this.url + '/asset/api/v1.0/assets/' + this.formValidate.id
                         axios({
                             method:'put',
                             url: url,

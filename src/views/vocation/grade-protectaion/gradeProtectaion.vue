@@ -414,7 +414,7 @@ export default {
             this.suchAsPaul.date = date
         },
         handelSubmit() {
-            const url = 'http://192.168.4.182:8092/insp/api/v1.0/systems'
+            const url = this.url + '/insp/api/v1.0/systems'
             const params = {
                 system_name: this.suchAsPaul.name,
                 system_no: this.suchAsPaul.num,
@@ -426,7 +426,7 @@ export default {
             }
             axios({
                 method:'post',
-                url: this.url + '/v1.0/assets',
+                url: url,
                 data:params
             })
             .then(response => {

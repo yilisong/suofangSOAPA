@@ -1,7 +1,7 @@
 import * as types from './type/userCode-types';
 
 const state = {
-    url: 'http://192.168.4.182:8092/asset/api'
+    url: 'http://192.168.0.105:8092'
 };
 const actions = {
 //   setTabelModalInfo ({ commit, state }, params) {
