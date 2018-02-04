@@ -95,7 +95,7 @@ export const appRouter = [
         path: '/preserve',
         icon: 'key',
         name: 'preserve',
-        title: '系统默认基本维护信息',
+        title: '系统管理',
         component: Main,
         children: [
             { 
@@ -134,24 +134,24 @@ export const appRouter = [
         path: '/vocation',
         icon: 'key',
         name: 'vocation',
-        title: '行业合规检测子系统',
+        title: '合规检测',
         component: Main,
         children: [
             {
                 path: '/protectaionList',
-                title: '等级保护列表', 
+                title: '等保系统列表', 
                 name: 'protectaionList', 
                 component: () => import('@/views/vocation/list/list.vue') 
             },
             {
                 path: '/gradeProtectaion',
-                title: '等级保护', 
+                title: '等保系统创建', 
                 name: 'gradeProtectaion', 
                 component: () => import('@/views/vocation/grade-protectaion/gradeProtectaion.vue') 
             },
             {
                 path: '/networkSafe',
-                title: '网络安全法', 
+                title: '等保系统自评', 
                 name: 'networkSafe', 
                 component: () => import('@/views/vocation/network-safe/networkSafe.vue') 
             },

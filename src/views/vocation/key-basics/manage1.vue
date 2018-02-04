@@ -520,6 +520,9 @@
                 </i-col>
             </row>
         </div>
+        <div style="width: 100%;text-align: center;margin-top: 5px;">
+            <i-button type="primary" @click="submitAssess">提交</i-button>
+        </div>
     </div>
 </template>
 <script>
@@ -545,7 +548,7 @@ export default {
             manage_1_9678e4390b701312c1ab922251b890c6:false,
             manage_1_5fff530e4e66488a3954d0e78de763d0:false,
             manage_1_e6e838595b23e9c111adf7d36e6ae506:false,
-            manage_1_9e37a8c6b6205b9878b78f280c88b8ac: false,
+            manage_1_9e37a8c6b6205b9878b78f280c88b8ac:false,
             manage_1_9d1358772faa8ba85e54cd4e0ab3d433:false,
             manage_1_2391143d958c842fff389fcd3cd37ac5:false,
             manage_1_0acaae47ebcd6bec3f2e79b7d0957ff5:false,
@@ -556,7 +559,6 @@ export default {
             manage_1_c7f43514fa8c4017a1e1dc9776b1743a:false,
             manage_1_5dec290129895730b1597da231067ae5:false,
             manage_1_be14cfe0e2fc00e3ae156c923b5050e1:false,
-            manage_1_3e7810971bd64c16c3d7e1cc1e60f531:false,
             manage_1_cee71eefe24c3c4ef6c926a73c7a8ad9:false,
             manage_1_b8146491f72ccfd7e88b6384d26616db:false,
             manage_1_1472a3b957137d12244c5690e2d8dd63:false,
@@ -585,58 +587,46 @@ export default {
       }
   },
   computed: {
-        url () {
-            return this.$store.state.userCode.url
-        },
-        inspId () {
-            return this.$store.state.userCode.inspId
-        }
-    },
-    created() {
-        if(localStorage.inspId) {
-            this.queryList()
-        }
-    },
-    methods: {
-        changeDate(date) {
-            this.suchAsPaul.date = date
-        },
-        queryList() {
-            const url = this.url + '/insp/api/v1.0/systems/' + localStorage.inspId
-            axios({
-                method:'get',
-                url: url,
-            })
-            .then(response => {
-                if(response.data.status) {
-                    const res = response.data.inspect_system
-                    console.log(res.system_data_json)
-                    this.suchAsPaul = res.system_data_json
-                }
-            })
-        },
-        handelSubmit() {
-            const url = this.url + '/insp/api/v1.0/systems'
-            const params = {
-                system_name: this.suchAsPaul.name,
-                system_no: this.suchAsPaul.num,
-                system_data_json: this.suchAsPaul,
-                // system_data_json: JSON.stringify(this.suchAsPaul),
-                describe: this.suchAsPaul.desc,
-                file:''
-                // system_name="等保系统测试"& system_no="Ksegeuiree"&system_data_json=""&describe="testeweset"&file=""
-            }
-            axios({
-                method:'post',
-                url: url,
-                data:params
-            })
-            .then(response => {
-                if(response.data.status) {
-                    console.log(response.data)
-                }
-            })
-        }
+    url () {
+        return this.$store.state.userCode.url
     }
+  },
+  created() {
+      if(localStorage.inspId) {
+          this.queryList()
+      }
+  },
+  methods: {
+      queryList() {
+        const url = this.url + '/insp/api/v1.0/manage/assess/' + localStorage.inspId
+        axios({
+            method:'get',
+            url: url
+        })
+        .then(response => {
+            if(response.data.status) {
+                const res = response.data
+                this.management = res.manage_assess
+            } else {
+                this.$Message.error(response.data.desc)
+            }
+        })
+      },
+      submitAssess() {
+        const url = this.url + '/insp/api/v1.0/manage/assess/' + localStorage.inspId
+        axios({
+            method:'post',
+            url: url,
+            data: { manage_assess: this.management }
+        })
+        .then(response => {
+            if(response.data.status) {
+                this.$Message.info('添加成功')
+            } else {
+                this.$Message.error(response.data.desc)
+            }
+        })
+      }
+  }
 }
 </script>
