@@ -42,15 +42,15 @@
                 <i-col span="3">
                     <row>
                         <i-col span="24" class="physics-tr">
-                            100
+                           <checkbox v-model="management.manage_1_9e37a8c6b6205b9878b78f280c88b8ac"></checkbox> 
                         </i-col>
                         <i-col span="24" class="issue-tr">
                             <row>
                                 <i-col span="24" class="formulate-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_9d1358772faa8ba85e54cd4e0ab3d433"></checkbox> 
                                 </i-col>
                                 <i-col span="24" class="formulate-tr-last">
-                                    100
+                                    <checkbox v-model="management.manage_1_2391143d958c842fff389fcd3cd37ac5"></checkbox> 
                                 </i-col>
                             </row>
                         </i-col>
@@ -84,16 +84,16 @@
                 <i-col span="3">
                     <row>
                         <i-col span="24" class="physics-tr">
-                            100
+                            <checkbox v-model="management.manage_1_0acaae47ebcd6bec3f2e79b7d0957ff5"></checkbox>
                         </i-col>
                         <i-col span="24" class="physics-tr">
-                            100
+                            <checkbox v-model="management.manage_1_90a1b26319d44f4e9597ff2f1fe80afa"></checkbox>
                         </i-col>
                         <i-col span="24" class="visit-tr">
-                            100
+                            <checkbox v-model="management.manage_1_744b9d0b701c8474cc5da6be48742d10"></checkbox>
                         </i-col>
                         <i-col span="24" class="physics-tr-last">
-                            100
+                            <checkbox v-model="management.manage_1_21a1c824ac39a7b9d01d2180342e58e1"></checkbox>
                         </i-col>
                     </row>
                 </i-col>
@@ -140,35 +140,35 @@
                         <i-col span="24" class="emplor-tr">
                             <row>
                                 <i-col span="24" class="formulate-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_e9d1eae819bd91d183cc90b2d34c4852"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_c7f43514fa8c4017a1e1dc9776b1743a"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="emplor-tr">
                             <row>
                                 <i-col span="24" class="formulate-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_5dec290129895730b1597da231067ae5"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_be14cfe0e2fc00e3ae156c923b5050e1"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="emplor-tr">
                             <row>
                                 <i-col span="24" class="formulate-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_cee71eefe24c3c4ef6c926a73c7a8ad9"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_b8146491f72ccfd7e88b6384d26616db"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="physics-tr-last">
-                            100
+                            <checkbox v-model="management.manage_1_1472a3b957137d12244c5690e2d8dd63"></checkbox>
                         </i-col>
                     </row>
                 </i-col>
@@ -185,7 +185,7 @@
                                 <i-col span="24" class="physics-tr-steal">自行软件开发</i-col>
                                 <i-col span="24" class="network-structure">外包软件开发</i-col>
                                 <i-col span="24" class="physics-tr">工程实施</i-col>
-                                <i-col span="24" class="visit-tr">测试验收</i-col>
+                                <i-col span="24" class="employ-tr-name">测试验收</i-col>
                                 <i-col span="24" class="network-structure">系统交付</i-col>
                                 <i-col span="24" class="service-tr-name">安全服务商选择</i-col>
                             </row>
@@ -223,8 +223,13 @@
                             </row>
                         </i-col>
                         <i-col span="24" class="physics-tr text-left">应指定或授权专门的部门或人员负责工程实施过程的管理</i-col>
-                        <i-col span="24" class="visit-tr text-left">
-                            应对系统进行安全性测试验收，在测试验收前应根据设计方案或合同要求等制订测试验收方案，在测试验收过程中应详细记录测试验收结果，并形成测试验收报告
+                        <i-col span="24" class="emplor-tr text-left">
+                            <row>
+                                <i-col span="24" class="physics-tr text-left">应对系统进行安全性测试验收</i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    在测试验收前应根据设计方案或合同要求等制订测试验收方案，在测试验收过程中应详细记录测试验收结果，并形成测试验收报告
+                                </i-col>
+                            </row>
                         </i-col>
                         <i-col span="24" class="network-control">
                             <row>
@@ -246,81 +251,89 @@
                         <i-col span="24" class="network-control">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_3e7810971bd64c16c3d7e1cc1e60f531"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_75863819c2c6a33959e7117cecedf582"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_bc827454956c16867166ab8331d67118"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="network-control">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_66a1f16743a91b24fe6844b17872a430"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_3550dc3140f97b9369aef7bb80b29e58"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_e0ab6ee2ecef6405de65d7f498b885ac"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="physics-tr">
-                            100
+                            <checkbox v-model="management.manage_1_e32678ef5c68343293c8a9bb11a71860"></checkbox>
                         </i-col>
                         <i-col span="24" class="steal-content">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_fe4ade2516985ebc7d328cf2729c71fb"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_3fcc9bf52e0059240ae570d151de1869"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="network-structure">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_2dbb880d5a9f9a98599a90b58dc63e35"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_4a6f4d2a223dd0cbd58fa3391eba3566"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_659b66e1c96f72fd43653213283dad6c"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="physics-tr">
-                            100
+                            <checkbox v-model="management.manage_1_1d5848c20332b61028c2dae44d381bdc"></checkbox>
                         </i-col>
-                        <i-col span="24" class="visit-tr">
-                            100
+                        <i-col span="24" class="emplor-tr text-left">
+                            <row>
+                                <i-col span="24" class="physics-tr">
+                                    <checkbox v-model="management.manage_1_ed15a7655b9bcb9771353155ef8589d4"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="management.manage_1_ac58c1c56627222eda2b9b82fb5fd95a"></checkbox>
+                                </i-col>
+                            </row>
                         </i-col>
+                       
                         <i-col span="24" class="network-control">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_e78f3dbdc334dd8fa7d29bc576a4b20a"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_adb9e9ce1f5caff3eb25293577d1d982"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_bf42ff8e6e1abb8fd6eda46d1b65392f"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="steal-content">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_bbf6746909a10ea06b5bf90da3febe75"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr-last">
-                                    100
+                                    <checkbox v-model="management.manage_1_411923a861d031194161faf46e18bbc6"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
@@ -424,82 +437,82 @@
                         <i-col span="24" class="network-control">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_8db141fd5e8dddb3594bed79ee674186"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_3081e48da42de1a396f8dda358d693fa"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_14cdd5aad050d35790f96d974af2649c"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="visit-tr">
-                            100
+                            <checkbox v-model="management.manage_1_d70335f3e47765777e97a6df470954f0"></checkbox>
                         </i-col>
                         <i-col span="24" class="steal-content">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_a7642e389f5ace2e218d3f1e1219c987"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_6c77bfc322ce2b72a8eaeacdefc0010a"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="emplor-tr">
                             <row>
                                 <i-col span="24" class="formulate-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_66e6c62c0c44534d8d77ffade8e38166"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_f576fc31ec07438895c5d9fb7c3d90ab"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="steal-content">
                             <row>
                                 <i-col span="24" class="formulate-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_1aeb980bd390f9be7a4bdc8b172ae828"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_265a1c4bf93a596bef3040e3588568ea"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="network-structure">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_1ef6036e9d9b07e287a79750e6a5748b"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_cd38778d09b32c7abb4095dce7ea3867"></checkbox>
                                 </i-col>
                                  <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_ab3b70d80fb94cd9e1f73730c45ca6ad"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="spite-tr">
-                            100
+                            <checkbox v-model="management.manage_1_8630039b1afea0b842b6ab05ec0a1d89"></checkbox>
                         </i-col>
                         <i-col span="24" class="steal-content">
                             <row>
                                 <i-col span="24" class="formulate-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_e9a856899df2c12b16c6c603fba4b411"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="formulate-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_9678e4390b701312c1ab922251b890c6"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="emplor-tr">
                             <row>
                                 <i-col span="24" class="formulate-tr">
-                                    100
+                                    <checkbox v-model="management.manage_1_5fff530e4e66488a3954d0e78de763d0"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr-last">
-                                    100
+                                    <checkbox v-model="management.manage_1_e6e838595b23e9c111adf7d36e6ae506"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
@@ -509,3 +522,121 @@
         </div>
     </div>
 </template>
+<script>
+import axios from 'axios'
+export default {
+  data () {
+      return  {
+         management: {
+            manage_1_3081e48da42de1a396f8dda358d693fa:false,
+            manage_1_14cdd5aad050d35790f96d974af2649c:false,
+            manage_1_d70335f3e47765777e97a6df470954f0:false,
+            manage_1_a7642e389f5ace2e218d3f1e1219c987:false,
+            manage_1_6c77bfc322ce2b72a8eaeacdefc0010a:false,
+            manage_1_66e6c62c0c44534d8d77ffade8e38166:false,
+            manage_1_f576fc31ec07438895c5d9fb7c3d90ab:false,
+            manage_1_1aeb980bd390f9be7a4bdc8b172ae828:false,
+            manage_1_265a1c4bf93a596bef3040e3588568ea:false,
+            manage_1_1ef6036e9d9b07e287a79750e6a5748b:false,
+            manage_1_cd38778d09b32c7abb4095dce7ea3867:false,
+            manage_1_ab3b70d80fb94cd9e1f73730c45ca6ad:false,
+            manage_1_8630039b1afea0b842b6ab05ec0a1d89:false,
+            manage_1_e9a856899df2c12b16c6c603fba4b411:false,
+            manage_1_9678e4390b701312c1ab922251b890c6:false,
+            manage_1_5fff530e4e66488a3954d0e78de763d0:false,
+            manage_1_e6e838595b23e9c111adf7d36e6ae506:false,
+            manage_1_9e37a8c6b6205b9878b78f280c88b8ac: false,
+            manage_1_9d1358772faa8ba85e54cd4e0ab3d433:false,
+            manage_1_2391143d958c842fff389fcd3cd37ac5:false,
+            manage_1_0acaae47ebcd6bec3f2e79b7d0957ff5:false,
+            manage_1_90a1b26319d44f4e9597ff2f1fe80afa:false,
+            manage_1_744b9d0b701c8474cc5da6be48742d10:false,
+            manage_1_21a1c824ac39a7b9d01d2180342e58e1:false,
+            manage_1_e9d1eae819bd91d183cc90b2d34c4852:false,
+            manage_1_c7f43514fa8c4017a1e1dc9776b1743a:false,
+            manage_1_5dec290129895730b1597da231067ae5:false,
+            manage_1_be14cfe0e2fc00e3ae156c923b5050e1:false,
+            manage_1_3e7810971bd64c16c3d7e1cc1e60f531:false,
+            manage_1_cee71eefe24c3c4ef6c926a73c7a8ad9:false,
+            manage_1_b8146491f72ccfd7e88b6384d26616db:false,
+            manage_1_1472a3b957137d12244c5690e2d8dd63:false,
+            manage_1_3e7810971bd64c16c3d7e1cc1e60f531:false,
+            manage_1_75863819c2c6a33959e7117cecedf582:false,
+            manage_1_bc827454956c16867166ab8331d67118:false,
+            manage_1_66a1f16743a91b24fe6844b17872a430:false,
+            manage_1_3550dc3140f97b9369aef7bb80b29e58:false,
+            manage_1_e0ab6ee2ecef6405de65d7f498b885ac:false,
+            manage_1_e32678ef5c68343293c8a9bb11a71860:false,
+            manage_1_fe4ade2516985ebc7d328cf2729c71fb:false,
+            manage_1_3fcc9bf52e0059240ae570d151de1869:false,
+            manage_1_2dbb880d5a9f9a98599a90b58dc63e35:false,
+            manage_1_4a6f4d2a223dd0cbd58fa3391eba3566:false,
+            manage_1_659b66e1c96f72fd43653213283dad6c:false,
+            manage_1_1d5848c20332b61028c2dae44d381bdc:false,
+            manage_1_ed15a7655b9bcb9771353155ef8589d4:false,
+            manage_1_ac58c1c56627222eda2b9b82fb5fd95a:false,
+            manage_1_e78f3dbdc334dd8fa7d29bc576a4b20a:false,
+            manage_1_adb9e9ce1f5caff3eb25293577d1d982:false,
+            manage_1_bf42ff8e6e1abb8fd6eda46d1b65392f:false,
+            manage_1_bbf6746909a10ea06b5bf90da3febe75:false,
+            manage_1_411923a861d031194161faf46e18bbc6:false,
+            manage_1_8db141fd5e8dddb3594bed79ee674186:false,
+         }
+      }
+  },
+  computed: {
+        url () {
+            return this.$store.state.userCode.url
+        },
+        inspId () {
+            return this.$store.state.userCode.inspId
+        }
+    },
+    created() {
+        if(localStorage.inspId) {
+            this.queryList()
+        }
+    },
+    methods: {
+        changeDate(date) {
+            this.suchAsPaul.date = date
+        },
+        queryList() {
+            const url = this.url + '/insp/api/v1.0/systems/' + localStorage.inspId
+            axios({
+                method:'get',
+                url: url,
+            })
+            .then(response => {
+                if(response.data.status) {
+                    const res = response.data.inspect_system
+                    console.log(res.system_data_json)
+                    this.suchAsPaul = res.system_data_json
+                }
+            })
+        },
+        handelSubmit() {
+            const url = this.url + '/insp/api/v1.0/systems'
+            const params = {
+                system_name: this.suchAsPaul.name,
+                system_no: this.suchAsPaul.num,
+                system_data_json: this.suchAsPaul,
+                // system_data_json: JSON.stringify(this.suchAsPaul),
+                describe: this.suchAsPaul.desc,
+                file:''
+                // system_name="等保系统测试"& system_no="Ksegeuiree"&system_data_json=""&describe="testeweset"&file=""
+            }
+            axios({
+                method:'post',
+                url: url,
+                data:params
+            })
+            .then(response => {
+                if(response.data.status) {
+                    console.log(response.data)
+                }
+            })
+        }
+    }
+}
+</script>
