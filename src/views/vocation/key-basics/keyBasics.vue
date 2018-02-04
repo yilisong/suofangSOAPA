@@ -674,15 +674,11 @@
                                 <i-col span="24" class="visit-tr">资产管理</i-col>
                                 <i-col span="24" class="physics-tr-steal">介质管理</i-col>
                                 <i-col span="24" class="employ-tr-name">设备管理</i-col>
-                                
-                                <!-- <i-col span="24" class="network-structure">安全方案设计</i-col>
-                                <i-col span="24" class="physics-tr">产品采购和使用</i-col>
-                                <i-col span="24" class="physics-tr-steal">自行软件开发</i-col>
-                                <i-col span="24" class="network-structure">外包软件开发</i-col>
-                                <i-col span="24" class="physics-tr">工程实施</i-col>
-                                <i-col span="24" class="visit-tr">测试验收</i-col>
-                                <i-col span="24" class="network-structure">系统交付</i-col>
-                                <i-col span="24" class="service-tr-name">安全服务商选择</i-col> -->
+                                <i-col span="24" class="physics-tr-steal">网络安全管理</i-col>
+                                <i-col span="24" class="network-structure">系统安全管理</i-col>
+                                <i-col span="24" class="physics-tr-steal">恶意代码防范管理</i-col>
+                                <i-col span="24" class="physics-tr-steal">备份与恢复管理</i-col>
+                                <i-col span="24" class="employ-tr-name-last">安全事件处置</i-col>
                             </row>
                         </i-col>
                     </row>
@@ -703,47 +699,64 @@
                                 <i-col span="24" class="physics-tr text-left">应对介质归档和查询等过程进行记录，并根据存档介质的目录清单定期盘点</i-col>
                             </row>
                         </i-col>
-                        <!-- <i-col span="24" class="network-control">
+                        <i-col span="24" class="emplor-tr">
                             <row>
-                                <i-col span="24" class="physics-tr text-left">应根据系统的安全保护等级选择基本安全措施，依据风险分析的结果补充和调整安全措施</i-col>
-                                <i-col span="24" class="physics-tr text-left">应以书面的形式描述对系统的安全保护要求和策略、安全措施等内容，形成系统的安全方案</i-col>
-                                <i-col span="24" class="physics-tr text-left">应对安全方案进行细化，形成能指导安全系统建设、安全产品采购和使用的详细设计方案</i-col>
+                                <i-col span="24" class="formulate-tr text-left">应对信息系统相关的各种设备、线路等指定专门的部门或人员定期进行维护管理</i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应建立基于申报、审批和专人负责的设备安全管理制度，对信息系统的各种软硬件设备的选型、采购、发放和领用等过程进行规范化管理
+                                </i-col>
                             </row>
                         </i-col>
-                        <i-col span="24" class="physics-tr text-left">应确保安全产品采购和使用符合国家的有关规定</i-col>
                         <i-col span="24" class="steal-content">
                             <row>
-                                <i-col span="24" class="physics-tr text-left">应确保开发环境与实际运行环境物理分开</i-col>
-                                <i-col span="24" class="physics-tr text-left">应确保软件设计相关文档由专人负责保管</i-col>
+                                <i-col span="24" class="formulate-tr text-left">
+                                    应指定人员对网络进行管理，负责运行日志、网络监控记录的日常维护和报警信息分析和处理工作
+                                </i-col>
+                                <i-col span="24" class="physics-tr text-left">
+                                    应定期进行网络系统漏洞扫描，对发现的网络系统安全漏洞进行及时的修补
+                                </i-col>
                             </row>
                         </i-col>
+                        
                         <i-col span="24" class="network-structure">
                             <row>
-                                <i-col span="24" class="physics-tr text-left">应根据开发要求检测软件质量</i-col>
-                                <i-col span="24" class="physics-tr text-left">应在软件安装之前检测软件包中可能存在的恶意代码</i-col>
-                                <i-col span="24" class="physics-tr text-left">应确保提供软件设计的相关文档和使用指南</i-col>
+                                <i-col span="24" class="physics-tr text-left">
+                                    应根据业务需求和系统安全分析确定系统的访问控制策略
+                                </i-col>
+                                <i-col span="24" class="physics-tr text-left">
+                                    应定期进行漏洞扫描，对发现的系统安全漏洞进行及时的修补
+                                </i-col>
+                                 <i-col span="24" class="physics-tr text-left">
+                                    应安装系统的最新补丁程序，并在安装系统补丁前对现有的重要文件进行备份
+                                </i-col>
                             </row>
                         </i-col>
-                        <i-col span="24" class="physics-tr text-left">应指定或授权专门的部门或人员负责工程实施过程的管理</i-col>
-                        <i-col span="24" class="visit-tr text-left">
-                            应对系统进行安全性测试验收，在测试验收前应根据设计方案或合同要求等制订测试验收方案，在测试验收过程中应详细记录测试验收结果，并形成测试验收报告
+                        <i-col span="24" class="spite-tr text-left">
+                            应提高所有用户的防病毒意识，告知及时升级防病毒软件，在读取移动存储设备上的数据以及网络上接收文件或邮件之前，先进行病毒检查，对外来计算机或存储设备接入网络系统之前也应进行病毒检查
                         </i-col>
-                        <i-col span="24" class="network-control">
+                        <i-col span="24" class="steal-content text-left">
                             <row>
-                                <i-col span="24" class="physics-tr text-left">应制定系统交付清单，并根据交付清单对所交接的设备、软件和文档等进行清点</i-col>
-                                <i-col span="24" class="physics-tr text-left">应对负责系统运行维护的技术人员进行相应的技能培训</i-col>
-                                <i-col span="24" class="physics-tr text-left">应确保提供系统建设过程中的文档和指导用户进行系统运行维护的文档</i-col>
+                                <i-col span="24" class="formulate-tr text-left">
+                                    应识别需要定期备份的重要业务信息、系统数据及软件系统等
+                                </i-col>
+                                <i-col span="24" class="formulate-tr text-left">
+                                    应规定备份信息的备份方式、备份频度、存储介质、保存期等
+                                </i-col>
                             </row>
                         </i-col>
-                        <i-col span="24" class="steal-content">
+                        <i-col span="24" class="emplor-tr text-left">
                             <row>
-                                <i-col span="24" class="physics-tr text-left">应确保安全服务商的选择符合国家的有关规定</i-col>
-                                <i-col span="24" class="physics-tr-last text-left">应确保软件设计相关文档由专人负责保管</i-col>
+                                <i-col span="24" class="formulate-tr text-left">
+                                    应报告所发现的安全弱点和可疑事件，但任何情况下用户均不应尝试验证弱点
+                                </i-col>
+                                <i-col span="24" class="visit-tr-last text-left">
+                                    应制定安全事件报告和处置管理制度，规定安全事件的现场处理、事件报告和后期恢复的管理职责
+                                </i-col>
                             </row>
-                        </i-col> -->
+                        </i-col>
                     </row>
                 </i-col>
-                <!-- <i-col span="3">
+                <i-col span="3">
                     <row>
                         <i-col span="24" class="network-control">
                             <row>
@@ -758,11 +771,11 @@
                                 </i-col>
                             </row>
                         </i-col>
-                        <i-col span="24" class="network-control">
+                        <i-col span="24" class="visit-tr">
+                            100
+                        </i-col>
+                        <i-col span="24" class="steal-content">
                             <row>
-                                <i-col span="24" class="physics-tr">
-                                    100
-                                </i-col>
                                 <i-col span="24" class="physics-tr">
                                     100
                                 </i-col>
@@ -771,12 +784,19 @@
                                 </i-col>
                             </row>
                         </i-col>
-                        <i-col span="24" class="physics-tr">
-                            100
+                        <i-col span="24" class="emplor-tr">
+                            <row>
+                                <i-col span="24" class="formulate-tr">
+                                    100
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    100
+                                </i-col>
+                            </row>
                         </i-col>
                         <i-col span="24" class="steal-content">
                             <row>
-                                <i-col span="24" class="physics-tr">
+                                <i-col span="24" class="formulate-tr">
                                     100
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
@@ -792,42 +812,36 @@
                                 <i-col span="24" class="physics-tr">
                                     100
                                 </i-col>
-                                <i-col span="24" class="physics-tr">
+                                 <i-col span="24" class="physics-tr">
                                     100
                                 </i-col>
                             </row>
                         </i-col>
-                        <i-col span="24" class="physics-tr">
+                        <i-col span="24" class="spite-tr">
                             100
-                        </i-col>
-                        <i-col span="24" class="visit-tr">
-                            100
-                        </i-col>
-                        <i-col span="24" class="network-control">
-                            <row>
-                                <i-col span="24" class="physics-tr">
-                                    100
-                                </i-col>
-                                <i-col span="24" class="physics-tr">
-                                    100
-                                </i-col>
-                                <i-col span="24" class="physics-tr">
-                                    100
-                                </i-col>
-                            </row>
                         </i-col>
                         <i-col span="24" class="steal-content">
                             <row>
-                                <i-col span="24" class="physics-tr">
+                                <i-col span="24" class="formulate-tr">
                                     100
                                 </i-col>
-                                <i-col span="24" class="physics-tr-last">
+                                <i-col span="24" class="formulate-tr">
+                                    100
+                                </i-col>
+                            </row>
+                        </i-col>
+                        <i-col span="24" class="emplor-tr">
+                            <row>
+                                <i-col span="24" class="formulate-tr">
+                                    100
+                                </i-col>
+                                <i-col span="24" class="visit-tr-last">
                                     100
                                 </i-col>
                             </row>
                         </i-col>
                     </row>
-                </i-col> -->
+                </i-col>
             </row>
         </div>
     </div>
