@@ -15,15 +15,15 @@
                 <el-table-column label="自评等级" width="" prop="security_level_name"></el-table-column>
                 <el-table-column label="下载路径" width="">
                     <template scope="scope">
-                        <span v-if="scope.row.system_word" style="cursor: pointer;" type="text" @click="download(scope.row.system_word)">下载</span>
-                        <span v-else>暂无下载文件</span>   
+                        <a v-if="scope.row.system_word" href="scope.row.system_word">下载</a>
+                        <a v-else>暂无下载文件</a>
                     </template>
                 </el-table-column>
                 <el-table-column label="操作">
                     <template scope="scope">
-                        <el-button type="primary" size="small" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                        <el-button type="primary" size="small" @click="handleEdit(scope.$index, scope.row.id)">编辑</el-button>
                         <el-popover ref="popover5" placement="top" width="160" v-model="scope.row.deleteVisible">
-                            <p>这是一段内容这是一段内容确定删除吗？</p>
+                            <p>您确定删除当前信息么？</p>
                             <div style="text-align: right; margin: 0">
                                 <el-button size="mini" type="text" @click="scope.row.deleteVisible = false">取消</el-button>
                                 <el-button type="primary" size="mini" @click="deleteList(scope.$index, scope.row.id)">确定</el-button>
@@ -32,12 +32,12 @@
                         <el-button type="primary" size="small" v-popover:popover5 @click="showVisible(scope.row.deleteVisible)">删除</el-button>
                         <el-dropdown>
                             <el-button size="small" type="primary">
-                                详情<i class="el-icon-caret-bottom el-icon--right"></i>
+                                自评<i class="el-icon-caret-bottom el-icon--right"></i>
                             </el-button>
                             <el-dropdown-menu slot="dropdown">
-                                <el-dropdown-item>等级自评详情</el-dropdown-item>
-                                <el-dropdown-item>技术自评详情</el-dropdown-item>
-                                <el-dropdown-item>管理自评详情</el-dropdown-item>
+                                <el-dropdown-item  @click="handleLevel(scope.row.security_level, scope.row.id)">等级自评详情</el-dropdown-item>
+                                <el-dropdown-item  @click="handleTec(scope.row.security_level, scope.row.id)">技术自评详情</el-dropdown-item>
+                                <el-dropdown-item  @click="handleManage(scope.row.security_level, scope.row.id)">管理自评详情</el-dropdown-item>
                             </el-dropdown-menu>
                         </el-dropdown>
                     </template>
@@ -57,6 +57,7 @@
 <script>
 import Resource from '@/store/recouse/recouse'
 import 'element-ui/lib/theme-default/index.css'
+import { mapActions } from 'vuex'
 import axios from 'axios'
 export default {
     name: 'home',
@@ -65,51 +66,10 @@ export default {
     data () {
         return {
             pageSize: 10,
-            total: 60,
+            total: 0,
             pageNum: 1,
             currentPage1: 1,
-            "inspect_systems": [{
-                "system_name": "等保系统测试",
-                "update_time": "Fri, 26 Jan 2018 15:08:01 GMT",
-                "describe": "testeweset",
-                "system_level": 5,
-                "business_level": 5,
-                "system_word": "/insp/api/v1.0/systems/download/1",
-                "security_level": 5,
-                "system_no": "Ksegeuiree",
-                "id": 1,
-                "system_data_json": {},
-                deleteVisible: false
-            }, {
-                "system_name": "等保系统测试1",
-                "update_time": "Fri, 02 Feb 2018 21:26:10 GMT",
-                "describe": "testeweset1",
-                "system_level": 0,
-                "business_level": 0,
-                "system_word": "/insp/api/v1.0/systems/download/3",
-                "security_level": 0,
-                "system_no": "Ksegeuiree1",
-                "id": 3,
-                "system_data_json": {
-                    "system_name": "等保系统测试1"
-                },
-                deleteVisible: false
-            },
-            {
-                "system_name": "等保系统测试1",
-                "update_time": "Fri, 02 Feb 2018 21:26:10 GMT",
-                "describe": "testeweset1",
-                "system_level": 0,
-                "business_level": 0,
-                "system_word": "",
-                "security_level": 0,
-                "system_no": "Ksegeuiree1",
-                "id": 3,
-                "system_data_json": {
-                    "system_name": "等保系统测试1"
-                },
-                deleteVisible: false
-            }]
+            inspect_systems: []
         };
     },
     computed: {
@@ -121,11 +81,12 @@ export default {
         this.queryAboutList()
     },
     methods: {
+        ...mapActions([
+            'setInspId'
+        ]),
         handleSizeChange(num) {
-            console.log('handleSizeChange', num)
-        },
-        download(url) {
-            console.log(url)
+            this.pageNum = num
+            this.queryAboutList()
         },
         showVisible(deleteVisible) {
             deleteVisible = true
@@ -145,13 +106,13 @@ export default {
                 if(response.data.status) {
                     const res = response.data
                     this.inspect_systems = res.inspect_systems
-                    this.total = res.total
+                    this.total = parseInt(res.total)
                 }
             })
         },
-        deletelist (params) {
-            console.log('删除')
-            const url = this.url + '/v1.0/assets/' + params.row.id
+        deleteList (index, params) {
+            console.log(params)
+            const url = this.url + '/insp/api/v1.0/systems/' + params
             axios({
                 method:'delete',
                 url: url
@@ -159,20 +120,36 @@ export default {
             .then(response => {
                 if(response.data.status) {
                     this.$Message.success('删除成功!');
-                    this.tableData.splice(params.index, 1);
+                    this.queryAboutList()
                 } else {
                     this.$Message.error('删除失败');
                 }
             })
         },
-        handleEdit(params) {
-            console.log('编辑')
+        handleEdit(params, id) {
+            this.setInspId(id)
+            localStorage.inspId = id
+            window.location.href = '/#/gradeProtectaion'
         },
         addProperty() {
-            console.log('add')
-            this.$refs['formValidate'].resetFields();
-            this.title = '增加资产信息'
-            this.modal = true
+            this.setInspId(null)
+            localStorage.inspId = null
+            window.location.href = '/#/gradeProtectaion'
+        },
+        handleLevel(level, id) {
+            console.log(level, id)
+            localStorage.inspId = id
+            window.location.href = '/#/networkSafe'
+        },
+        handleTec(level, id) {
+            console.log(level, id)
+            localStorage.inspId = id
+            window.location.href = '/#/technology'
+        },
+        handleManage(level, id) {
+            console.log(level, id)
+            localStorage.inspId = id
+            window.location.href = '/#/keyBasics'
         }
     }
 }

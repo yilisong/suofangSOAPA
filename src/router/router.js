@@ -156,10 +156,52 @@ export const appRouter = [
                 component: () => import('@/views/vocation/network-safe/networkSafe.vue') 
             },
             {
-                path: '/keyBasics',
-                title: '关键基础设施', 
-                name: 'keyBasics', 
-                component: () => import('@/views/vocation/key-basics/keyBasics.vue') 
+                path: '/manage1',
+                title: '管理一', 
+                name: 'manage1', 
+                component: () => import('@/views/vocation/key-basics/manage1.vue') 
+            },
+            {
+                path: '/manage2',
+                title: '管理二', 
+                name: 'manage2', 
+                component: () => import('@/views/vocation/key-basics/manage2.vue') 
+            },
+            {
+                path: '/manage3',
+                title: '管理三', 
+                name: 'manage3', 
+                component: () => import('@/views/vocation/key-basics/manage3.vue') 
+            },
+            {
+                path: '/manage4',
+                title: '管理四', 
+                name: 'manage4', 
+                component: () => import('@/views/vocation/key-basics/manage4.vue') 
+            },
+            {
+                path: '/technology1',
+                title: '技术一', 
+                name: 'technology1', 
+                component: () => import('@/views/vocation/key-basics/technology1.vue') 
+            },
+            {
+                path: '/technology2',
+                title: '技术二', 
+                name: 'technology2', 
+                component: () => import('@/views/vocation/key-basics/technology2.vue') 
+            },
+            {
+                path: '/technology3',
+                title: '技术三', 
+                name: 'technology3', 
+                component: () => import('@/views/vocation/key-basics/technology3.vue') 
+            },
+            {
+                path: '/technology4',
+                title: '技术四', 
+                name: 'technology4', 
+                component: () => import('@/views/vocation/key-basics/technology4.vue') 
             },
             {
                 path: '/mainframe',

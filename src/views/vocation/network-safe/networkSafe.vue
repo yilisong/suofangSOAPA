@@ -30,13 +30,13 @@
                     <i-col span="16">
                         <row class="destroy-level">
                             <i-col span="8" class="br">
-                                <checkbox v-model="equityGood"></checkbox>
+                                <checkbox v-model="business_assess.citizen_normal"></checkbox>
                             </i-col>
                             <i-col span="8" class="br">
-                                <checkbox v-model="equityBetter"></checkbox>
+                                <checkbox v-model="business_assess.citizen_serious"></checkbox>
                             </i-col>
                             <i-col span="8">
-                                <checkbox v-model="equityVery"></checkbox>
+                                <checkbox v-model="business_assess.citizen_special"></checkbox>
                             </i-col>
                         </row>
                     </i-col>
@@ -48,13 +48,13 @@
                     <i-col span="16">
                         <row class="destroy-level">
                             <i-col span="8" class="br">
-                                <checkbox v-model="societyGood"></checkbox>
+                                <checkbox v-model="business_assess.social_normal"></checkbox>
                             </i-col>
                             <i-col span="8" class="br">
-                                <checkbox v-model="societyBetter"></checkbox>
+                                <checkbox v-model="business_assess.social_serious"></checkbox>
                             </i-col>
                             <i-col span="8">
-                                <checkbox v-model="societyVery"></checkbox>
+                                <checkbox v-model="business_assess.social_special"></checkbox>
                             </i-col>
                         </row>
                     </i-col>
@@ -66,13 +66,13 @@
                     <i-col span="16">
                         <row class="destroy-level">
                             <i-col span="8" class="br">
-                                <checkbox v-model="nationGood"></checkbox>
+                                <checkbox v-model="business_assess.country_normal"></checkbox>
                             </i-col>
                             <i-col span="8" class="br">
-                                <checkbox v-model="nationBetter"></checkbox>
+                                <checkbox v-model="business_assess.country_serious"></checkbox>
                             </i-col>
                             <i-col span="8">
-                                <checkbox v-model="nationVery"></checkbox>
+                                <checkbox v-model="business_assess.country_specail"></checkbox>
                             </i-col>
                         </row>
                     </i-col>
@@ -101,13 +101,13 @@
                     <i-col span="16">
                         <row class="destroy-level">
                             <i-col span="8" class="br">
-                                <checkbox v-model="systemEquityGood"></checkbox>
+                                <checkbox v-model="system_assess.citizen_normal"></checkbox>
                             </i-col>
                             <i-col span="8" class="br">
-                                <checkbox v-model="systemEquityBetter"></checkbox>
+                                <checkbox v-model="system_assess.citizen_serious"></checkbox>
                             </i-col>
                             <i-col span="8">
-                                <checkbox v-model="systemEquityVery"></checkbox>
+                                <checkbox v-model="system_assess.citizen_special"></checkbox>
                             </i-col>
                         </row>
                     </i-col>
@@ -119,13 +119,13 @@
                     <i-col span="16">
                         <row class="destroy-level">
                             <i-col span="8" class="br">
-                                <checkbox v-model="systemSocietyGood"></checkbox>
+                                <checkbox v-model="system_assess.social_normal"></checkbox>
                             </i-col>
                             <i-col span="8" class="br">
-                                <checkbox v-model="systemSocietyBetter"></checkbox>
+                                <checkbox v-model="system_assess.social_serious"></checkbox>
                             </i-col>
                             <i-col span="8">
-                                <checkbox v-model="systemSocietyVery"></checkbox>
+                                <checkbox v-model="system_assess.social_special"></checkbox>
                             </i-col>
                         </row>
                     </i-col>
@@ -137,48 +137,99 @@
                     <i-col span="16">
                         <row class="destroy-level">
                             <i-col span="8" class="br">
-                                <checkbox v-model="systemNationGood"></checkbox>
+                                <checkbox v-model="system_assess.country_normal"></checkbox>
                             </i-col>
                             <i-col span="8" class="br">
-                                <checkbox v-model="systemNationBetter"></checkbox>
+                                <checkbox v-model="system_assess.country_serious"></checkbox>
                             </i-col>
                             <i-col span="8">
-                                <checkbox v-model="systemNationVery"></checkbox>
+                                <checkbox v-model="system_assess.country_specail"></checkbox>
                             </i-col>
                         </row>
                     </i-col>
                 </row>
                 <row class="system-button">
-                    <i-button type="primary">等级测评</i-button>
+                    <i-button type="primary" @click="submitAssess">等级测评</i-button>
                 </row>
             </div>
         </div>
     </div>
 </template>
 <script>
-import Cookies from 'js-cookie';
+import axios from 'axios';
 export default {
     data () {
         return {
-            equityGood:'',
-            equityBetter:'',
-            equityVery:'',
-            societyGood:'',
-            societyBetter:'',
-            societyVery:'',
-            nationGood:'',
-            nationBetter:'',
-            nationVery:'',
-            systemEquityGood:'',
-            systemEquityBetter:'',
-            systemEquityVery:'',
-            systemSocietyGood:'',
-            systemSocietyBetter:'',
-            systemSocietyVery:'',
-            systemNationGood:'',
-            systemNationBetter:'',
-            systemNationVery:'',
+            business_assess: {
+                citizen_normal: false,
+                citizen_serious: false,
+                citizen_special: false,
+                social_normal: false,
+                social_serious: false,
+                social_special: false,
+                country_normal: false,
+                country_serious: false,
+                country_specail: false
+            },
+            system_assess: {
+                citizen_normal: false,
+                citizen_serious: false,
+                citizen_special: false,
+                social_normal: false,
+                social_serious: false,
+                social_special: false,
+                country_normal: false,
+                country_serious: false,
+                country_specail: false
+            }
         }
     },
+    computed: {
+        url () {
+            return this.$store.state.userCode.url
+        }
+    },
+    created() {
+        if(localStorage.inspId) {
+            this.queryList()
+        }
+    },
+    methods: {
+        queryList() {
+            const url = this.url + '/insp/api/v1.0/systems/assess/' + localStorage.inspId
+            axios({
+                method:'get',
+                url: url
+            })
+            .then(response => {
+                if(response.data.status) {
+                    const res = response.data
+                    this.business_assess = res.business_assess
+                    this.system_assess = res.system_assess
+                } else {
+                    this.$Message.error(response.data.desc)
+                }
+            })
+        },
+        submitAssess(){
+            const url = this.url + '/insp/api/v1.0/systems/assess/' + localStorage.inspId
+            axios({
+                method:'post',
+                url: url,
+                data:{
+                    system_id: localStorage.inspId,
+                    system_assess: this.system_assess,
+                    business_assess: this.business_assess
+                }
+            })
+            .then(response => {
+                if(response.data.status) {
+                    this.$Message.info('保存成功')
+                } else {
+                    this.$Message.error(response.data.desc)
+                }
+            })
+        }
+    }
 };
 </script>

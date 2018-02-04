@@ -406,12 +406,33 @@ export default {
     computed: {
         url () {
             return this.$store.state.userCode.url
+        },
+        inspId () {
+            return this.$store.state.userCode.inspId
+        }
+    },
+    created() {
+        if(localStorage.inspId) {
+            this.queryList()
         }
     },
     methods: {
         changeDate(date) {
-            console.log(date)
             this.suchAsPaul.date = date
+        },
+        queryList() {
+            const url = this.url + '/insp/api/v1.0/systems/' + localStorage.inspId
+            axios({
+                method:'get',
+                url: url,
+            })
+            .then(response => {
+                if(response.data.status) {
+                    const res = response.data.inspect_system
+                    console.log(res.system_data_json)
+                    this.suchAsPaul = res.system_data_json
+                }
+            })
         },
         handelSubmit() {
             const url = this.url + '/insp/api/v1.0/systems'
