@@ -57,39 +57,39 @@
                 <i-col span="3">
                     <row>
                         <i-col span="24" class="physics-tr">
-                            100
+                            <checkbox v-model="technology.tech_1_f651627d9cb8668b788f706d6b12261a"></checkbox>
                         </i-col>
                         <i-col span="24" class="steal-content">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_b84d9b4c81d8329fe18be2b2f598e0e2"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_58b5521a03185d6599ea2993039e2ec2"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="physics-tr">
-                            100
+                            <checkbox v-model="technology.tech_1_1e6ea84aff15e04530304c6c9a73d1b4"></checkbox>
                         </i-col>
                         <i-col span="24" class="physics-tr">
-                            100
+                            <checkbox v-model="technology.tech_1_8514ec39f04a59c662ec9ab122596f69"></checkbox>
                         </i-col>
                         <i-col span="24" class="steal-content">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_2d3635eb0f8a8d4561f387509d132f9c"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_0882d21670d70557ef9c232e821ace4d"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="physics-tr">
-                            100
+                            <checkbox v-model="technology.tech_1_daae56682bc69f98a0d969bad7372164"></checkbox>
                         </i-col>
                         <i-col span="24" class="physics-tr-last">
-                            100
+                            <checkbox v-model="technology.tech_1_1caf718db55f75ddcede3e2783077008"></checkbox>
                         </i-col>
                     </row>
                 </i-col>
@@ -137,39 +137,39 @@
                         <i-col span="24" class="network-structure">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_a3a560958b6ce33f5eaa356286d5d0aa"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_00112f3f43564c0f0664c6c82ad13306"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_1ad553f870d68087b2ca3f9ef2e5a7a8"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="network-visit">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_7fc3befd6909ddb524b0bac0f79bd4a9"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr-es">
-                                    100
+                                    <checkbox v-model="technology.tech_1_faa1b90884b8da5a51c773fc7956a7e2"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr-last-case">
-                                    100
+                                    <checkbox v-model="technology.tech_1_32edec6845da3f3044901f147d6e0ee4"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="network-visit-last">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_8a29e81f6682e2ff4544fd845e5c5fc5"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr-es">
-                                    100
+                                    <checkbox v-model="technology.tech_1_e0700418373bb6279d1bdc642c4c08c0"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr-last-case">
-                                    100
+                                    <checkbox v-model="technology.tech_1_4cd45c449016cfeb62bca6909f9c3740"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
@@ -212,30 +212,30 @@
                 <i-col span="3">
                     <row>
                         <i-col span="24" class="physics-tr">
-                            100
+                            <checkbox v-model="technology.tech_1_3e830a8c146ed4e461ddc612f6878773"></checkbox>
                         </i-col>
                         <i-col span="24" class="network-control">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_a0cdb8142b5b65ef5ec79e62d0d5b171"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_73fa79e0de26d6dccf8a68ba4d43d892"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_ccd50b18960f24a3e89cbabfd6eb5f99"></checkbox>
                                 </i-col>
 
                             </row>
                         </i-col>
                         <i-col span="24" class="precaution-tr">
                             <i-col span="24"> 
-                                100
+                                <checkbox v-model="technology.tech_1_0a19d0c6a8dc1dae56b78719df6cb336"></checkbox>
                             </i-col>
                         </i-col>
                         <i-col span="24" class="precaution-tr-last">
                             <i-col span="24"> 
-                                100
+                                <checkbox v-model="technology.tech_1_431bc013ea26803d294612419ae7dd2d"></checkbox>
                             </i-col>
                         </i-col>
                     </row>
@@ -283,31 +283,31 @@
                         <i-col span="24" class="network-control">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_4fa58a449ac8013a231be49d012207af"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_ed5fe3e68332d195927b63971f82e704"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_08dbf73fa35d6ff1bc44edff57334c85"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="steal-content">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_62299caf5407a5860f52220b642e20ef"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_fad4f85af75256aec9d576d63acebbec"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="precaution-tr">
-                            100
+                            <checkbox v-model="technology.tech_1_8813133d0f0da4e76d3ce5c388bb1bce"></checkbox>
                         </i-col>
                         <i-col span="24" class="precaution-tr-last">
-                            100
+                            <checkbox v-model="technology.tech_1_0b05b22332ebe0e7f57e73974340f6ef"></checkbox>
                         </i-col>
                     </row>
                 </i-col>
@@ -337,14 +337,103 @@
                 <i-col span="3">
                    <row>
                         <i-col span="24" class="network-structure">
-                            100
+                            <checkbox v-model="technology.tech_1_4076256f6c966d12b98ea126c668db69"></checkbox>
                         </i-col>
                         <i-col span="24" class="back-recover">
-                            100
+                            <checkbox v-model="technology.tech_1_334d45b58242ec750d812cb1ad9a89ec"></checkbox>
                         </i-col>
                     </row>
                 </i-col>
             </row>
         </div>
+        <div style="width: 100%;text-align: center;margin-top: 5px;">
+            <i-button type="primary" @click="submitAssess">提交</i-button>
+        </div>
     </div>
 </template>
+<script>
+import axios from 'axios'
+export default {
+  data(){
+      return {
+          technology: {
+              tech_1_f651627d9cb8668b788f706d6b12261a: false,
+              tech_1_b84d9b4c81d8329fe18be2b2f598e0e2: false,
+              tech_1_58b5521a03185d6599ea2993039e2ec2: false,
+              tech_1_1e6ea84aff15e04530304c6c9a73d1b4: false,
+              tech_1_8514ec39f04a59c662ec9ab122596f69: false,
+              tech_1_2d3635eb0f8a8d4561f387509d132f9c: false,
+              tech_1_0882d21670d70557ef9c232e821ace4d: false,
+              tech_1_daae56682bc69f98a0d969bad7372164: false,
+              tech_1_1caf718db55f75ddcede3e2783077008: false,
+              tech_1_a3a560958b6ce33f5eaa356286d5d0aa: false,
+              tech_1_00112f3f43564c0f0664c6c82ad13306: false,
+              tech_1_1ad553f870d68087b2ca3f9ef2e5a7a8: false,
+              tech_1_7fc3befd6909ddb524b0bac0f79bd4a9: false,
+              tech_1_faa1b90884b8da5a51c773fc7956a7e2: false,
+              tech_1_32edec6845da3f3044901f147d6e0ee4: false,
+              tech_1_8a29e81f6682e2ff4544fd845e5c5fc5: false,
+              tech_1_e0700418373bb6279d1bdc642c4c08c0: false,
+              tech_1_4cd45c449016cfeb62bca6909f9c3740: false,
+              tech_1_3e830a8c146ed4e461ddc612f6878773: false,
+              tech_1_a0cdb8142b5b65ef5ec79e62d0d5b171: false,
+              tech_1_73fa79e0de26d6dccf8a68ba4d43d892: false,
+              tech_1_ccd50b18960f24a3e89cbabfd6eb5f99: false,
+              tech_1_0a19d0c6a8dc1dae56b78719df6cb336: false,
+              tech_1_431bc013ea26803d294612419ae7dd2d: false,
+              tech_1_4fa58a449ac8013a231be49d012207af: false,
+              tech_1_ed5fe3e68332d195927b63971f82e704: false,
+              tech_1_08dbf73fa35d6ff1bc44edff57334c85: false,
+              tech_1_62299caf5407a5860f52220b642e20ef: false,
+              tech_1_fad4f85af75256aec9d576d63acebbec: false,
+              tech_1_8813133d0f0da4e76d3ce5c388bb1bce: false,
+              tech_1_0b05b22332ebe0e7f57e73974340f6ef: false,
+              tech_1_4076256f6c966d12b98ea126c668db69: false,
+              tech_1_334d45b58242ec750d812cb1ad9a89ec: false
+          }
+      }
+  },
+  computed: {
+    url () {
+        return this.$store.state.userCode.url
+    }
+  },
+  created() {
+      if(localStorage.inspId) {
+          this.queryList()
+      }
+  },
+  methods: {
+      queryList() {
+        const url = this.url + '/insp/api/v1.0/tech/assess/' + localStorage.inspId
+        axios({
+            method:'get',
+            url: url
+        })
+        .then(response => {
+            if(response.data.status) {
+                const res = response.data
+                this.technology = res.tech_assess
+            } else {
+                this.$Message.error(response.data.desc)
+            }
+        })
+      },
+      submitAssess() {
+        const url = this.url + '/insp/api/v1.0/tech/assess/' + localStorage.inspId
+        axios({
+            method:'post',
+            url: url,
+            data: this.technology
+        })
+        .then(response => {
+            if(response.data.status) {
+                this.$Message.info('添加成功')
+            } else {
+                this.$Message.error(response.data.desc)
+            }
+        })
+      }
+  }
+}
+</script>
