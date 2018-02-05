@@ -6,7 +6,7 @@
     <div class="home-main">
         <div>
             <Button @click="addProperty"><Icon type="plus-round" class="icon"></Icon>添加</Button>
-            <upload action="http://192.168.4.182:8092/asset/api/v1.0/assets/file">
+            <upload action="http://192.168.4.182:8092/asset/api/v1.0/assets/file" style="display: inline-block;">
                 <Button><Icon type="share" class="icon"></Icon>Excel导入</Button>
             </upload>
         </div>

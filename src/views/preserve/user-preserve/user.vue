@@ -4,20 +4,22 @@
 
 <template>
    <div class="user-preserve">
-        <div>
-            <!-- <page :total="40" size="small" show-elevator show-sizer></page> -->
+        <tabs value="name1">
+            <tab-pane label="用户" name="name1">
+                <div>
             <Button  @click="addProperty">
                 <Icon type="plus-round" class="icon"></Icon>添加
             </Button>
-            <!-- <Button><Icon type="minus-round" class="icon"></Icon>删除</Button>
-            <Button><Icon type="edit" class="icon"></Icon>修改</Button> -->
-            <Button><Icon type="key" class="icon"></Icon>重置密码</Button>
+            <!-- <Button><Icon type="key" class="icon"></Icon>重置密码</Button>
             <Button><Icon type="star" class="icon"></Icon>岗位</Button>
             <Button><Icon type="person-stalker" class="icon"></Icon>部门</Button>
-            <Button><Icon type="backspace" class="icon"></Icon>清空岗位</Button>
+            <Button><Icon type="backspace" class="icon"></Icon>清空岗位</Button> -->
         </div>
         <modal v-model="modal" :title="title" :mask-closable="false">
             <i-form ref="formItem" :model="formItem" :rules="ruleValidate" :label-width="100">
+                <form-item label="账号" prop="name">
+                    <i-input v-model="formItem.name"></i-input>
+                </form-item>
                 <form-item label="用户名" prop="name">
                     <i-input v-model="formItem.name"></i-input>
                 </form-item>
@@ -27,35 +29,8 @@
                 <form-item label="确认密码" prop="confirmPassword">
                     <i-input v-model="formItem.confirmPassword"></i-input>
                 </form-item>
-                <form-item label="性别">
-                    <radio-group v-model="sex">
-                        <radio label="男">男</radio>
-                        <radio label="女">女</radio>
-                    </radio-group>
-                </form-item>
-                 <form-item label="是否可用">
-                    <radio-group v-model="use">
-                        <radio label="是">是</radio>
-                        <radio label="否">否</radio>
-                    </radio-group>
-                </form-item>
-                 <form-item label="是否为管理员">
-                    <radio-group v-model="administrator">
-                        <radio label="是">是</radio>
-                        <radio label="否">否</radio>
-                    </radio-group>
-                </form-item>
-                <form-item label="出生日期" prop="born">
-                    <date-picker type="date" v-model="formItem.born"></date-picker>
-                </form-item>
-                <form-item label="地址" prop="address">
+                <form-item label="所属用户组" prop="address">
                     <i-input v-model="formItem.address"></i-input>
-                </form-item>
-                <form-item label="中文名" prop="china">
-                    <i-input v-model="formItem.china"></i-input>
-                </form-item>
-                <form-item label="英文名" prop="english">
-                    <i-input v-model="formItem.english"></i-input>
                 </form-item>
                 <form-item label="手机" prop="phone">
                     <i-input v-model="formItem.phone"></i-input>
@@ -77,7 +52,10 @@
                 </div>
             </div>
         </div>
-        
+            </tab-pane>
+            <tab-pane label="用户组" name="name2">标签二的内容</tab-pane>
+            <tab-pane label="权限" name="name3">标签三的内容</tab-pane>
+        </tabs>
    </div>
 </template>
 
@@ -90,75 +68,39 @@ export default {
             pageSize:1,
             modal: false,
             title: '增加资产信息',
-            administrator:'是',
-            use:'是',
-            sex:'男',
             tableColumns1: [
+                {
+                    title: '账号',
+                    key: 'admin',
+                },
                 {
                     title: '用户名',
                     key: 'name',
-                    width:100,
-                    fixed: 'left'
-                },
-                {
-                    title: '中文名',
-                    key: 'china',
-                    width:100
-                },
-                {
-                    title: '英文名',
-                    key: 'english',
-                    width:100
-                },
-                {
-                    title: '性别',
-                    key: 'sex',
-                    width:80
-                },
-                {
-                    title: '是否为管理员',
-                    key: 'administrator',
-                    width:110
                 },
                 {
                     title: '手机',
                     key: 'phone',
-                    width:120
                 },
                 {
                     title:'邮箱',
                     key:'email',
-                    width:100
-                },
-                {
-                    title:'是否可用',
-                    key:'use',
-                    width:90
-                },
-                {
-                    title:'岗位',
-                    key:'post',
-                    width:80
                 },
                 {
                     title:'部门',
                     key:'section',
-                    width:80
                 },
                 {
-                    title:'出生日期',
-                    key:'born',
-                    width:100
+                    title:'激活',
+                    key:'use',
                 },
                 {
-                    title:'地址',
-                    key:'address',
-                    width:80
+                    title:'用户组',
+                    key:'post',
                 },
                 {
                     title: '操作',
                     key: 'action',
-                    width: 140,
+                    width: 200,
                     align: 'center',
                     // fixed: 'right',
                     render: (h, params) => {
@@ -176,6 +118,19 @@ export default {
                                 }
                             }
                         }, '修改'),
+                        h('Button', {
+                            props: {
+                                size: 'small'
+                            },
+                            style: {
+                                marginRight: '5px'
+                            },
+                            on: {
+                                click: () => {
+                                    this.editPlan(params)
+                                }
+                            }
+                        }, '密码管理'),
                         h('Poptip', {
                             props: {
                                 confirm: true,
@@ -314,20 +269,6 @@ export default {
                         message:'请填写您的地址！'
                     }
                 ],
-                china:[
-                    {
-                        required:'ture',
-                        message:'请填写您的中文名！',
-                        trigger:'blur'
-                    }
-                ],
-                english:[
-                    {
-                        required:'true',
-                        message:'请填写您的英文名！',
-                        trigger:'blur'
-                    }
-                ],
                 phone:[
                     {
                         required:'true',
@@ -342,14 +283,6 @@ export default {
                         trigger:'blur'
                     }
                 ],
-                sex:[
-                    {
-                        required: true, 
-                        type: 'date', 
-                        message: '请选择资产类型', 
-                        trigger: 'change' 
-                    }
-                ],
                 use:[
                     {
                         required: true, 
@@ -357,27 +290,11 @@ export default {
                         message: '请选择资产类型', 
                         trigger: 'change' 
                     }
-                ],
-                administrator:[
-                    {
-                        required: true, 
-                        type: 'date', 
-                        message: '请选择资产类型', 
-                        trigger: 'change' 
-                    }
-                ],
+                ]
             }
         }
     },
      methods: {
-            formatDate (date) {
-                const y = date.getFullYear();
-                let m = date.getMonth() + 1;
-                m = m < 10 ? '0' + m : m;
-                let d = date.getDate();
-                d = d < 10 ? ('0' + d) : d;
-                return y + '-' + m + '-' + d;
-            },
             changePage (num) {
                 console.log(num)
                 // this.tableData1 = this.mockTableData1();
@@ -385,7 +302,7 @@ export default {
             addProperty() {
                 // console.log('add')
                 this.$refs['formItem'].resetFields();
-                this.title = '添加用户信息'
+                this.title = '请提交用户信息'
                 this.modal = true
             },
             editPlan(params) {
