@@ -1,7 +1,7 @@
 import * as types from './type/userCode-types';
 
 const state = {
-    url: 'http://192.168.0.105:8092',
+    url: 'http://114.55.219.41:8092',
     inspId : null
 };
 const actions = {

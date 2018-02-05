@@ -262,7 +262,7 @@ export default {
                 asset_type_name: [
                     { 
                         required: true, 
-                        type: 'date', 
+                        // type: 'date', 
                         message: '请选择资产类型', 
                         trigger: 'change' 
                     }
@@ -270,7 +270,7 @@ export default {
                 ip: [
                     { 
                         required: true, 
-                        type: 'date', 
+                        // type: 'date', 
                         message: '请输入IP地址',
                         trigger: 'blur' 
                     }
@@ -353,6 +353,7 @@ export default {
         },
         changePage(num) {
             this.pageNum = num
+            this.queryAboutList()
         },
         deletelist (params) {
             console.log(params)
@@ -384,9 +385,9 @@ export default {
             this.modal = true
         },
         handleSubmit(name) {
-            // this.$refs[name].validate((valid) => {
-            //     console.log(valid)
-            //     if (valid) {
+            this.$refs[name].validate((valid) => {
+                console.log(valid)
+                if (valid) {
                     console.log(2)
                     let url
                     const params = this.formValidate
@@ -419,11 +420,10 @@ export default {
                             }
                         })
                     }
-                    // this.$Message.success('保存成功!');
-                // } else {
-                //     this.$Message.error('保存失败');
-                // }
-            // })
+                } else {
+                    this.$Message.error('保存失败');
+                }
+            })
         },
         handleReset(name) {
             this.modal = false
