@@ -348,6 +348,8 @@ export default {
                     const res = response.data
                     this.total = res.total
                     this.tableData = res.assets
+                } else {
+                    this.$Message.error(response.data.desc)
                 }
             })
         },
@@ -356,7 +358,6 @@ export default {
             this.queryAboutList()
         },
         deletelist (params) {
-            console.log(params)
             const url = this.url + '/asset/api/v1.0/assets/' + params.row.id
             axios({
                 method:'delete',
@@ -367,28 +368,23 @@ export default {
                     this.$Message.success('删除成功!');
                     this.tableData.splice(params.index, 1);
                 } else {
-                    this.$Message.error('删除失败');
+                    this.$Message.error(response.data.desc)
                 }
             })
         },
         editPlan(params) {
-            // this.$refs['formValidate'].resetFields();
-            console.log(params)
             this.title = '修改资产信息'
             this.formValidate = params.row
             this.modal = true
         },
         addProperty() {
-            console.log('add')
             this.$refs['formValidate'].resetFields();
             this.title = '增加资产信息'
             this.modal = true
         },
         handleSubmit(name) {
             this.$refs[name].validate((valid) => {
-                console.log(valid)
                 if (valid) {
-                    console.log(2)
                     let url
                     const params = this.formValidate
                     if(this.title === '增加资产信息') {
@@ -402,7 +398,7 @@ export default {
                             if(response.data.status) {
                                 this.$Message.success('保存成功!');
                             } else {
-                                this.$Message.error('保存失败');
+                                this.$Message.error(response.data.desc)
                             }
                         })
                     } else {
@@ -416,7 +412,7 @@ export default {
                             if(response.data.status) {
                                 this.$Message.success('保存成功!');
                             } else {
-                                this.$Message.error('保存失败');
+                                this.$Message.error(response.data.desc)
                             }
                         })
                     }

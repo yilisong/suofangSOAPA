@@ -6,7 +6,6 @@
             <Button @click="addProperty"><Icon type="plus-round" class="icon"></Icon>添加</Button>
         </div>
         <div style="margin-top:10px">
-           <template>
             <el-table :data="inspect_systems" border style="width: 100%">
                 <el-table-column label="系统编号" width="180" prop="system_no"></el-table-column>
                 <el-table-column label="系统名称" width="" prop="system_name"></el-table-column>
@@ -43,7 +42,6 @@
                     </template>
                 </el-table-column>
             </el-table>
-            </template>
         </div>
         <div>
             <div class="block" v-if="total > pageSize" style="float: right">
@@ -107,11 +105,12 @@ export default {
                     const res = response.data
                     this.inspect_systems = res.inspect_systems
                     this.total = parseInt(res.total)
+                } else {
+                    this.$Message.error(response.data.desc)
                 }
             })
         },
         deleteList (index, params) {
-            console.log(params)
             const url = this.url + '/insp/api/v1.0/systems/' + params
             axios({
                 method:'delete',
@@ -122,7 +121,7 @@ export default {
                     this.$Message.success('删除成功!');
                     this.queryAboutList()
                 } else {
-                    this.$Message.error('删除失败');
+                    this.$Message.error(response.data.desc)
                 }
             })
         },

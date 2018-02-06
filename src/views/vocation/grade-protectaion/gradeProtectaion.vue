@@ -429,8 +429,9 @@ export default {
             .then(response => {
                 if(response.data.status) {
                     const res = response.data.inspect_system
-                    console.log(res.system_data_json)
                     this.suchAsPaul = res.system_data_json
+                } else {
+                    this.$Message.error(response.data.desc)
                 }
             })
         },
@@ -440,10 +441,8 @@ export default {
                 system_name: this.suchAsPaul.name,
                 system_no: this.suchAsPaul.num,
                 system_data_json: this.suchAsPaul,
-                // system_data_json: JSON.stringify(this.suchAsPaul),
                 describe: this.suchAsPaul.desc,
                 file:''
-                // system_name="等保系统测试"& system_no="Ksegeuiree"&system_data_json=""&describe="testeweset"&file=""
             }
             axios({
                 method:'post',
@@ -452,7 +451,9 @@ export default {
             })
             .then(response => {
                 if(response.data.status) {
-                    console.log(response.data)
+                    this.$Message.info('创建成功')
+                } else {
+                    this.$Message.error(response.data.desc)
                 }
             })
         }

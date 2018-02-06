@@ -4,105 +4,122 @@
 
 <template>
    <div class="user-preserve">
-        <tabs value="name1">
-            <tab-pane label="用户" name="name1">
+        <el-tabs v-model="activeName2" type="card" @tab-click="handleClick">
+            <el-tab-pane label="用户" name="first">
                 <div>
-            <Button  @click="addProperty">
-                <Icon type="plus-round" class="icon"></Icon>添加
-            </Button>
-            <!-- <Button><Icon type="key" class="icon"></Icon>重置密码</Button>
-            <Button><Icon type="star" class="icon"></Icon>岗位</Button>
-            <Button><Icon type="person-stalker" class="icon"></Icon>部门</Button>
-            <Button><Icon type="backspace" class="icon"></Icon>清空岗位</Button> -->
-        </div>
-        <modal v-model="modal" :title="title" :mask-closable="false">
-            <i-form ref="formItem" :model="formItem" :rules="ruleValidate" :label-width="100">
-                <form-item label="账号" prop="name">
-                    <i-input v-model="formItem.name"></i-input>
-                </form-item>
-                <form-item label="用户名" prop="name">
-                    <i-input v-model="formItem.name"></i-input>
-                </form-item>
-                <form-item label="密码" prop="password">
-                    <i-input v-model="formItem.password"></i-input>
-                </form-item>
-                <form-item label="确认密码" prop="confirmPassword">
-                    <i-input v-model="formItem.confirmPassword"></i-input>
-                </form-item>
-                <form-item label="所属用户组" prop="address">
-                    <i-input v-model="formItem.address"></i-input>
-                </form-item>
-                <form-item label="手机" prop="phone">
-                    <i-input v-model="formItem.phone"></i-input>
-                </form-item>
-                <form-item label="邮箱" prop="email">
-                    <i-input v-model="formItem.email"></i-input>
-                </form-item>
-            </i-form>
-            <div slot="footer">
-                <i-button type="primary" @click="handleSubmit('formItem')">保存</i-button>
-                <i-button type="ghost" @click="handleReset('formItem')" style="margin-left: 8px">取消</i-button>
-            </div>
-        </modal>
-        <div class="table-name">
-            <Table :data="tableData1" :columns="tableColumns1" stripe></Table>
-            <div class="page">
-                <div class="page-show">
-                    <Page show-total :total="total" :current="pageSize" @on-change="changePage"></Page>
+                    <Button  @click="addProperty">
+                        <Icon type="plus-round" class="icon"></Icon>添加
+                    </Button>
                 </div>
-            </div>
-        </div>
-            </tab-pane>
-            <tab-pane label="用户组" name="name2">标签二的内容</tab-pane>
-            <tab-pane label="权限" name="name3">标签三的内容</tab-pane>
-        </tabs>
+                <modal v-model="modal" :title="title" :mask-closable="false">
+                    <i-form ref="formItem" :model="formItem" :rules="ruleValidate" :label-width="100">
+                        <form-item label="账号" prop="name">
+                            <i-input v-model="formItem.name"></i-input>
+                        </form-item>
+                        <form-item label="用户名" prop="name">
+                            <i-input v-model="formItem.name"></i-input>
+                        </form-item>
+                        <form-item label="密码" prop="password">
+                            <i-input v-model="formItem.password"></i-input>
+                        </form-item>
+                        <form-item label="确认密码" prop="confirmPassword">
+                            <i-input v-model="formItem.confirmPassword"></i-input>
+                        </form-item>
+                        <form-item label="所属用户组" prop="address">
+                            <i-input v-model="formItem.address"></i-input>
+                        </form-item>
+                        <form-item label="手机" prop="phone">
+                            <i-input v-model="formItem.phone"></i-input>
+                        </form-item>
+                        <form-item label="邮箱" prop="email">
+                            <i-input v-model="formItem.email"></i-input>
+                        </form-item>
+                    </i-form>
+                    <div slot="footer">
+                        <i-button type="primary" @click="handleSubmit('formItem')">保存</i-button>
+                        <i-button type="ghost" @click="handleReset('formItem')" style="margin-left: 8px">取消</i-button>
+                    </div>
+                </modal>
+                <div class="table-name">
+                    <el-table :data="tableData1" border style="width: 100%">
+                        <el-table-column label="账号" width="180" prop="cname"></el-table-column>
+                        <el-table-column label="用户名" prop="name"></el-table-column>
+                        <!-- 业务描述 -->
+                        <el-table-column label="手机" width="180" prop="mobile"></el-table-column>
+                        <el-table-column label="邮箱" width="180" prop="email"></el-table-column>
+                        <el-table-column label="部门" prop="department"></el-table-column>
+                        <el-table-column label="激活">
+                            <template scope="scope">
+                                <el-switch v-model="scope.row.status" on-color="#13ce66" off-color="#ff4949" disabled="true"></el-switch>
+                            </template>
+                        </el-table-column>
+                        <el-table-column label="用户组" prop="group_ids"></el-table-column>
+                        <el-table-column label="操作" width="250">
+                            <template scope="scope">
+                                <el-button type="primary" size="small" @click="handleEdit(scope.$index, scope.row.id)">编辑</el-button>
+                                <el-popover ref="popover5" placement="top" width="160" v-model="scope.row.deleteVisible">
+                                    <p>您确定删除当前信息么？</p>
+                                    <div style="text-align: right; margin: 0">
+                                        <el-button size="mini" type="text" @click="scope.row.deleteVisible = false">取消</el-button>
+                                        <el-button type="primary" size="mini" @click="deleteList(scope.$index, scope.row.id)">确定</el-button>
+                                    </div>
+                                </el-popover>
+                                <el-button type="primary" size="small" v-popover:popover5 @click="showVisible(scope.row.deleteVisible)">删除</el-button>
+                                <el-dropdown>
+                                    <el-button size="small" type="primary">
+                                        自评<i class="el-icon-caret-bottom el-icon--right"></i>
+                                    </el-button>
+                                    <el-dropdown-menu slot="dropdown">
+                                        <el-dropdown-item  @click="handleLevel(scope.row.security_level, scope.row.id)">等级自评详情</el-dropdown-item>
+                                        <el-dropdown-item  @click="handleTec(scope.row.security_level, scope.row.id)">技术自评详情</el-dropdown-item>
+                                        <el-dropdown-item  @click="handleManage(scope.row.security_level, scope.row.id)">管理自评详情</el-dropdown-item>
+                                    </el-dropdown-menu>
+                                </el-dropdown>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                    <!-- <Table :data="tableData1" :columns="tableColumns1" stripe></Table> -->
+                </div>
+            </el-tab-pane>
+            <el-tab-pane label="用户组" name="second">配置管理</el-tab-pane>
+            <el-tab-pane label="权限" name="third">角色管理</el-tab-pane>
+        </el-tabs>
    </div>
 </template>
 
 <script>
-import Cookies from 'js-cookie';
+import axios from 'axios';
+import 'element-ui/lib/theme-default/index.css'
 export default {
     data () {
         return {
-            total: 2,
+            activeName2: 'first',
+            total: 0,
             pageSize:1,
             modal: false,
             title: '增加资产信息',
             tableColumns1: [
-                {
-                    title: '账号',
-                    key: 'admin',
-                },
-                {
-                    title: '用户名',
-                    key: 'name',
-                },
-                {
-                    title: '手机',
-                    key: 'phone',
-                },
                 {
                     title:'邮箱',
                     key:'email',
                 },
                 {
                     title:'部门',
-                    key:'section',
+                    key:'department',
                 },
                 {
                     title:'激活',
-                    key:'use',
+                    key:'status',
                 },
                 {
                     title:'用户组',
-                    key:'post',
+                    key:'group_ids',
                 },
                 {
                     title: '操作',
                     key: 'action',
                     width: 200,
                     align: 'center',
-                    // fixed: 'right',
                     render: (h, params) => {
                         return h('div', [
                         h('Button', {
@@ -227,10 +244,10 @@ export default {
             ],
             formItem: 
             {
-                name:'',
-                password:'',
-                confirmPassword:'',
-                sex:'male',
+                name:'',//用户名
+                cname:'',//账号
+                group_ids:'',//用户组
+                // status:,
                 use:'male',
                 administrator:'male',
                 born:'',
@@ -294,11 +311,33 @@ export default {
             }
         }
     },
-     methods: {
-            changePage (num) {
-                console.log(num)
-                // this.tableData1 = this.mockTableData1();
-            },
+    computed: {
+        url () {
+            return this.$store.state.userCode.url
+        }
+    },
+    created(){
+        this.queryUsers()
+    },
+    methods: {
+        handleClick(tab, event) {
+            console.log(tab, event)
+        },
+        queryUsers() {
+            const url = this.url + '/user/api/v1.0/users'
+            axios({
+                method:'get',
+                url: url,
+            })
+            .then(response => {
+                if(response.data.status) {
+                    const res = response.data
+                    this.tableData1 = res.users
+                } else {
+                    this.$Message.error(response.data.desc)
+                }
+            })
+        },
             addProperty() {
                 // console.log('add')
                 this.$refs['formItem'].resetFields();
@@ -328,4 +367,10 @@ export default {
         
 };
 </script>
+<style>
+.el-tabs__item.is-active {
+    background: #20a0ff;
+    color: #fff
+}
+</style>
 
