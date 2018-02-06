@@ -334,6 +334,220 @@
                </row>
             </i-col>
         </row>
+        <row class="employ">
+            <i-col span="4" class="employ-name br">08 系统采用服务情况</i-col>
+            <i-col span="20" class="product-descripe">
+               <row>
+                    <i-col span="24" class="product-header">
+                       <row>
+                            <i-col span="2" class="product-hr br">序号</i-col>
+                            <i-col span="8" class="product-hr br">服务类型</i-col>
+                            <i-col span="14">
+                                <row>
+                                    <i-col span="24" class="employ-china"> 服务责任方类型</i-col>
+                                    <i-col span="24">
+                                        <row>
+                                            <i-col span="7" class="employ-china-num br">本行业（单位）</i-col>
+                                            <i-col span="7" class="employ-china-num br">国内其他服务商</i-col>
+                                            <i-col span="10" class="employ-china-num">国外服务商</i-col>
+                                        </row>
+                                    </i-col>
+                                </row>
+                            </i-col>
+                       </row>
+                    </i-col>
+                    <i-col span="24" class="product-content">
+                         <row>
+                            <i-col span="2" class="content-hr br">1</i-col>
+                            <i-col span="5" class="content-hr br">等级测评</i-col>
+                            <i-col span="3" class="content-hr br">
+                                <i-input v-model="suchAsPaul.useCounts[0]" style="margin-top:-3px;"></i-input>
+                            </i-col>
+                            <i-col span="14">
+                                <row>
+                                    <i-col span="24">
+                                        <row>
+                                            <i-col span="7" class="employ-china-num br">
+                                                <checkbox v-model="suchAsPaul.used[0]"></checkbox>
+                                            </i-col>
+                                            <i-col span="7" class="employ-china-num br">
+                                                <checkbox v-model="suchAsPaul.unused[0]"></checkbox>
+                                            </i-col>
+                                            <i-col span="10" class="employ-china-num">
+                                                <checkbox v-model="suchAsPaul.partUsed[0]"></checkbox>
+                                                <span><i-input v-model="suchAsPaul.percent[0]" class="input-num"></i-input></span>%
+                                            </i-col>
+                                        </row>
+                                    </i-col>
+                                </row>
+                            </i-col>
+                       </row>
+                    </i-col>
+                    <i-col span="24" class="product-content">
+                         <row>
+                            <i-col span="2" class="content-hr br">2</i-col>
+                            <i-col span="5" class="content-hr br">风险评估</i-col>
+                            <i-col span="3" class="content-hr br">
+                                <i-input v-model="suchAsPaul.useCounts[1]" style="margin-top:-3px;"></i-input>
+                            </i-col>
+                            <i-col span="14">
+                                <row>
+                                    <i-col span="24">
+                                        <row>
+                                            <i-col span="7" class="employ-china-num br">
+                                                <checkbox v-model="suchAsPaul.used[1]"></checkbox>
+                                            </i-col>
+                                            <i-col span="7" class="employ-china-num br">
+                                                <checkbox v-model="suchAsPaul.unused[1]"></checkbox>
+                                            </i-col>
+                                            <i-col span="10" class="employ-china-num">
+                                                <checkbox v-model="suchAsPaul.partUsed[1]"></checkbox>
+                                                <span><i-input v-model="suchAsPaul.percent[1]" class="input-num"></i-input></span>%
+                                            </i-col>
+                                        </row>
+                                    </i-col>
+                                </row>
+                            </i-col>
+                       </row>
+                    </i-col>
+                    <i-col span="24" class="product-content">
+                         <row>
+                            <i-col span="2" class="content-hr br">3</i-col>
+                            <i-col span="5" class="content-hr br">灾难恢复</i-col>
+                            <i-col span="3" class="content-hr br">
+                                <i-input v-model="suchAsPaul.useCounts[2]" style="margin-top:-3px;"></i-input>
+                            </i-col>
+                            <i-col span="14">
+                                <row>
+                                    <i-col span="24">
+                                        <row>
+                                            <i-col span="7" class="employ-china-num br">
+                                                <checkbox v-model="suchAsPaul.used[2]"></checkbox>
+                                            </i-col>
+                                            <i-col span="7" class="employ-china-num br">
+                                                <checkbox v-model="suchAsPaul.unused[2]"></checkbox>
+                                            </i-col>
+                                            <i-col span="10" class="employ-china-num">
+                                                <checkbox v-model="suchAsPaul.partUsed[2]"></checkbox>
+                                                <span><i-input v-model="suchAsPaul.percent[2]" class="input-num"></i-input></span>%
+                                            </i-col>
+                                        </row>
+                                    </i-col>
+                                </row>
+                            </i-col>
+                       </row>
+                    </i-col>
+                    <i-col span="24" class="product-content">
+                         <row>
+                            <i-col span="2" class="content-hr br">4</i-col>
+                            <i-col span="5" class="content-hr br">应急响应</i-col>
+                            <i-col span="3" class="content-hr br">
+                                <i-input v-model="suchAsPaul.useCounts[3]" style="margin-top:-3px;"></i-input>
+                            </i-col>
+                            <i-col span="14">
+                                <row>
+                                    <i-col span="24">
+                                        <row>
+                                            <i-col span="7" class="employ-china-num br">
+                                                <checkbox v-model="suchAsPaul.used[3]"></checkbox>
+                                            </i-col>
+                                            <i-col span="7" class="employ-china-num br">
+                                                <checkbox v-model="suchAsPaul.unused[3]"></checkbox>
+                                            </i-col>
+                                            <i-col span="10" class="employ-china-num">
+                                                <checkbox v-model="suchAsPaul.partUsed[3]"></checkbox>
+                                                <span><i-input v-model="suchAsPaul.percent[3]" class="input-num"></i-input></span>%
+                                            </i-col>
+                                        </row>
+                                    </i-col>
+                                </row>
+                            </i-col>
+                       </row>
+                    </i-col>
+                    <i-col span="24" class="product-content">
+                         <row>
+                            <i-col span="2" class="content-hr br">5</i-col>
+                            <i-col span="5" class="content-hr br">系统集成</i-col>
+                            <i-col span="3" class="content-hr br">
+                                <i-input v-model="suchAsPaul.useCounts[4]" style="margin-top:-3px;"></i-input>
+                            </i-col>
+                            <i-col span="14">
+                                <row>
+                                    <i-col span="24">
+                                        <row>
+                                            <i-col span="7" class="employ-china-num br">
+                                                <checkbox v-model="suchAsPaul.used[4]"></checkbox>
+                                            </i-col>
+                                            <i-col span="7" class="employ-china-num br">
+                                                <checkbox v-model="suchAsPaul.unused[4]"></checkbox>
+                                            </i-col>
+                                            <i-col span="10" class="employ-china-num">
+                                                <checkbox v-model="suchAsPaul.partUsed[4]"></checkbox>
+                                                <span><i-input v-model="suchAsPaul.percent[4]" class="input-num"></i-input></span>%
+                                            </i-col>
+                                        </row>
+                                    </i-col>
+                                </row>
+                            </i-col>
+                       </row>
+                    </i-col>
+                    <i-col span="24" class="product-content">
+                         <row>
+                            <i-col span="2" class="content-hr br">6</i-col>
+                            <i-col span="5" class="content-hr br">安全咨询</i-col>
+                            <i-col span="3" class="content-hr br">
+                                <i-input v-model="suchAsPaul.useCounts[5]" style="margin-top:-3px;"></i-input>
+                            </i-col>
+                            <i-col span="14">
+                                <row>
+                                    <i-col span="24">
+                                        <row>
+                                            <i-col span="7" class="employ-china-num br">
+                                                <checkbox v-model="suchAsPaul.used[5]"></checkbox>
+                                            </i-col>
+                                            <i-col span="7" class="employ-china-num br">
+                                                <checkbox v-model="suchAsPaul.unused[5]"></checkbox>
+                                            </i-col>
+                                            <i-col span="10" class="employ-china-num">
+                                                <checkbox v-model="suchAsPaul.partUsed[5]"></checkbox>
+                                                <span><i-input v-model="suchAsPaul.percent[5]" class="input-num"></i-input></span>%
+                                            </i-col>
+                                        </row>
+                                    </i-col>
+                                </row>
+                            </i-col>
+                       </row>
+                    </i-col>
+                    <i-col span="24" class="product-content-end">
+                         <row>
+                            <i-col span="2" class="content-hr br">7</i-col>
+                            <i-col span="5" class="content-hr br">其它</i-col>
+                            <i-col span="3" class="content-hr br">
+                                <i-input v-model="suchAsPaul.useCounts[6]" style="margin-top:-3px;"></i-input>
+                            </i-col>
+                            <i-col span="14">
+                                <row>
+                                    <i-col span="24">
+                                        <row>
+                                            <i-col span="7" class="employ-china-num br">
+                                                <checkbox v-model="suchAsPaul.used[6]"></checkbox>
+                                            </i-col>
+                                            <i-col span="7" class="employ-china-num br">
+                                                <checkbox v-model="suchAsPaul.unused[6]"></checkbox>
+                                            </i-col>
+                                            <i-col span="10" class="employ-china-num">
+                                                <checkbox v-model="suchAsPaul.partUsed[6]"></checkbox>
+                                                <span><i-input v-model="suchAsPaul.percent[6]" class="input-num"></i-input></span>%
+                                            </i-col>
+                                        </row>
+                                    </i-col>
+                                </row>
+                            </i-col>
+                       </row>
+                    </i-col>
+               </row>
+            </i-col>
+        </row>
         <row class="gradetest-name system">
             <i-col span="4" class="system-name br">09 等级测评单位名称</i-col>
             <i-col span="20" class="system-name">

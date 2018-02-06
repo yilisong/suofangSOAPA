@@ -132,7 +132,9 @@
                                 <i-col span="24" class="visit-tr text-left">应告知人员相关的安全责任和惩戒措施</i-col>
                             </row>
                         </i-col>
-                        <i-col span="24" class="physics-tr-last text-left">应确保在外部人员访问受控区域前得到授权或审</i-col>
+                        <i-col span="24" class="physics-tr-last text-left">
+                            应确保在外部人员访问受控区域前得到授权或审批，批准后由专人全程陪同或监督，并登记备案
+                        </i-col>
                     </row>
                 </i-col>
                 <i-col span="3">
