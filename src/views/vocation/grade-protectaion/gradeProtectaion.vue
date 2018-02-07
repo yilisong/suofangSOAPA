@@ -335,7 +335,7 @@
             </i-col>
         </row>
         <row class="employ">
-            <i-col span="4" class="employ-name br">08 系统采用服务情况</i-col>
+            <i-col span="4" class="employ-name-steal br">08 系统采用服务情况</i-col>
             <i-col span="20" class="product-descripe">
                <row>
                     <i-col span="24" class="product-header">
@@ -361,7 +361,12 @@
                             <i-col span="2" class="content-hr br">1</i-col>
                             <i-col span="5" class="content-hr br">等级测评</i-col>
                             <i-col span="3" class="content-hr br">
-                                <i-input v-model="suchAsPaul.useCounts[0]" style="margin-top:-3px;"></i-input>
+                                <checkbox-group v-model="social">
+                                    <checkbox label="有">
+                                    </checkbox>
+                                    <checkbox label="无">
+                                    </checkbox>
+                                </checkbox-group>
                             </i-col>
                             <i-col span="14">
                                 <row>
@@ -388,7 +393,12 @@
                             <i-col span="2" class="content-hr br">2</i-col>
                             <i-col span="5" class="content-hr br">风险评估</i-col>
                             <i-col span="3" class="content-hr br">
-                                <i-input v-model="suchAsPaul.useCounts[1]" style="margin-top:-3px;"></i-input>
+                                <checkbox-group v-model="social">
+                                    <checkbox label="有">
+                                    </checkbox>
+                                    <checkbox label="无">
+                                    </checkbox>
+                                </checkbox-group>
                             </i-col>
                             <i-col span="14">
                                 <row>
@@ -415,7 +425,12 @@
                             <i-col span="2" class="content-hr br">3</i-col>
                             <i-col span="5" class="content-hr br">灾难恢复</i-col>
                             <i-col span="3" class="content-hr br">
-                                <i-input v-model="suchAsPaul.useCounts[2]" style="margin-top:-3px;"></i-input>
+                                <checkbox-group v-model="social">
+                                    <checkbox label="有">
+                                    </checkbox>
+                                    <checkbox label="无">
+                                    </checkbox>
+                                </checkbox-group>
                             </i-col>
                             <i-col span="14">
                                 <row>
@@ -442,7 +457,12 @@
                             <i-col span="2" class="content-hr br">4</i-col>
                             <i-col span="5" class="content-hr br">应急响应</i-col>
                             <i-col span="3" class="content-hr br">
-                                <i-input v-model="suchAsPaul.useCounts[3]" style="margin-top:-3px;"></i-input>
+                                <checkbox-group v-model="social">
+                                    <checkbox label="有">
+                                    </checkbox>
+                                    <checkbox label="无">
+                                    </checkbox>
+                                </checkbox-group>
                             </i-col>
                             <i-col span="14">
                                 <row>
@@ -469,7 +489,12 @@
                             <i-col span="2" class="content-hr br">5</i-col>
                             <i-col span="5" class="content-hr br">系统集成</i-col>
                             <i-col span="3" class="content-hr br">
-                                <i-input v-model="suchAsPaul.useCounts[4]" style="margin-top:-3px;"></i-input>
+                                <checkbox-group v-model="social">
+                                    <checkbox label="有">
+                                    </checkbox>
+                                    <checkbox label="无">
+                                    </checkbox>
+                                </checkbox-group>
                             </i-col>
                             <i-col span="14">
                                 <row>
@@ -496,7 +521,44 @@
                             <i-col span="2" class="content-hr br">6</i-col>
                             <i-col span="5" class="content-hr br">安全咨询</i-col>
                             <i-col span="3" class="content-hr br">
-                                <i-input v-model="suchAsPaul.useCounts[5]" style="margin-top:-3px;"></i-input>
+                                <checkbox-group v-model="social">
+                                    <checkbox label="有">
+                                    </checkbox>
+                                    <checkbox label="无">
+                                    </checkbox>
+                                </checkbox-group>
+                            </i-col>
+                            <i-col span="14">
+                                <row>
+                                    <i-col span="24">
+                                        <row>
+                                            <i-col span="7" class="employ-china-num br">
+                                                <checkbox v-model="suchAsPaul.used[5]"></checkbox>
+                                            </i-col>
+                                            <i-col span="7" class="employ-china-num br">
+                                                <checkbox v-model="suchAsPaul.unused[5]"></checkbox>
+                                            </i-col>
+                                            <i-col span="10" class="employ-china-num">
+                                                <checkbox v-model="suchAsPaul.partUsed[5]"></checkbox>
+                                                <span><i-input v-model="suchAsPaul.percent[5]" class="input-num"></i-input></span>%
+                                            </i-col>
+                                        </row>
+                                    </i-col>
+                                </row>
+                            </i-col>
+                       </row>
+                    </i-col>
+                    <i-col span="24" class="product-content">
+                         <row>
+                            <i-col span="2" class="content-hr br">7</i-col>
+                            <i-col span="5" class="content-hr br">安全培训</i-col>
+                            <i-col span="3" class="content-hr br">
+                                <checkbox-group v-model="social">
+                                    <checkbox label="有">
+                                    </checkbox>
+                                    <checkbox label="无">
+                                    </checkbox>
+                                </checkbox-group>
                             </i-col>
                             <i-col span="14">
                                 <row>
@@ -520,8 +582,10 @@
                     </i-col>
                     <i-col span="24" class="product-content-end">
                          <row>
-                            <i-col span="2" class="content-hr br">7</i-col>
-                            <i-col span="5" class="content-hr br">其它</i-col>
+                            <i-col span="2" class="content-hr br">8</i-col>
+                            <i-col span="5" class="content-hr br">
+                                其它 <i-input style="margin-top:-3px;width:100px;"></i-input>
+                            </i-col>
                             <i-col span="3" class="content-hr br">
                                 <i-input v-model="suchAsPaul.useCounts[6]" style="margin-top:-3px;"></i-input>
                             </i-col>
