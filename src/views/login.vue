@@ -26,11 +26,18 @@
                                 </span>
                             </Input>
                         </FormItem>
+                        <FormItem prop="auth_code">
+                            <Input type="text" v-model="form.auth_code" placeholder="请输入验证码">
+                                <span slot="prepend">
+                                    <Icon :size="14" type="locked"></Icon>
+                                </span>
+                            </Input>
+                            <img :src="src" alt="">
+                        </FormItem>
                         <FormItem>
                             <Button @click="handleSubmit" type="primary" long>登录</Button>
                         </FormItem>
                     </Form>
-                    <p class="login-tip">输入任意用户名和密码即可</p>
                 </div>
             </Card>
         </div>
@@ -39,12 +46,14 @@
 
 <script>
 import Cookies from 'js-cookie';
+import axios from 'axios';
 export default {
     data () {
         return {
             form: {
                 userName: '',
-                password: ''
+                password: '',
+                auth_code: ''
             },
             rules: {
                 userName: [
@@ -52,25 +61,59 @@ export default {
                 ],
                 password: [
                     { required: true, message: '密码不能为空', trigger: 'blur' }
+                ],
+                auth_code: [
+                    { required: true, message: '验证码不能为空', trigger: 'blur' }
                 ]
-            }
+            },
+            src: ''
         };
     },
+    computed: {
+        url () {
+            return this.$store.state.userCode.url
+        }
+    },
+    created() {
+        this.getAuthCode()
+    },
     methods: {
+        getAuthCode() {
+            const url = this.url + '/users/code'
+            axios({
+                method: "get",
+                url: url
+            })
+            .then(response => {
+                console.log(response)
+                this.src = response.data
+                // if(response.data.status) {
+                //     console.log(response.data)
+                // } else {
+                //     this.$Message.error(response.data.desc)
+                // }
+            })
+        },
         handleSubmit () {
             this.$refs.loginForm.validate((valid) => {
                 if (valid) {
-                    Cookies.set('user', this.form.userName);
-                    Cookies.set('password', this.form.password);
-                    this.$store.commit('setAvator', 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3448484253,3685836170&fm=27&gp=0.jpg');
-                    if (this.form.userName === 'iview_admin') {
-                        Cookies.set('access', 0);
-                    } else {
-                        Cookies.set('access', 1);
-                    }
-                    this.$router.push({
-                        name: 'home_index'
-                    });
+                    const url = this.url + '/api/login'
+                    // axios({
+                    //     method: "post",
+                    //     url: url,
+                    //     data: this.form
+                    // })
+                    // .then(response => {
+                    //     if(response.data.status) {
+                            this.$router.push({
+                                name: 'home_index'
+                            })
+                            Cookies.set('user', this.form.userName);
+                            Cookies.set('password', this.form.password);
+                        // } else {
+                        //     this.$Message.error(response.data.desc)
+                        // }
+                    // })
                 }
             });
         }

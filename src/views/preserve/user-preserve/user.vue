@@ -13,7 +13,10 @@
                 </div>
                 <modal v-model="modal" :title="title" :mask-closable="false">
                     <i-form ref="formItem" :model="formItem" :rules="ruleValidate" :label-width="100">
-                        <form-item label="账号" prop="name">
+                        <form-item label="账号" prop="cname">
+                            <i-input v-model="formItem.cname"></i-input>
+                        </form-item>
+                        <form-item label="用户名" prop="name">
                             <i-input v-model="formItem.name"></i-input>
                         </form-item>
                         <form-item label="手机" prop="mobile">
@@ -39,6 +42,9 @@
                 </modal>
                 <modal v-model="modal2" title="修改密码" :mask-closable="false">
                     <i-form ref="formItem2" :model="formItem2" :rules="ruleValidate2" :label-width="100">
+                        <form-item label="用户名" prop="username">
+                            <i-input v-model="formItem2.username"></i-input>
+                        </form-item>
                         <form-item label="输入新密码" prop="passWord">
                             <i-input v-model="formItem2.passWord"></i-input>
                         </form-item>
@@ -75,15 +81,105 @@
                                         <el-button type="primary" size="mini" @click="deleteUsers(scope.$index, scope.row.id)">确定</el-button>
                                     </div>
                                 </el-popover>
-                                <el-button type="primary" size="small" v-popover:popover5 @click="deleteUsers(scope.row.deleteVisible)">删除</el-button>
-                                <el-button type="primary" size="small" @click="changePassWords(scope.row.id)">修改密码</el-button>
+                                <el-button type="primary" size="small" v-popover:popover5>删除</el-button>
+                                <el-button type="primary" size="small" @click="changePassWords(scope.row,scope.row.id)">修改密码</el-button>
                             </template>
                         </el-table-column>
                     </el-table>
                 </div>
             </el-tab-pane>
-            <el-tab-pane label="用户组" name="second">配置管理</el-tab-pane>
-            <el-tab-pane label="权限" name="third">角色管理</el-tab-pane>
+            <el-tab-pane label="用户组" name="second">
+                <div>
+                    <Button  @click="addGroup">
+                        <Icon type="plus-round" class="icon"></Icon>添加
+                    </Button>
+                </div>
+                <modal v-model="modal3" title="请提交用户组信息:" :mask-closable="false">
+                    <i-form ref="formItem3" :model="formItem3" :rules="ruleValidate3" :label-width="100">
+                        <form-item label="名称" prop="cname">
+                            <i-input v-model="formItem3.cname"></i-input>
+                        </form-item>
+                        <form-item label="说明" prop="name">
+                            <i-input v-model="formItem3.name"></i-input>
+                        </form-item>
+                        <form-item label="权限" prop="selectors">
+                            <i-input v-model="formItem3.selectors"></i-input>
+                        </form-item>
+                    </i-form>
+                    <div slot="footer">
+                        <i-button type="primary" @click="handleInfoAboutUsers('formItem3')">保存</i-button>
+                        <i-button type="ghost" @click="handleResetInfoAboutUsers('formItem3')" style="margin-left: 8px">取消</i-button>
+                    </div>
+                </modal>
+                <div class="table-name">
+                    <el-table :data="tableData2" border style="width: 100%">
+                        <el-table-column label="ID" width="180" prop="id"></el-table-column>
+                        <el-table-column label="名称" prop="cname"></el-table-column>
+                        <!-- 业务描述 -->
+                        <el-table-column label="说明" width="" prop="name"></el-table-column>
+                        <el-table-column label="权限" width="" prop="selectors"></el-table-column>
+                        <el-table-column label="操作" width="250">
+                            <template scope="scope">
+                                <el-button type="primary" size="small" @click="editPlan2(scope.$index, scope.row)">编辑</el-button>
+                                <el-popover ref="popover2" placement="top" width="160" v-model="scope.row.deleteVisible">
+                                    <p>您确定删除当前信息么？</p>
+                                    <div style="text-align: right; margin: 0">
+                                        <el-button size="mini" type="text" @click="scope.row.deleteVisible = false">取消</el-button>
+                                        <el-button type="primary" size="mini" @click="deleteUsers2(scope.$index, scope.row.id)">确定</el-button>
+                                    </div>
+                                </el-popover>
+                                <el-button type="primary" size="small" v-popover:popover2>删除</el-button>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                </div>
+            </el-tab-pane>
+            <el-tab-pane label="权限" name="third">
+                <div>
+                    <Button  @click="addPower">
+                        <Icon type="plus-round" class="icon"></Icon>添加
+                    </Button>
+                </div>
+                <modal v-model="modal4" title="请提交权限信息:" :mask-closable="false">
+                    <i-form ref="formItem4" :model="formItem4" :rules="ruleValidate4" :label-width="100">
+                        <form-item label="名称" prop="name">
+                            <i-input v-model="formItem4.name"></i-input>
+                        </form-item>
+                        <form-item label="说明" prop="cname">
+                            <i-input v-model="formItem4.cname"></i-input>
+                        </form-item>
+                        <form-item label="类型" prop="kind">
+                            <i-input v-model="formItem4.kind"></i-input>
+                        </form-item>
+                    </i-form>
+                    <div slot="footer">
+                        <i-button type="primary" @click="handlePrower('formItem4')">保存</i-button>
+                        <i-button type="ghost" @click="handleResetPrower('formItem4')" style="margin-left: 8px">取消</i-button>
+                    </div>
+                </modal>
+                <div class="table-name">
+                    <el-table :data="tableData3" border style="width: 100%">
+                        <el-table-column label="ID" width="180" prop="id"></el-table-column>
+                        <el-table-column label="名称" prop="name"></el-table-column>
+                        <!-- 业务描述 -->
+                        <el-table-column label="说明" width="" prop="cname"></el-table-column>
+                        <el-table-column label="类型" width="" prop="kind"></el-table-column>
+                        <el-table-column label="操作" width="250">
+                            <template scope="scope">
+                                <el-button type="primary" size="small" @click="editPlan3(scope.$index, scope.row)">编辑</el-button>
+                                <el-popover ref="popover2" placement="top" width="160" v-model="scope.row.deleteVisible">
+                                    <p>您确定删除当前信息么？</p>
+                                    <div style="text-align: right; margin: 0">
+                                        <el-button size="mini" type="text" @click="scope.row.deleteVisible = false">取消</el-button>
+                                        <el-button type="primary" size="mini" @click="deleteUsers3(scope.$index, scope.row.id)">确定</el-button>
+                                    </div>
+                                </el-popover>
+                                <el-button type="primary" size="small" v-popover:popover2>删除</el-button>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                </div>
+            </el-tab-pane>
         </el-tabs>
    </div>
 </template>
@@ -93,28 +189,55 @@ import axios from 'axios';
 import 'element-ui/lib/theme-default/index.css'
 export default {
     data () {
+        const validatePass = (rule, value, callback) => {
+            if (value === '') {
+                callback(new Error('请输入新密码'));
+            } else {
+                if (this.formCustom.passwdCheck !== '') {
+                    // 对第二个密码框单独验证
+                    this.$refs.formCustom.validateField('passwdCheck');
+                }
+                callback();
+            }
+        };
+        const validatePassCheck = (rule, value, callback) => {
+            if (value === '') {
+                callback(new Error('请再次输入新密码'));
+            } else if (value !== this.formCustom.passwd) {
+                callback(new Error('两次密码不一致!'));
+            } else {
+                callback();
+            }
+        };
         return {
             activeName2: 'first',
             total: 0,
             pageSize:1,
             modal: false,
             modal2: false,
+            modal3: false,
+            modal4: false,
             title: '增加用户信息',
             tableData1: [],
-            formItem2: {
-                password: '',
-                passwords: ''
-            },
+            tableData2:[],
+            tableData3: [],
             formItem: {
                 name:'',//用户名
                 group_ids:'',//用户组
                 status: true,
                 department:'',
                 email:'',
-                mobile:''
+                mobile:'',
+                cname: ''
             },
-            ruleValidate2: {},
             ruleValidate: {
+                cname: [
+                    {
+                        required: true,
+                        message: '请填写您的账号！', 
+                        trigger: 'blur' 
+                    }
+                ],
                 name: [
                     {
                         required: true,
@@ -164,7 +287,78 @@ export default {
                         trigger: 'change' 
                     }
                 ]
-            }
+            },
+            formItem2: {
+                username: '',
+                passwd: '',
+                passwords: ''
+            },
+            ruleValidate2: {
+                passwd: [
+                    { validator: validatePass, trigger: 'blur' }
+                ],
+                passwords: [
+                    { validator: validatePassCheck, trigger: 'blur' }
+                ]
+            },
+            formItem3: {
+                cname: '',
+                name: '',
+                selectors: ''
+            },
+            ruleValidate3: {
+                cname: [
+                    {
+                        required: true,
+                        message: '请填写您的名称！', 
+                        trigger: 'blur' 
+                    }
+                ],
+                name: [
+                    {
+                        required: true,
+                        message: '请填写您的说明！', 
+                        trigger: 'blur' 
+                    }
+                ],
+                selectors: [
+                    {
+                        required: true,
+                        message: '请填写您的权限！', 
+                        trigger: 'blur' 
+                    }
+                ]
+            },
+            title1: '增加用户组信息',
+            formItem4: {
+                cname: '',
+                name: '',
+                kind: ''
+            },
+            ruleValidate4: {
+                cname: [
+                    {
+                        required: true,
+                        message: '请填写您的名称！', 
+                        trigger: 'blur' 
+                    }
+                ],
+                name: [
+                    {
+                        required: true,
+                        message: '请填写您的说明！', 
+                        trigger: 'blur' 
+                    }
+                ],
+                kind: [
+                    {
+                        required: true,
+                        message: '请填写您的类型！', 
+                        trigger: 'blur' 
+                    }
+                ]
+            },
+            title2: '增加权限信息',
         }
     },
     computed: {
@@ -174,6 +368,8 @@ export default {
     },
     created(){
         this.queryUsers()
+        this.queryAboutGroup()
+        this.queryPower()
     },
     methods: {
         handleClick(tab, event) {
@@ -200,7 +396,6 @@ export default {
             this.modal = true
         },
         editPlan(index, params) {
-            console.log(params)
             this.title = '修改用户信息'
             this.formItem = params
             this.modal = true
@@ -218,6 +413,7 @@ export default {
                         })
                         .then(response => {
                             if(response.data.status) {
+                                this.modal = false
                                 this.$Message.info('添加成功')
                             } else {
                                 this.$Message.error(response.data.desc)
@@ -232,6 +428,7 @@ export default {
                         })
                         .then(response => {
                             if(response.data.status) {
+                                this.modal = false
                                 this.$Message.info('修改成功')
                             } else {
                                 this.$Message.error(response.data.desc)
@@ -264,8 +461,194 @@ export default {
                 }
             })
         },
-        changePassWords(id) {
+        changePassWords(parmas, id) {
+            this.formItem2.username = parmas.name
+            console.log(parmas)
+            this.modal2 = true
+        },
+        handleSubmitPassWords(name) {
+            this.$refs[name].validate((valid) => {
+                if (valid) {
+                    const url = this.url + '/user/api/v1.0/password'
+                    axios({
+                        method:'post',
+                        url: url,
+                        data: this.formItem2
+                    })
+                    .then(response => {
+                        if(response.data.status) {
+                            this.modal2 = false
+                            this.$Message.info('修改成功')
+                            this.queryUsers()
+                        } else {
+                            this.$Message.error(response.data.desc)
+                        }
+                    })
+                } else {
 
+                }
+            })
+        },
+        handleResetPassWords(name) {
+            this.modal2 = false
+        },
+        //用户组
+        queryAboutGroup() {
+            const url = this.url + '/group/api/v1.0/groups'
+            axios({
+                method:'get',
+                url: url,
+            })
+            .then(response => {
+                if(response.data.status) {
+                    const res = response.data
+                    this.tableData2 = res.groups
+                } else {
+                    this.$Message.error(response.data.desc)
+                }
+            })
+        },
+        addGroup() {
+            this.title1 = '增加用户组信息'
+            this.formItem3 = {
+                cname: '',
+                name: '',
+                selectors: ''
+            }
+            this.modal3 = true
+        },
+        editPlan2(index, params) {
+            this.title1 = '修改用户组信息'
+            this.formItem3 = params
+            this.modal3 = true
+        },
+        deleteUsers2(index, id) {
+            const url = this.url + '/group/api/v1.0/groups/' + id
+            axios({
+                method:'delete',
+                url: url,
+            })
+            .then(response => {
+                if(response.data.status) {
+                    this.$Message.info('删除成功')
+                    this.queryAboutGroup()
+                } else {
+                    this.$Message.error(response.data.desc)
+                }
+            })
+        },
+        handleInfoAboutUsers(name) {
+            this.$refs[name].validate((valid) => {
+                if (valid) {
+                    let url
+                    let methodT
+                    if(this.title1 === '增加用户组信息') {
+                        methodT = 'post'
+                        url = this.url + '/group/api/v1.0/groups'
+                    } else {
+                        methodT = 'put'
+                        url = this.url + '/group/api/v1.0/groups/' + this.formItem3.id
+                    }
+                    axios({
+                        method:methodT,
+                        url: url,
+                        data: this.formItem3
+                    })
+                    .then(response => {
+                        if(response.data.status) {
+                            this.modal3 = false
+                            this.$Message.info('操作成功')
+                            this.queryAboutGroup()
+                        } else {
+                            this.$Message.error(response.data.desc)
+                        }
+                    })
+                } else {
+
+                }
+            })
+        },
+        handleResetInfoAboutUsers(name) {
+            this.modal3 = false
+        },
+        //权限
+        queryPower() {
+            const url = this.url + '/selector/api/v1.0/selectors'
+            axios({
+                method:'get',
+                url: url,
+            })
+            .then(response => {
+                if(response.data.status) {
+                    const res = response.data
+                    this.tableData3 = res.selectors
+                } else {
+                    this.$Message.error(response.data.desc)
+                }
+            })
+        },
+        addPower() {
+            this.title2 = '增加权限信息'
+            this.formItem4 = {
+                cname: '',
+                name: '',
+                kind: ''
+            }
+            this.modal4 = true
+        },
+        editPlan3(index, params) {
+            this.title2 = '修改权限信息'
+            this.formItem4 = params
+            this.modal4 = true
+        },
+        deleteUsers3(index, id) {
+            const url = this.url + '/selector/api/v1.0/selectors/' + id
+            axios({
+                method:'delete',
+                url: url,
+            })
+            .then(response => {
+                if(response.data.status) {
+                    this.$Message.info('删除成功')
+                    this.queryPower()
+                } else {
+                    this.$Message.error(response.data.desc)
+                }
+            })
+        },
+        handlePrower(name) {
+            this.$refs[name].validate((valid) => {
+                if (valid) {
+                    let url
+                    let methodT
+                    if(this.title2 === '增加权限信息') {
+                        methodT = 'post'
+                        url = this.url + '/selector/api/v1.0/selectors'
+                    } else {
+                        methodT = 'put'
+                        url = this.url + '/selector/api/v1.0/selectors/' + this.formItem4.id
+                    }
+                    axios({
+                        method:methodT,
+                        url: url,
+                        data: this.formItem4
+                    })
+                    .then(response => {
+                        if(response.data.status) {
+                            this.modal4 = false
+                            this.$Message.info('操作成功')
+                            this.queryPower()
+                        } else {
+                            this.$Message.error(response.data.desc)
+                        }
+                    })
+                } else {
+
+                }
+            })
+        },
+        handleResetPrower(name) {
+            this.modal4 = false
         }
      }
 };
