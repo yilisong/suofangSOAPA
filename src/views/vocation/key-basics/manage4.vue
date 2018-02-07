@@ -1189,7 +1189,7 @@
                                 <i-col span="24" class="visit-tr text-left">
                                     应定期对应急预案进行演练，根据不同的应急恢复内容，确定演练的周期
                                 </i-col>
-                                <i-col span="24" class="visit-tr-last text-left">
+                                <i-col span="24" class="visit-tr text-left">
                                     应规定应急预案需要定期审查和根据实际情况更新的内容，并按照执行
                                 </i-col>
                                 <i-col span="24" class="visit-tr-last text-left">
@@ -1371,82 +1371,97 @@
                         <i-col span="24" class="visit-tr">
                             <checkbox v-model="management.manage_4_14df7ba5dc3fbf14ed5898233f5896e8"></checkbox>
                         </i-col>
-                        <!-- <i-col span="24">
+                        <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="management.manage_3_62949930b8d807f9b832f866b0d7d471"></checkbox>
+                                    <checkbox v-model="management.manage_4_62949930b8d807f9b832f866b0d7d471"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="management.manage_3_d29661a94cf457ec07499954dd05d7f2"></checkbox>
+                                    <checkbox v-model="management.manage_4_d29661a94cf457ec07499954dd05d7f2"></checkbox>
                                 </i-col>
                                  <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="management.manage_3_e328c5236eb83fa6d0432e417eb4c25f"></checkbox>
+                                    <checkbox v-model="management.manage_4_e328c5236eb83fa6d0432e417eb4c25f"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="management.manage_3_446ece75157eb3fccc8aa63c14b85def"></checkbox>
+                                    <checkbox v-model="management.manage_4_446ece75157eb3fccc8aa63c14b85def"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="management.manage_4_d422c1106341fb6636105224fb8a191d"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="management.manage_3_e9a856899df2c12b16c6c603fba4b411"></checkbox>
+                                    <checkbox v-model="management.manage_4_e9a856899df2c12b16c6c603fba4b411"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="management.manage_3_8e759579f91e3a675274bc5aa36b8ee9"></checkbox>
+                                    <checkbox v-model="management.manage_4_53bf79a63924b1c57b3b48cdaa1c86c7"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="management.manage_3_4368285008630edf7778c66da254dcf4"></checkbox>
+                                    <checkbox v-model="management.manage_4_4368285008630edf7778c66da254dcf4"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="management.manage_3_782f8101b4770f25ffe86634f1e1b318"></checkbox>
+                                    <checkbox v-model="management.manage_4_782f8101b4770f25ffe86634f1e1b318"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="management.manage_3_0861209991e052d001cf674a1335307a"></checkbox>
+                                    <checkbox v-model="management.manage_4_0861209991e052d001cf674a1335307a"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="spite-tr">
+                                    <checkbox v-model="management.manage_4_07c29fbb71d381c92d80336967c49931"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="management.manage_3_5fff530e4e66488a3954d0e78de763d0"></checkbox>
+                                    <checkbox v-model="management.manage_4_5fff530e4e66488a3954d0e78de763d0"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="management.manage_3_3456ba8782c9cf701e44fb5bd1430c18"></checkbox> 
+                                    <checkbox v-model="management.manage_4_3456ba8782c9cf701e44fb5bd1430c18"></checkbox> 
                                 </i-col>
                                  <i-col span="24" class="visit-tr">
-                                     <checkbox v-model="management.manage_3_1a92576ece35e4ff790e03e7dd647238"></checkbox>
+                                     <checkbox v-model="management.manage_4_1a92576ece35e4ff790e03e7dd647238"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="management.manage_3_a57ba6720d4dcb0731d3e87e9223f663"></checkbox>
+                                    <checkbox v-model="management.manage_4_a57ba6720d4dcb0731d3e87e9223f663"></checkbox>
                                 </i-col>
-                                 <i-col span="24" class="visit-tr">
-                                     <checkbox v-model="management.manage_3_c79ebd2801044f09160a6ecf71e963e9"></checkbox>
+                                 <i-col span="24" class="spite-tr">
+                                     <checkbox v-model="management.manage_4_c79ebd2801044f09160a6ecf71e963e9"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="management.manage_3_9004da7bb73e3ac7de31529593cb1ced"></checkbox>
+                                    <checkbox v-model="management.manage_4_9004da7bb73e3ac7de31529593cb1ced"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="management.manage_4_498b6c9c20a1da7863fbea9f8e215de4"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="management.manage_4_d54e3e4dc660d4124b25c0c96980f494"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="management.manage_3_7864f4e8b0104e5c8e21e8af13ad6d09"></checkbox>
+                                    <checkbox v-model="management.manage_4_7864f4e8b0104e5c8e21e8af13ad6d09"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="management.manage_3_81e62723630207cfcae11df7ef24c560"></checkbox>
+                                    <checkbox v-model="management.manage_4_81e62723630207cfcae11df7ef24c560"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="management.manage_3_5fec878ecdcdf5b2511085585b08ed52"></checkbox>
+                                    <checkbox v-model="management.manage_4_5fec878ecdcdf5b2511085585b08ed52"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="management.manage_3_b74624489b34ddf9f0bc7b533b827a67"></checkbox>
+                                    <checkbox v-model="management.manage_4_b74624489b34ddf9f0bc7b533b827a67"></checkbox>
+                                </i-col>
+                                 <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="management.manage_4_c0dca038c0236fdfe708f4c330efcccc"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr-last">
-                                    <checkbox v-model="management.manage_3_c0dca038c0236fdfe708f4c330efcccc"></checkbox>
+                                    <checkbox v-model="management.manage_4_b8f4d43a8298c9e63655bf4ed949816e"></checkbox>
                                 </i-col>
                             </row>
-                        </i-col> -->
+                        </i-col>
                     </row>
                 </i-col>
             </row>
@@ -1459,13 +1474,6 @@ export default{
      data () {
       return  {
           management: {
-              manage_4_14df7ba5dc3fbf14ed5898233f5896e8:false,
-
-
-              
-
-
-
               manage_4_1784702f03a7a2deb07cc38a4e6a7676:false,
               manage_4_1b2fa800469f72920e553be8f0f0050a:false,
               manage_4_52ec361c63e26a864749fb265fad4988:false,
@@ -1609,7 +1617,32 @@ export default{
               manage_4_b4b892f4057915c31a561ff3b100799a:false,
               manage_4_dedb98b74bce9f2f7eca72985ea9d7dd:false,
               manage_4_ea4763bbd1b49c428b0b2fb3f8dded89:false,
-              
+              manage_4_14df7ba5dc3fbf14ed5898233f5896e8:false,
+              manage_4_62949930b8d807f9b832f866b0d7d471:false,
+              manage_4_d29661a94cf457ec07499954dd05d7f2:false,
+              manage_4_e328c5236eb83fa6d0432e417eb4c25f:false,
+              manage_4_446ece75157eb3fccc8aa63c14b85def:false,
+              manage_4_d422c1106341fb6636105224fb8a191d:false,
+              manage_4_e9a856899df2c12b16c6c603fba4b411:false,
+              manage_4_53bf79a63924b1c57b3b48cdaa1c86c7:false,
+              manage_4_4368285008630edf7778c66da254dcf4:false,
+              manage_4_782f8101b4770f25ffe86634f1e1b318:false,
+              manage_4_0861209991e052d001cf674a1335307a:false,
+              manage_4_07c29fbb71d381c92d80336967c49931:false,
+              manage_4_5fff530e4e66488a3954d0e78de763d0:false,
+              manage_4_3456ba8782c9cf701e44fb5bd1430c18:false,
+              manage_4_1a92576ece35e4ff790e03e7dd647238:false,
+              manage_4_a57ba6720d4dcb0731d3e87e9223f663:false,
+              manage_4_c79ebd2801044f09160a6ecf71e963e9:false,
+              manage_4_9004da7bb73e3ac7de31529593cb1ced:false,
+              manage_4_498b6c9c20a1da7863fbea9f8e215de4:false,
+              manage_4_d54e3e4dc660d4124b25c0c96980f494:false,
+              manage_4_7864f4e8b0104e5c8e21e8af13ad6d09:false,
+              manage_4_81e62723630207cfcae11df7ef24c560:false,
+              manage_4_5fec878ecdcdf5b2511085585b08ed52:false,
+              manage_4_b74624489b34ddf9f0bc7b533b827a67:false,
+              manage_4_c0dca038c0236fdfe708f4c330efcccc:false,
+              manage_4_b8f4d43a8298c9e63655bf4ed949816e:false
           }
       }
      }

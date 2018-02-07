@@ -22,75 +22,162 @@
                         <i-col span="4" class="physics-name">物理安全</i-col>
                         <i-col span="20">
                             <row class="physics-type">
-                                <i-col span="24" class="physics-tr">物理访问控制</i-col>
-                                <i-col span="24" class="physics-tr-steal">防盗窃和防破坏</i-col>
+                                <i-col span="24" class="visit-tr">物理位置的选择</i-col>
+                                <i-col span="24" class="network-structure">物理访问控制</i-col>
+                                <i-col span="24" class="network-design">防盗窃和防破坏</i-col>
                                 <i-col span="24" class="physics-tr">防雷击</i-col>
                                 <i-col span="24" class="physics-tr">防火</i-col>
-                                <i-col span="24" class="physics-tr-steal">防水和防潮</i-col>
-                                <i-col span="24" class="physics-tr">温湿度控制</i-col>
-                                <i-col span="24" class="physics-tr-last">电力供应</i-col>
+                                <i-col span="24" class="network-visit">防水和防潮</i-col>
+                                <i-col span="24" class="physics-tr">防静电</i-col>
+                                <i-col span="24" class="visit-tr">温湿度控制</i-col>
+                                <i-col span="24" class="network-structure">电力供应</i-col>
+                                <i-col span="24" class="physics-tr-last">电磁防护</i-col>
                             </row>
                         </i-col>
                     </row>
                 </i-col>
                 <i-col span="15">
                     <row class="br">
-                        <i-col span="24" class="physics-tr text-left">机房出入应安排专人负责，控制、鉴别和记录进入的人员</i-col>
-                        <i-col span="24" class="steal-content">
+                         <i-col span="24" class="visit-tr text-left">
+                             机房和办公场地应选择在具有防震、防风和防雨等能力的建筑内
+                         </i-col>
+                        <i-col span="24">
                             <row>
-                                <i-col span="24" class="physics-tr text-left">应将主要设备放置在机房内</i-col>
-                                <i-col span="24" class="physics-tr text-left">防应将设备或主要部件进行固定，并设置明显的不易除去的标记火</i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    机房出入应安排专人负责，控制、鉴别和记录进入的人员
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    需进入机房的来访人员应经过申请和审批流程，并限制和监控其活动范围
+                                </i-col>
+                            </row>
+                        </i-col>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="physics-tr text-left">
+                                    应将主要设备放置在机房内
+                                </i-col>
+                                <i-col span="24" class="physics-tr text-left">
+                                    应将设备或主要部件进行固定，并设置明显的不易除去的标记
+                                </i-col>
+                                <i-col span="24" class="physics-tr text-left">
+                                    应将通信线缆铺设在隐蔽处，可铺设在地下或管道中
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应对介质分类标识，存储在介质库或档案室中
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    主机房应安装必要的防盗报警设施
+                                </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="physics-tr text-left">机房建筑应设置避雷装置</i-col>
                         <i-col span="24" class="physics-tr text-left">机房应设置灭火设备</i-col>
-                        <i-col span="24" class="steal-content">
+                        <i-col span="24">
                             <row>
-                                <i-col span="24" class="physics-tr text-left">应对穿过机房墙壁和楼板的水管增加必要的保护措施</i-col>
-                                <i-col span="24" class="physics-tr text-left">应采取措施防止雨水通过机房窗户、屋顶和墙壁渗透</i-col>
+                                <i-col span="24" class="physics-tr text-left">
+                                    水管安装，不得穿过机房屋顶和活动地板下
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应采取措施防止雨水通过机房窗户、屋顶和墙壁渗透
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应采取措施防止机房内水蒸气结露和地下积水的转移与渗透
+                                </i-col>
                             </row>
                         </i-col>
-                        <i-col span="24" class="physics-tr text-left">机房应设置必要的温、湿度控制设施，使机房温、湿度的变化在设备运行所允许的范围之内</i-col>
-                        <i-col span="24" class="physics-tr-last text-left">应在机房供电线路上配置稳压器和过电压防护设备</i-col>
+                        <i-col span="24" class="physics-tr text-left">
+                            关键设备应采用必要的接地防静电措施
+                        </i-col>
+                        <i-col span="24" class="visit-tr text-left">
+                            机房应设置必要的温、湿度控制设施，使机房温、湿度的变化在设备运行所允许的范围之内
+                        </i-col>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应在机房供电线路上配置稳压器和过电压防护设备
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应提供短期的备用电力供应，至少满足关键设备在断电情况下的正常运行要求
+                                </i-col>
+                            </row>
+                        </i-col>
+                         <i-col span="24" class="physics-tr-last text-left">
+                            应在机房供电线路上配置稳压器和过电压防护设备
+                        </i-col>
                     </row>
                 </i-col>
                 <i-col span="3">
                     <row>
-                        <i-col span="24" class="physics-tr">
-                            100
+                         <i-col span="24" class="visit-tr">
+                             <checkbox v-model="technology.tech_2_f651627d9cb8668b788f706d6b12261a"></checkbox>
+                         </i-col>
+                        <!-- <i-col span="24">
+                            <row>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_1_f651627d9cb8668b788f706d6b12261a"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_1_f651627d9cb8668b788f706d6b12261a"></checkbox>
+                                </i-col>
+                            </row>
                         </i-col>
-                        <i-col span="24" class="steal-content">
+                        <i-col span="24">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_f651627d9cb8668b788f706d6b12261a"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_f651627d9cb8668b788f706d6b12261a"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="physics-tr">
+                                    <checkbox v-model="technology.tech_1_f651627d9cb8668b788f706d6b12261a"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_1_f651627d9cb8668b788f706d6b12261a"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_1_f651627d9cb8668b788f706d6b12261a"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="physics-tr">
-                            100
+                            <checkbox v-model="technology.tech_1_f651627d9cb8668b788f706d6b12261a"></checkbox>
                         </i-col>
                         <i-col span="24" class="physics-tr">
-                            100
+                            <checkbox v-model="technology.tech_1_f651627d9cb8668b788f706d6b12261a"></checkbox>
                         </i-col>
-                        <i-col span="24" class="steal-content">
+                        <i-col span="24">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    100
+                                    <checkbox v-model="technology.tech_1_f651627d9cb8668b788f706d6b12261a"></checkbox>
                                 </i-col>
-                                <i-col span="24" class="physics-tr">
-                                    100
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_1_f651627d9cb8668b788f706d6b12261a"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_1_f651627d9cb8668b788f706d6b12261a"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="physics-tr">
-                            100
+                            <checkbox v-model="technology.tech_1_f651627d9cb8668b788f706d6b12261a"></checkbox>
                         </i-col>
-                        <i-col span="24" class="physics-tr-last">
-                            100
+                        <i-col span="24" class="visit-tr">
+                            <checkbox v-model="technology.tech_1_f651627d9cb8668b788f706d6b12261a"></checkbox>
                         </i-col>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_1_f651627d9cb8668b788f706d6b12261a"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_1_f651627d9cb8668b788f706d6b12261a"></checkbox>
+                                </i-col>
+                            </row>
+                        </i-col>
+                         <i-col span="24" class="physics-tr-last">
+                            <checkbox v-model="technology.tech_1_f651627d9cb8668b788f706d6b12261a"></checkbox>
+                        </i-col> -->
                     </row>
                 </i-col>
             </row>
@@ -348,3 +435,14 @@
         </div>
     </div>
 </template>
+<script>
+import axios from 'axios'
+export default {
+  data(){
+      return {
+          technology: {
+              tech_2_f651627d9cb8668b788f706d6b12261a:false,
+          }
+      }
+  }
+}
