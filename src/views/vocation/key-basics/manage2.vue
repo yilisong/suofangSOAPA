@@ -963,80 +963,80 @@
 <script>
 import axios from 'axios'
 export default{
-     data () {
+    data () {
       return  {
-          management: {
-              manage_2_df1603f3d33ef73d15f0bb83eb80d3cd:false,
-              manage_2_1784702f03a7a2deb07cc38a4e6a7676:false,
-              manage_2_11501e98f8cd56d243e091120fd9f6eb:false,
-              manage_2_0284a53b1891d3ecbbbf5e2355c88aab:false,
-              manage_2_552d97a7b00a3839605c06abd834bdde:false,
-              manage_2_2391143d958c842fff389fcd3cd37ac5:false,
-              manage_2_a22be5172def81a1db804f0ce526334d:false,
-              manage_2_ede1613bcb0eab321d530dfe71218407:false,
-              manage_2_0acaae47ebcd6bec3f2e79b7d0957ff5:false,
-              manage_2_90a1b26319d44f4e9597ff2f1fe80afa:false,
-              manage_2_12012c9654f083be2f3d0d6c8e24419c:false,
-              manage_2_401cb301075be62e8c99c1b9ff18047b:false,
-              manage_2_c1dc10fb1f793f5c1c4d0ae72668eb31:false,
-              manage_2_f0768c25af1e13d5af63f82b678171cc:false,
-              manage_2_21a1c824ac39a7b9d01d2180342e58e1:false,
-              manage_2_9c12977d0ee8bc7bc2907fe3ae86c1ce:false,
-              manage_2_e9d1eae819bd91d183cc90b2d34c4852:false,
-              manage_2_8ea54bb8667c225d8c0a8f5c3db94955:false,
-              manage_2_fae283fe48f9f05a55c7e180ec8699ee:false,
-              manage_2_3a383b41b3fb0ca600d1aa0aaeadcb1a:false,
-              manage_2_be14cfe0e2fc00e3ae156c923b5050e1:false,
-              manage_2_7df4f19a1c8ab3ba59ce256cd339b75c:false,
-              manage_2_573556ac1861d2c80afee3792df1b908:false,
-              manage_2_874597474ec6e42287c373525d53fcbd:false,
-              manage_2_094d6924073fe60f1c325d87f499d289:false,
-              manage_2_d76a69f3566886f4c6d27c974b64e129:false,
-              manage_2_9ed1b2494ffcc27b38c17c8da6b64ec2:false,
-              manage_2_3e7810971bd64c16c3d7e1cc1e60f531:false,
-              manage_2_75863819c2c6a33959e7117cecedf582:false,
-              manage_2_bc827454956c16867166ab8331d67118:false,
-              manage_2_66a1f16743a91b24fe6844b17872a430:false,
-              manage_2_3550dc3140f97b9369aef7bb80b29e58:false,
-              manage_2_e0ab6ee2ecef6405de65d7f498b885ac:false,
-              manage_2_6aefb8550b43854c8469e916406ca15e:false,
-              manage_2_e32678ef5c68343293c8a9bb11a71860:false,
-              manage_2_e07847847dc9633438c176d82f36c6e5:false,
-              manage_2_37337734ab902297bf8060236df54432:false,
-              manage_2_fe4ade2516985ebc7d328cf2729c71fb:false,
-              manage_2_a5ea40bde1d5bd6b43ce3e3bb807d538:false,
-              manage_2_b52f5f9287e9e0579a61440528186569:false,
-              manage_2_2dbb880d5a9f9a98599a90b58dc63e35:false,
-              manage_2_4a6f4d2a223dd0cbd58fa3391eba3566:false,
-              manage_2_659b66e1c96f72fd43653213283dad6c:false,
-              manage_2_93a3ba7ea9664bb78a75c6cfcb5ad086:false,
-              manage_2_1d5848c20332b61028c2dae44d381bdc:false,
-              manage_2_6b94e44d42f119a626e2268fd056969a:false,
-              manage_2_ed15a7655b9bcb9771353155ef8589d4:false,
-              manage_2_99e1bad3d907129c1ee3a57950bc0c3a:false,
-              manage_2_432c059aaf53700a850b48b27b70cd97:false,
-              manage_2_e78f3dbdc334dd8fa7d29bc576a4b20a:false,
-              manage_2_adb9e9ce1f5caff3eb25293577d1d982:false,
-              manage_2_19c44d698075302681e9d1d130b215b0:false,
-              manage_2_bbf6746909a10ea06b5bf90da3febe75:false,
-              manage_2_411923a861d031194161faf46e18bbc6:false,
-              manage_2_d9b06ee39794d7ba5009e48973557e7d:false,
-             manage_2_8db141fd5e8dddb3594bed79ee674186:false,
-             manage_2_3081e48da42de1a396f8dda358d693fa:false,
-             manage_2_87d4a14708f6701983920a4935214408:false,
-             manage_2_14cdd5aad050d35790f96d974af2649c:false,
-             manage_2_b0d790be4030038e65446eccb5285493:false,
-             manage_2_d70335f3e47765777e97a6df470954f0:false,
-             manage_2_022ebe22cee25ff5e7265baecf4f6823:false,
-             manage_2_f6dfa8d9685a26c0ce81348d2d380a1a:false,
-             manage_2_6c77bfc322ce2b72a8eaeacdefc0010a:false,
-             manage_2_d106b597c61dd89ecd5192abdeae31df:false,
-             manage_2_5a8a09546feec04fec419ef2094dd1df:false,
-             manage_2_3048060d9498288d2aeba3c4e5d5ba15:false,
-             manage_2_f576fc31ec07438895c5d9fb7c3d90ab:false,
-             manage_2_ded5b84ad13c7f0044ea755372d7ff6a:false,
-             manage_2_10daef5bbe24a06a76c39e0896059840:false,
-             manage_2_1aeb980bd390f9be7a4bdc8b172ae828:false,
+        management: {
+            manage_2_df1603f3d33ef73d15f0bb83eb80d3cd:false,
+            manage_2_1784702f03a7a2deb07cc38a4e6a7676:false,
+            manage_2_11501e98f8cd56d243e091120fd9f6eb:false,
+            manage_2_0284a53b1891d3ecbbbf5e2355c88aab:false,
+            manage_2_552d97a7b00a3839605c06abd834bdde:false,
+            manage_2_2391143d958c842fff389fcd3cd37ac5:false,
+            manage_2_a22be5172def81a1db804f0ce526334d:false,
+            manage_2_ede1613bcb0eab321d530dfe71218407:false,
+            manage_2_0acaae47ebcd6bec3f2e79b7d0957ff5:false,
+            manage_2_90a1b26319d44f4e9597ff2f1fe80afa:false,
+            manage_2_12012c9654f083be2f3d0d6c8e24419c:false,
+            manage_2_401cb301075be62e8c99c1b9ff18047b:false,
+            manage_2_c1dc10fb1f793f5c1c4d0ae72668eb31:false,
+            manage_2_f0768c25af1e13d5af63f82b678171cc:false,
+            manage_2_21a1c824ac39a7b9d01d2180342e58e1:false,
+            manage_2_9c12977d0ee8bc7bc2907fe3ae86c1ce:false,
+            manage_2_e9d1eae819bd91d183cc90b2d34c4852:false,
+            manage_2_8ea54bb8667c225d8c0a8f5c3db94955:false,
+            manage_2_fae283fe48f9f05a55c7e180ec8699ee:false,
+            manage_2_3a383b41b3fb0ca600d1aa0aaeadcb1a:false,
+            manage_2_be14cfe0e2fc00e3ae156c923b5050e1:false,
+            manage_2_7df4f19a1c8ab3ba59ce256cd339b75c:false,
+            manage_2_573556ac1861d2c80afee3792df1b908:false,
+            manage_2_874597474ec6e42287c373525d53fcbd:false,
+            manage_2_094d6924073fe60f1c325d87f499d289:false,
+            manage_2_d76a69f3566886f4c6d27c974b64e129:false,
+            manage_2_9ed1b2494ffcc27b38c17c8da6b64ec2:false,
+            manage_2_3e7810971bd64c16c3d7e1cc1e60f531:false,
+            manage_2_75863819c2c6a33959e7117cecedf582:false,
+            manage_2_bc827454956c16867166ab8331d67118:false,
+            manage_2_66a1f16743a91b24fe6844b17872a430:false,
+            manage_2_3550dc3140f97b9369aef7bb80b29e58:false,
+            manage_2_e0ab6ee2ecef6405de65d7f498b885ac:false,
+            manage_2_6aefb8550b43854c8469e916406ca15e:false,
+            manage_2_e32678ef5c68343293c8a9bb11a71860:false,
+            manage_2_e07847847dc9633438c176d82f36c6e5:false,
+            manage_2_37337734ab902297bf8060236df54432:false,
+            manage_2_fe4ade2516985ebc7d328cf2729c71fb:false,
+            manage_2_a5ea40bde1d5bd6b43ce3e3bb807d538:false,
+            manage_2_b52f5f9287e9e0579a61440528186569:false,
+            manage_2_2dbb880d5a9f9a98599a90b58dc63e35:false,
+            manage_2_4a6f4d2a223dd0cbd58fa3391eba3566:false,
+            manage_2_659b66e1c96f72fd43653213283dad6c:false,
+            manage_2_93a3ba7ea9664bb78a75c6cfcb5ad086:false,
+            manage_2_1d5848c20332b61028c2dae44d381bdc:false,
+            manage_2_6b94e44d42f119a626e2268fd056969a:false,
+            manage_2_ed15a7655b9bcb9771353155ef8589d4:false,
+            manage_2_99e1bad3d907129c1ee3a57950bc0c3a:false,
+            manage_2_432c059aaf53700a850b48b27b70cd97:false,
+            manage_2_e78f3dbdc334dd8fa7d29bc576a4b20a:false,
+            manage_2_adb9e9ce1f5caff3eb25293577d1d982:false,
+            manage_2_19c44d698075302681e9d1d130b215b0:false,
+            manage_2_bbf6746909a10ea06b5bf90da3febe75:false,
+            manage_2_411923a861d031194161faf46e18bbc6:false,
+            manage_2_d9b06ee39794d7ba5009e48973557e7d:false,
+            manage_2_8db141fd5e8dddb3594bed79ee674186:false,
+            manage_2_3081e48da42de1a396f8dda358d693fa:false,
+            manage_2_87d4a14708f6701983920a4935214408:false,
+            manage_2_14cdd5aad050d35790f96d974af2649c:false,
+            manage_2_b0d790be4030038e65446eccb5285493:false,
+            manage_2_d70335f3e47765777e97a6df470954f0:false,
+            manage_2_022ebe22cee25ff5e7265baecf4f6823:false,
+            manage_2_f6dfa8d9685a26c0ce81348d2d380a1a:false,
+            manage_2_6c77bfc322ce2b72a8eaeacdefc0010a:false,
+            manage_2_d106b597c61dd89ecd5192abdeae31df:false,
+            manage_2_5a8a09546feec04fec419ef2094dd1df:false,
+            manage_2_3048060d9498288d2aeba3c4e5d5ba15:false,
+            manage_2_f576fc31ec07438895c5d9fb7c3d90ab:false,
+            manage_2_ded5b84ad13c7f0044ea755372d7ff6a:false,
+            manage_2_10daef5bbe24a06a76c39e0896059840:false,
+            manage_2_1aeb980bd390f9be7a4bdc8b172ae828:false,
             manage_2_b99f96d633ec4cca32b0a754440b7895:false,
             manage_2_8693ffe9d14fec917e6bc618641c85cb:false,
             manage_2_265a1c4bf93a596bef3040e3588568ea:false,
@@ -1052,19 +1052,61 @@ export default{
             manage_2_b4b892f4057915c31a561ff3b100799a:false,
             manage_2_dedb98b74bce9f2f7eca72985ea9d7dd:false,
             manage_2_b60335b17cf3e4dc9066505fb35387df:false,
-              manage_2_62949930b8d807f9b832f866b0d7d471:false,
-              manage_2_cfde17279ef02f66b9ae0bd6e7b489ff:false,
-              manage_2_e9a856899df2c12b16c6c603fba4b411:false,
-              manage_2_9678e4390b701312c1ab922251b890c6:false,
-              manage_2_4368285008630edf7778c66da254dcf4:false,
-              manage_2_5fff530e4e66488a3954d0e78de763d0:false,
-              manage_2_eed84aedfb5f487ff568e3f2f3cfa3b0:false,
-              manage_2_1a92576ece35e4ff790e03e7dd647238:false,
-              manage_2_60acd3408e095622fc7f3fac372754c0:false,
-              manage_2_7864f4e8b0104e5c8e21e8af13ad6d09:false,
-              manage_2_5fec878ecdcdf5b2511085585b08ed52:false
-          }
+            manage_2_62949930b8d807f9b832f866b0d7d471:false,
+            manage_2_cfde17279ef02f66b9ae0bd6e7b489ff:false,
+            manage_2_e9a856899df2c12b16c6c603fba4b411:false,
+            manage_2_9678e4390b701312c1ab922251b890c6:false,
+            manage_2_4368285008630edf7778c66da254dcf4:false,
+            manage_2_5fff530e4e66488a3954d0e78de763d0:false,
+            manage_2_eed84aedfb5f487ff568e3f2f3cfa3b0:false,
+            manage_2_1a92576ece35e4ff790e03e7dd647238:false,
+            manage_2_60acd3408e095622fc7f3fac372754c0:false,
+            manage_2_7864f4e8b0104e5c8e21e8af13ad6d09:false,
+            manage_2_5fec878ecdcdf5b2511085585b08ed52:false
+        }
       }
-     }
+    },
+    computed: {
+        url () {
+            return this.$store.state.userCode.url
+        }
+    },
+    created() {
+        if(localStorage.inspId) {
+            this.queryList()
+        }
+    },
+    methods: {
+        queryList() {
+            const url = this.url + '/insp/api/v1.0/manage/assess/' + localStorage.inspId
+            axios({
+                method:'get',
+                url: url
+            })
+            .then(response => {
+                if(response.data.status) {
+                    const res = response.data
+                    this.management = res.manage_assess
+                } else {
+                    this.$Message.error(response.data.desc)
+                }
+            })
+        },
+        submitAssess() {
+            const url = this.url + '/insp/api/v1.0/manage/assess/' + localStorage.inspId
+            axios({
+                method:'post',
+                url: url,
+                data: { manage_assess: this.management }
+            })
+            .then(response => {
+                if(response.data.status) {
+                    this.$Message.info('添加成功')
+                } else {
+                    this.$Message.error(response.data.desc)
+                }
+            })
+        }
+    }
 }
 </script>

@@ -1539,6 +1539,48 @@ export default{
               manage_3_c0dca038c0236fdfe708f4c330efcccc:false
           }
       }
-     }
+    },
+    computed: {
+        url () {
+            return this.$store.state.userCode.url
+        }
+    },
+    created() {
+        if(localStorage.inspId) {
+            this.queryList()
+        }
+    },
+    methods: {
+        queryList() {
+            const url = this.url + '/insp/api/v1.0/manage/assess/' + localStorage.inspId
+            axios({
+                method:'get',
+                url: url
+            })
+            .then(response => {
+                if(response.data.status) {
+                    const res = response.data
+                    this.management = res.manage_assess
+                } else {
+                    this.$Message.error(response.data.desc)
+                }
+            })
+        },
+        submitAssess() {
+            const url = this.url + '/insp/api/v1.0/manage/assess/' + localStorage.inspId
+            axios({
+                method:'post',
+                url: url,
+                data: { manage_assess: this.management }
+            })
+            .then(response => {
+                if(response.data.status) {
+                    this.$Message.info('添加成功')
+                } else {
+                    this.$Message.error(response.data.desc)
+                }
+            })
+        }
+    }
 }
 </script>
