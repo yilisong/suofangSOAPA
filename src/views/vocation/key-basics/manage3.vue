@@ -880,7 +880,7 @@
                                 <i-col span="24" class="network-design">变更管理</i-col>
                                 <i-col span="24" class="safety-program">备份与恢复管理</i-col>
                                 <i-col span="24" class="safety-program">安全事件处置</i-col>
-                                <i-col span="24" class="safety-program-last">应急预案管理</i-col>
+                                <i-col span="24" class="safety-warn-last">应急预案管理</i-col>
                             </row>
                         </i-col>
                     </row>

@@ -9,7 +9,7 @@
             <span>1</span>级，安全保护等级为
             <span>2</span>级
         </div>
-        <div class="service-header">二等级技术要求：</div>
+        <div class="service-header">三等级技术要求：</div>
         <div class="technology-table">
             <row class="table-header">
                 <i-col span="6" class="br">分类</i-col>
@@ -250,35 +250,61 @@
                         </i-col>
                         <i-col span="24">
                             <row>
-                                <i-col span="24" class="physics-tr">
-                                    <checkbox v-model="technology.tech_2_646a0c8b530e86fb0c537f6699235b0e"></checkbox>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_646a0c8b530e86fb0c537f6699235b0e"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_0882d21670d70557ef9c232e821ace4d"></checkbox>
+                                    <checkbox v-model="technology.tech_3_0882d21670d70557ef9c232e821ace4d"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_1c307f5f1915d547a7b71e985f91eb4c"></checkbox>
+                                    <checkbox v-model="technology.tech_3_1c307f5f1915d547a7b71e985f91eb4c"></checkbox>
+                                </i-col>
+                                 <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_efdb1ad253ca31c0970165319f6ee9f9"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
-                        <i-col span="24" class="physics-tr">
-                            <checkbox v-model="technology.tech_2_283a3b2e998fe644e6d3281cb64d5673"></checkbox>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="physics-tr">
+                                    <checkbox v-model="technology.tech_3_53eac9565188c5879453c491cbf92dde"></checkbox>
+                                </i-col>
+                                        <i-col span="24" class="physics-tr">
+                                    <checkbox v-model="technology.tech_3_8fc1d78fdcae8ff64757cdb234efd7ec"></checkbox>
+                                </i-col>
+                            </row>
                         </i-col>
                         <i-col span="24" class="visit-tr">
-                            <checkbox v-model="technology.tech_2_48f8e4aa7e35edba07c55aeaf4d229de"></checkbox>
+                            <checkbox v-model="technology.tech_3_48f8e4aa7e35edba07c55aeaf4d229de"></checkbox>
                         </i-col>
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_1caf718db55f75ddcede3e2783077008"></checkbox>
+                                    <checkbox v-model="technology.tech_3_1caf718db55f75ddcede3e2783077008"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_2f13b7e26cb979b07f2968b27af30d54"></checkbox>
+                                    <checkbox v-model="technology.tech_3_b0ec67f86e688f88c33f17a5e0d87d60"></checkbox>
+                                </i-col>
+                                 <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_41486591ac6545414b5c0403534cf98f"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_3dc981337dfcd8d4e20ec64d0026e5c4"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
-                         <i-col span="24" class="physics-tr-last">
-                            <checkbox v-model="technology.tech_2_2cc98ce368e3cf1a27f9dde1ac22a7af"></checkbox>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="physics-tr">
+                                    <checkbox v-model="technology.tech_3_729ada3391b3a61fef5f648a1fd3f91a"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="physics-tr">
+                                    <checkbox v-model="technology.tech_3_c5f4ac43417d67783b848281790712ad"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="physics-tr-last">
+                                    <checkbox v-model="technology.tech_3_19ce3ae25b3dadd910066c429bf2328e"></checkbox>
+                                </i-col>
+                            </row>
                         </i-col>
                     </row>
                 </i-col>
@@ -289,12 +315,13 @@
                         <i-col span="4" class="physics-name">网络安全</i-col>
                         <i-col span="20">
                             <row class="physics-type">
-                                <i-col span="24" class="network-design">结构安全</i-col>
-                                <i-col span="24" class="network-design">访问控制</i-col>
-                                <i-col span="24" class="network-structure">安全审计</i-col>
-                                <i-col span="24" class="visit-tr">边界完整性检查</i-col>
-                                <i-col span="24" class="visit-tr">入侵防范</i-col>
-                                <i-col span="24" class="safety-program-last">网络设备防护</i-col>
+                                <i-col span="24" class="network-safe">结构安全</i-col>
+                                <i-col span="24" class="network-medium-steal">访问控制</i-col>
+                                <i-col span="24" class="network-design">安全审计</i-col>
+                                <i-col span="24" class="network-structure">边界完整性检查</i-col>
+                                <i-col span="24" class="network-structure">入侵防范</i-col>
+                                <i-col span="24" class="physics-tr-steal">恶意代码防范</i-col>
+                                <i-col span="24" class="network-safe-last">网络设备防护</i-col>
                                 
                             </row>
                         </i-col>
@@ -305,24 +332,48 @@
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr text-left">
-                                    应保证关键网络设备的业务处理能力具备冗余空间，满足业务高峰期需要
+                                    应保证主要网络设备的业务处理能力具备冗余空间，满足业务高峰期需要
                                 </i-col>
                                 <i-col span="24" class="visit-tr text-left">
-                                    应保证接入网络和核心网络的带宽满足业务高峰期需要 
+                                    应保证网络各个部分的带宽满足业务高峰期需要 
                                 </i-col>
                                 <i-col span="24" class="visit-tr text-left">
+                                    应在业务终端与业务服务器之间进行路由控制建立安全的访问路径
+                                </i-col>
+                                <i-col span="24" class="physics-tr text-left">
                                     应绘制与当前运行情况相符的网络拓扑结构图
                                 </i-col>
-                                <i-col span="24" class="visit-tr text-left">
+                                 <i-col span="24" class="visit-tr text-left">
                                     应根据各部门的工作职能、重要性和所涉及信息的重要程度等因素，划分不同的子网或网段，并按照方便管理和控制的原则为各子网、网段分配地址段
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应避免将重要网段部署在网络边界处且直接连接外部信息系统，重要网段与其他网段之间采取可靠的技术隔离手段 
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应按照对业务服务的重要次序来指定带宽分配优先级别，保证在网络发生拥堵的时候优先保护重要主机
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24">
                             <row>
-                                <i-col span="24" class="visit-tr text-left">应在网络边界部署访问控制设备，启用访问控制功能</i-col>
                                 <i-col span="24" class="visit-tr text-left">
-                                    应能根据会话状态信息为数据流提供明确的允许/拒绝访问的能力，控制粒度为网段级。/拒绝数据包出入</i-col>
+                                    应在网络边界部署访问控制设备，启用访问控制功能
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应能根据会话状态信息为数据流提供明确的允许/拒绝访问的能力，控制粒度为端口级
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应对进出网络的信息内容进行过滤，实现对应用层HTTP、FTP、TELNET、SMTP、POP3等协议命令级的控制
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应在会话处于非活跃一定时间或会话结束后终止网络连接
+                                </i-col>
+                                <i-col span="24" class="physics-tr text-left">
+                                    应限制网络最大流量数及网络连接数
+                                </i-col>
+                                <i-col span="24" class="physics-tr text-left">
+                                    重要网段应采取技术手段防止地址欺骗/拒绝访问的能力，控制粒度为网段级。
+                                </i-col>
                                 <i-col span="24" class="visit-tr text-left">
                                     应按用户和系统之间的允许访问规则，决定允许或拒绝用户对受控系统进行资源访问，控制粒度为单个用户
                                 </i-col>
@@ -339,14 +390,44 @@
                                 <i-col span="24" class="visit-tr text-left">
                                     审计记录应包括事件的日期和时间、用户、事件类型、事件是否成功及其他与审计相关的信息
                                 </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应能够根据记录数据进行分析，并生成审计报表
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应对审计记录进行保护，避免受到未预期的删除、修改或覆盖等
+                                </i-col>
                             </row>
                         </i-col>
-                        <i-col span="24" class="visit-tr text-left">
-                            应能够对内部网络中出现的内部用户未通过准许私自联到外部网络的行为进行检查
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应能够对非授权设备私自联到内部网络的行为进行检查，准确定出位置，并对其进行有效阻断
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应能够对内部网络用户私自联到外部网络的行为进行检查，准确定出位置，并对其进行有效阻断
+                                </i-col>
+                            </row>
                         </i-col>
-                         <i-col span="24" class="visit-tr text-left">
-                            应在网络边界处监视以下攻击行为：端口扫描、强力攻击、木马后门攻击、拒绝服务攻击、缓冲区溢出攻击、IP碎片攻击和网络蠕虫攻击等
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应在网络边界处监视以下攻击行为：端口扫描、强力攻击、木马后门攻击、拒绝服务攻击、缓冲区溢出攻击、IP碎片攻击和网络蠕虫攻击等
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    当检测到攻击行为时，记录攻击源IP、攻击类型、攻击目的、攻击时间，在发生严重入侵事件时应提供报警
+                                </i-col>
+                            </row>
                         </i-col>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="physics-tr text-left">
+                                    应在网络边界处对恶意代码进行检测和清除
+                                </i-col>
+                                <i-col span="24" class="physics-tr text-left">
+                                    应维护恶意代码库的升级和检测系统的更新
+                                </i-col>
+                            </row>
+                         </i-col>
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="physics-tr text-left">
@@ -364,8 +445,14 @@
                                 <i-col span="24" class="visit-tr text-left">
                                     身份鉴别信息应具有不易被冒用的特点，口令应有复杂度要求并定期更换
                                 </i-col>
-                                <i-col span="24" class="visit-tr-last text-left">
+                                <i-col span="24" class="visit-tr text-left">
                                     应具有登录失败处理功能，可采取结束会话、限制非法登录次数和当网络登录连接超时自动退出等措施
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    当对网络设备进行远程管理时，应采取必要措施防止鉴别信息在网络传输过程中被窃听
+                                </i-col>
+                                <i-col span="24" class="physics-tr-last text-left">
+                                    应实现设备特权用户的权限分离
                                 </i-col>
                             </row>
                         </i-col>
@@ -376,70 +463,127 @@
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_3fd0520ed0c4832195732b3cf424629b"></checkbox>
+                                    <checkbox v-model="technology.tech_3_0ab286f04a7c277bc572f46fdda61624"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_40f98b3ed49e25b0d99021f3b9db93b4"></checkbox>
+                                    <checkbox v-model="technology.tech_3_7ed7de822f3dbdfc439c0469086122e0"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_1ad553f870d68087b2ca3f9ef2e5a7a8"></checkbox>
+                                    <checkbox v-model="technology.tech_3_0b2e94a14886b2e2f246bc5557169e3f"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="physics-tr">
+                                    <checkbox v-model="technology.tech_3_1ad553f870d68087b2ca3f9ef2e5a7a8"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_e60d7bcd759c591e4b5daba040277cfe"></checkbox>
+                                    <checkbox v-model="technology.tech_3_e60d7bcd759c591e4b5daba040277cfe"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_0b0c45967439096c13eb3984ab080f08"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_ed0480999b5ab062393cf85ec653284c"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_7fc3befd6909ddb524b0bac0f79bd4a9"></checkbox>
+                                    <checkbox v-model="technology.tech_3_7fc3befd6909ddb524b0bac0f79bd4a9"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_b7085ef81d636e0639465719712bfc95"></checkbox>
+                                    <checkbox v-model="technology.tech_3_8d43756c40c7ef8506263e7d20e54138"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_22e40b9ed32d006b86f53730ba6ad0d4"></checkbox>
+                                    <checkbox v-model="technology.tech_3_9d4b2f83ed9091b91c13243de2862456"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_6caa72249c287bb10ccf8fd1087f2761"></checkbox>
+                                    <checkbox v-model="technology.tech_3_024559e738a2d273ffa0ce6418db1c4c"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="physics-tr">
+                                    <checkbox v-model="technology.tech_3_0cfe7f0258357519ef9101c41688f963"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="physics-tr">
+                                    <checkbox v-model="technology.tech_3_67c6dad22ece5fc258ba0ba263ac7348"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_22e40b9ed32d006b86f53730ba6ad0d4"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_6caa72249c287bb10ccf8fd1087f2761"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_e35b0a6add802f4d9ec781e0f1da1d04"></checkbox>
+                                    <checkbox v-model="technology.tech_3_e35b0a6add802f4d9ec781e0f1da1d04"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_c84029b29eeba53ac683f6827ec640a7"></checkbox>
+                                    <checkbox v-model="technology.tech_3_c84029b29eeba53ac683f6827ec640a7"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_21ad3934a3978d92474f59d91e67e61d"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_779c3a9c539d63b10240ddfe5ae8afc8"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
-                        <i-col span="24" class="visit-tr">
-                            <checkbox v-model="technology.tech_2_9052bc202b506eaf1f7b25664a040fcb"></checkbox>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_02e22ef93ed2027c13cdcd2a4e56022f"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_9f08aa10be9f2752fb43e6fba87635c7"></checkbox>
+                                </i-col>
+                            </row>
                         </i-col>
-                        <i-col span="24" class="visit-tr">
-                            <checkbox v-model="technology.tech_2_47379759bba3c907bba5d509b5e194e0"></checkbox>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_016b9d319fb231c13b4f6a04ec154ce9"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_23f84683475e6c3ffcd665e894d0471f"></checkbox>
+                                </i-col>
+                            </row>
                         </i-col>
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="physics-tr">
-                                    <checkbox v-model="technology.tech_2_8a29e81f6682e2ff4544fd845e5c5fc5"></checkbox>
+                                    <checkbox v-model="technology.tech_3_c2182b9a4318c0bcd5a8140b07b6daa8"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    <checkbox v-model="technology.tech_2_b7bacb714c295f8d5606acbbbe66d7b3"></checkbox>
+                                    <checkbox v-model="technology.tech_3_87224ed46306cda7135226d668efaeef"></checkbox>
+                                </i-col>
+                            </row>
+                        </i-col>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="physics-tr">
+                                    <checkbox v-model="technology.tech_3_8a29e81f6682e2ff4544fd845e5c5fc5"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    <checkbox v-model="technology.tech_2_f51546c505fd011d35a7d971cd8ecc6a"></checkbox>
+                                    <checkbox v-model="technology.tech_3_b7bacb714c295f8d5606acbbbe66d7b3"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="physics-tr">
+                                    <checkbox v-model="technology.tech_3_f51546c505fd011d35a7d971cd8ecc6a"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_59c8d49719b143604d2dcc7bf06ed03d"></checkbox>
+                                    <checkbox v-model="technology.tech_3_59c8d49719b143604d2dcc7bf06ed03d"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_cbdf9f79e94b61844a7e8bb4e2036b7f"></checkbox>
+                                    <checkbox v-model="technology.tech_3_cbdf9f79e94b61844a7e8bb4e2036b7f"></checkbox>
                                 </i-col>
-                                <i-col span="24" class="visit-tr-last">
-                                    <checkbox v-model="technology.tech_2_e0700418373bb6279d1bdc642c4c08c0"></checkbox>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_e0700418373bb6279d1bdc642c4c08c0"></checkbox>
+                                </i-col>
+                                 <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_4cd45c449016cfeb62bca6909f9c3740"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="physics-tr-last">
+                                    <checkbox v-model="technology.tech_3_37243a4c0ffddca5e701abd4298addf5"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
@@ -452,12 +596,13 @@
                         <i-col span="4" class="physics-name">主机安全</i-col>
                         <i-col span="20">
                             <row class="physics-type">
-                                <i-col span="24" class="safety-program">身份鉴别</i-col>
+                                <i-col span="24" class="safety-warn">身份鉴别</i-col>
                                 <i-col span="24" class="network-design">访问控制</i-col>
-                                <i-col span="24" class="network-design">安全审计</i-col>
-                                <i-col span="24" class="safe-visit">入侵防范</i-col>
-                                <i-col span="24" class="network-structure">恶意代码防范</i-col>
-                                <i-col span="24" class="network-visit-last">资源控制</i-col>
+                                <i-col span="24" class="safety-program">安全审计</i-col>
+                                <i-col span="24" class="network-structure">剩余信息保护</i-col>
+                                <i-col span="24" class="monitoring-tr">入侵防范</i-col>
+                                <i-col span="24" class="network-visit">恶意代码防范</i-col>
+                                <i-col span="24" class="safety-program-last">资源控制</i-col>
                             </row>
                         </i-col>
                     </row>
@@ -481,26 +626,31 @@
                                 <i-col span="24" class="visit-tr text-left">
                                     应为操作系统和数据库系统的不同用户分配不同的用户名，确保用户名具有唯一性
                                 </i-col>
-                            </row>
-                        </i-col>
-                        <i-col span="24">
-                            <row>
-                                <i-col span="24" class="visit-tr text-left">应启用访问控制功能，依据安全策略控制用户对资源的访问</i-col>
                                 <i-col span="24" class="visit-tr text-left">
-                                    应实现操作系统和数据库系统特权用户的权限分离
-                                </i-col>
-                                <i-col span="24" class="visit-tr text-left">
-                                    应限制默认帐户的访问权限，重命名系统默认帐户，修改这些帐户的默认口令
-                                </i-col>
-                                <i-col span="24" class="visit-tr text-left">
-                                    应及时删除多余的、过期的帐户，避免共享帐户的存在
+                                    应采用两种或两种以上组合的鉴别技术对管理用户进行身份鉴别
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr text-left">
-                                    审计范围应覆盖到服务器上的每个操作系统用户和数据库用户
+                                    应启用访问控制功能，依据安全策略控制用户对资源的访问
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应根据管理用户的角色分配权限，实现管理用户的权限分离，仅授予管理用户所需的最小权限
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应对重要信息资源设置敏感标记
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应依据安全策略严格控制用户对有敏感标记重要信息资源的操作
+                                </i-col>
+                            </row>
+                        </i-col>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="visit-tr text-left">
+                                    审计范围应覆盖到服务器和重要客户端上的每个操作系统用户和数据库用户
                                 </i-col>
                                 <i-col span="24" class="visit-tr text-left">
                                     审计内容应包括重要用户行为、系统资源的异常使用和重要系统命令的使用等系统内重要的安全相关事件
@@ -508,20 +658,49 @@
                                 <i-col span="24" class="visit-tr text-left">
                                     审计记录应包括事件的日期、时间、类型、主体标识、客体标识和结果等
                                 </i-col>
-                                <i-col span="24" class="visit-tr text-left">
+                                <i-col span="24" class="physics-tr text-left">
+                                    应能够根据记录数据进行分析，并生成审计报表
+                                </i-col>
+                                <i-col span="24" class="physics-tr text-left">
+                                    应保护审计进程，避免受到未预期的中断
+                                </i-col>
+                                <i-col span="24" class="physics-tr text-left">
                                     应保护审计记录，避免受到未预期的删除、修改或覆盖等
                                 </i-col>
                             </row>
                         </i-col>
-                        <i-col span="24" class="precaution-tr text-left">
-                            操作系统应遵循最小安装的原则，仅安装需要的组件和应用程序，并保持系统补丁及时得到更新
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应保证操作系统和数据库系统用户的鉴别信息所在的存储空间，被释放或再分配给其他用户前得到完全清除，无论这些信息是存放在硬盘上还是在内存中
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应确保系统内的文件、目录和数据库记录等资源所在的存储空间，被释放或重新分配给其他用户前得到完全清除
+                                </i-col>
+                            </row>
                         </i-col>
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr text-left">
-                                    应安装防恶意代码软件，并及时更新防恶意代码软件版本和恶意代码库
+                                    应能够检测到对重要服务器进行入侵的行为，能够记录入侵的源IP、攻击的类型、攻击的目的、攻击的时间，并在发生严重入侵事件时提供报警
                                 </i-col>
                                 <i-col span="24" class="visit-tr text-left">
+                                    应能够对重要程序的完整性进行检测，并在检测到完整性受到破坏后具有恢复的措施
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    操作系统应遵循最小安装的原则，仅安装需要的组件和应用程序，并通过设置升级服务器等方式保持系统补丁及时得到更新
+                                </i-col>
+                            </row>
+                        </i-col>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应安装防恶意代码软件，并及时更新防恶意代码软件版本和恶意代码库应安装防恶意代码软件，并及时更新防恶意代码软件版本和恶意代码库
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    主机防恶意代码产品应具有与网络防恶意代码产品不同的恶意代码库
+                                </i-col>
+                                <i-col span="24" class="physics-tr text-left">
                                     应支持防恶意代码软件的统一管理
                                 </i-col>
                             </row>
@@ -531,11 +710,17 @@
                                 <i-col span="24" class="visit-tr text-left">
                                     应通过设定终端接入方式、网络地址范围等条件限制终端登录
                                 </i-col>
-                                <i-col span="24" class="physics-tr text-left">
+                                <i-col span="24" class="visit-tr text-left">
                                     应根据安全策略设置登录终端的操作超时锁定
                                 </i-col>
-                                <i-col span="24" class="visit-tr-last text-left">
+                                <i-col span="24" class="visit-tr text-left">
+                                    应对重要服务器进行监视，包括监视服务器的CPU、硬盘、内存、网络等资源的使用情况
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
                                     应限制单个用户对系统资源的最大或最小使用限度
+                                </i-col>
+                                <i-col span="24" class="visit-tr-last text-left">
+                                    应能够对系统的服务水平降低到预先规定的最小值进行检测和报警
                                 </i-col>
                             </row>
                         </i-col>
@@ -546,80 +731,116 @@
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_3e830a8c146ed4e461ddc612f6878773"></checkbox>
+                                    <checkbox v-model="technology.tech_3_3e830a8c146ed4e461ddc612f6878773"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_e8d0fee3e2a46b582ea400f0534f6112"></checkbox>
+                                    <checkbox v-model="technology.tech_3_e8d0fee3e2a46b582ea400f0534f6112"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_48a9d9411b1fab9914530560f9bfe868"></checkbox>
+                                    <checkbox v-model="technology.tech_3_48a9d9411b1fab9914530560f9bfe868"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_20a74ac007edf7779b84d446b5ef4910"></checkbox>
+                                    <checkbox v-model="technology.tech_3_20a74ac007edf7779b84d446b5ef4910"></checkbox>
                                 </i-col>
-                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_b23df1a4fdde5ac9a1ffad076f3f12ae"></checkbox>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_b23df1a4fdde5ac9a1ffad076f3f12ae"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_49209471b0d321007c6801816fdbab09"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_a0cdb8142b5b65ef5ec79e62d0d5b171"></checkbox>
+                                    <checkbox v-model="technology.tech_3_a0cdb8142b5b65ef5ec79e62d0d5b171"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_11d7864ce457612c9dc0dca3fc9da892"></checkbox>
+                                    <checkbox v-model="technology.tech_3_b70559a65a607ae9c110a9b426889560"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_73fa79e0de26d6dccf8a68ba4d43d892"></checkbox>
+                                    <checkbox v-model="technology.tech_3_6a4e40e359ea8f75c8288d71184b8cd7"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_ccd50b18960f24a3e89cbabfd6eb5f99"></checkbox>
+                                    <checkbox v-model="technology.tech_3_87b10f1d1f4e94477a0284d387d90508"></checkbox>
                                 </i-col>
 
                             </row>
                         </i-col>
-                       <i-col span="24">
-                            <row>
-                                <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_b6b6f9285a4ee82749ca4ac1b7958c79"></checkbox>
-                                </i-col>
-                                <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_17aba70d2736236857f49ea87dd0a91a"></checkbox>
-                                </i-col>
-                                <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_b08e59e7db169b6496353f3e064240f3"></checkbox>
-                                </i-col>
-                                <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_6083ac262c3b067bd24877d0281665ad"></checkbox>
-                                </i-col>
-                            </row>
-                        </i-col>
-                        <i-col span="24" class="visit-tr">
-                            <i-col span="24"> 
-                                <checkbox v-model="technology.tech_2_12803640cfd61acd1ecb018d66a483df"></checkbox>
-                            </i-col>
-                        </i-col>
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_431bc013ea26803d294612419ae7dd2d"></checkbox>
+                                    <checkbox v-model="technology.tech_3_375bef6f9b1824870d10fa126b7c0463"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_aaca964b489e8696008ee34b405e0611"></checkbox>
+                                    <checkbox v-model="technology.tech_3_17aba70d2736236857f49ea87dd0a91a"></checkbox>
                                 </i-col>
-                            </row>
-                        </i-col>
-                        <i-col span="24">
-                            <row>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_cd9ccba5a562f730096ab4c7f006bc42"></checkbox>
+                                    <checkbox v-model="technology.tech_3_b08e59e7db169b6496353f3e064240f3"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="physics-tr">
-                                    <checkbox v-model="technology.tech_2_22fb62899529e6c0e587967cd32880f2"></checkbox>
+                                    <checkbox v-model="technology.tech_3_708f8771cea17673b251daa09e2becf8"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="physics-tr">
+                                    <checkbox v-model="technology.tech_3_3b0d33942072c3e6af565c3640e0e006"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="physics-tr">
+                                    <checkbox v-model="technology.tech_3_6083ac262c3b067bd24877d0281665ad"></checkbox>
+                                </i-col>
+                            </row>
+                        </i-col>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_b571845403091994600dace74ea09325"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_0c5b2ce703c07d3ff75e59d2fbb61d6e"></checkbox>
+                                </i-col>
+                            </row>
+                        </i-col>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_c2aed29667653c002310699a7dc912fa"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_45d1b51805d9235fcda0e1adb04b219a"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_12803640cfd61acd1ecb018d66a483df"></checkbox>
+                                </i-col>
+                            </row>
+                        </i-col>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_b5eab036092551401cf6c3424f2875cc"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_7d584df39c2e11ab18d0fa94748b2a07"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="physics-tr">
+                                    <checkbox v-model="technology.tech_3_aaca964b489e8696008ee34b405e0611"></checkbox>
+                                </i-col>
+                            </row>
+                        </i-col>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_cd9ccba5a562f730096ab4c7f006bc42"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_22fb62899529e6c0e587967cd32880f2"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_e34235044f31e0f9c801c8cdde2f6f06"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_4b35880c8e4544a91d46eaaeb60bc829"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr-last">
-                                    <checkbox v-model="technology.tech_2_4b35880c8e4544a91d46eaaeb60bc829"></checkbox>
+                                    <checkbox v-model="technology.tech_3_52ae33837406384779b51a5ff53e9dc5"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
@@ -632,13 +853,15 @@
                         <i-col span="4" class="physics-name">应用安全</i-col>
                         <i-col span="20">
                             <row class="physics-type">
-                                <i-col span="24" class="network-design">身份鉴别</i-col>
-                                <i-col span="24" class="network-design">访问控制</i-col>
-                                <i-col span="24" class="network-visit">安全审计</i-col>
+                                <i-col span="24" class="safety-program">身份鉴别</i-col>
+                                <i-col span="24" class="safety-warn">访问控制</i-col>
+                                <i-col span="24" class="network-design">安全审计</i-col>
+                                <i-col span="24" class="network-structure">剩余信息保护</i-col>
                                 <i-col span="24" class="visit-tr">通信完整性</i-col>
                                 <i-col span="24" class="network-structure">通信保密性</i-col>
+                                <i-col span="24" class="network-structure">抗抵赖</i-col>
                                 <i-col span="24" class="network-structure">软件容错</i-col>
-                                <i-col span="24" class="monitoring-tr-last">资源控制</i-col>
+                                <i-col span="24" class="network-safe-last">资源控制</i-col>
                             </row>
                         </i-col>
                     </row>
@@ -649,6 +872,9 @@
                             <row>
                                 <i-col span="24" class="visit-tr text-left">
                                     应提供专用的登录控制模块对登录用户进行身份标识和鉴别
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应对同一用户采用两种或两种以上组合的鉴别技术实现用户身份鉴别
                                 </i-col>
                                 <i-col span="24" class="visit-tr text-left">
                                     应提供用户身份标识唯一和鉴别信息复杂度检查功能，保证应用系统中不存在重复用户身份标识，身份鉴别信息不易被冒用
@@ -670,10 +896,16 @@
                                     访问控制的覆盖范围应包括与资源访问相关的主体、客体及它们之间的操作
                                 </i-col>
                                 <i-col span="24" class="visit-tr text-left">
-                                    应由授权主体配置访问控制策略，并严格限制默认用户的访问权限
+                                     应由授权主体配置访问控制策略，并严格限制默认帐户的访问权限
                                 </i-col>
                                 <i-col span="24" class="visit-tr text-left">
                                     应授予不同帐户为完成各自承担任务所需的最小权限，并在它们之间形成相互制约的关系
+                                </i-col>
+                                 <i-col span="24" class="visit-tr text-left">
+                                    应具有对重要信息资源设置敏感标记的功能
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应依据安全策略严格控制用户对有敏感标记重要信息资源的操作
                                 </i-col>
                             </row>
                         </i-col>
@@ -682,16 +914,29 @@
                                 <i-col span="24" class="visit-tr text-left">
                                     应提供覆盖到每个用户的安全审计功能，对应用系统重要安全事件进行审计
                                 </i-col>
-                                <i-col span="24" class="physics-tr text-left">
-                                    应保证无法删除、修改或覆盖审计记录
+                                <i-col span="24" class="visit-tr text-left">
+                                    应保证无法单独中断审计进程，无法删除、修改或覆盖审计记录
                                 </i-col>
                                 <i-col span="24" class="visit-tr text-left">
                                     审计记录的内容至少应包括事件日期、时间、发起者信息、类型、描述和结果等
                                 </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应提供对审计记录数据进行统计、查询、分析及生成审计报表的功能
+                                </i-col>
+                            </row>
+                        </i-col>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应保证用户鉴别信息所在的存储空间被释放或再分配给其他用户前得到完全清除，无论这些信息是存放在硬盘上还是在内存中
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应保证系统内的文件、目录和数据库记录等资源所在的存储空间被释放或重新分配给其他用户前得到完全清除
+                                </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="visit-tr text-left">
-                            应采用校验码技术保证通信过程中数据的完整性
+                            应采用密码技术保证通信过程中数据的完整性
                         </i-col>
                         <i-col span="24">
                             <row>
@@ -699,7 +944,17 @@
                                     在通信双方建立连接之前，应用系统应利用密码技术进行会话初始化验证
                                 </i-col>
                                 <i-col span="24" class="visit-tr text-left">
-                                    应对通信过程中的敏感信息字段进行加密
+                                    应对通信过程中的整个报文或会话过程进行加密
+                                </i-col>
+                            </row>
+                        </i-col>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应具有在请求的情况下为数据原发者或接收者提供数据原发证据的功能
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应具有在请求的情况下为数据原发者或接收者提供数据接收证据的功能
                                 </i-col>
                             </row>
                         </i-col>
@@ -709,7 +964,7 @@
                                     应提供数据有效性检验功能，保证通过人机接口输入或通过通信接口输入的数据格式或长度符合系统设定要求
                                 </i-col>
                                 <i-col span="24" class="visit-tr text-left">
-                                    在故障发生时，应用系统应能够继续提供一部分功能，确保能够实施必要的措施
+                                    应提供自动保护功能，当故障发生时自动保护当前所有状态，保证系统能够进行恢复
                                 </i-col>
                             </row>
                         </i-col>
@@ -718,11 +973,23 @@
                                 <i-col span="24" class="visit-tr text-left">
                                     当应用系统的通信双方中的一方在一段时间内未作任何响应，另一方应能够自动结束会话
                                 </i-col>
-                                <i-col span="24" class="visit-tr text-left">
+                                <i-col span="24" class="physics-tr text-left">
                                     应能够对应用系统的最大并发会话连接数进行限制
                                 </i-col>
-                                 <i-col span="24" class="visit-tr-last text-left">
+                                 <i-col span="24" class="visit-tr text-left">
                                     应能够对单个帐户的多重并发会话进行限制
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应能够对一个时间段内可能的并发会话连接数进行限制
+                                </i-col>
+                                 <i-col span="24" class="visit-tr text-left">
+                                    应能够对一个访问帐户或一个请求进程占用的资源分配最大限额和最小限额
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应能够对系统服务水平降低到预先规定的最小值进行检测和报警
+                                </i-col>
+                                 <i-col span="24" class="visit-tr-last text-left">
+                                    应提供服务优先级设定功能，并在安装后根据安全策略设定访问帐户或请求进程的优先级，根据优先级分配系统资源
                                 </i-col>
                             </row>
                         </i-col>
@@ -733,81 +1000,125 @@
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_4fa58a449ac8013a231be49d012207af"></checkbox>
+                                    <checkbox v-model="technology.tech_3_4fa58a449ac8013a231be49d012207af"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_3182b80f97e8de16dd21f8a944da8dda"></checkbox>
+                                    <checkbox v-model="technology.tech_3_8ec8bb169e944239d32283e88568c84d"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_ed5fe3e68332d195927b63971f82e704"></checkbox>
+                                    <checkbox v-model="technology.tech_3_3182b80f97e8de16dd21f8a944da8dda"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_73c851730a6a8616e3cd1764b8533a6a"></checkbox>
+                                    <checkbox v-model="technology.tech_3_ed5fe3e68332d195927b63971f82e704"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_73c851730a6a8616e3cd1764b8533a6a"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                          <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_708b59a0d66ba369efb784c476b923e4"></checkbox>
+                                    <checkbox v-model="technology.tech_3_708b59a0d66ba369efb784c476b923e4"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_849dde28910d5940e092fba7e3b648a6"></checkbox>
+                                    <checkbox v-model="technology.tech_3_849dde28910d5940e092fba7e3b648a6"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_fad4f85af75256aec9d576d63acebbec"></checkbox>
+                                    <checkbox v-model="technology.tech_3_f17e0e9a292268136dbaebef86badb7a"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_cbdbece0902e891474ff20a4cf883165"></checkbox>
+                                    <checkbox v-model="technology.tech_3_cbdbece0902e891474ff20a4cf883165"></checkbox>
+                                </i-col>
+                                 <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_cedc6acb555c521964b6fbea5949eaec"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_bfe5068dcda314f156078eef4fc007cf"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_a0c114b247b805d08f81bbeb8b8583a4"></checkbox>
-                                </i-col>
-                                <i-col span="24" class="physics-tr">
-                                    <checkbox v-model="technology.tech_2_199f4cd9ee67153b96037d527d1599ef"></checkbox>
+                                    <checkbox v-model="technology.tech_3_a0c114b247b805d08f81bbeb8b8583a4"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_9b0962f78513067e7f5ebee29f0f8819"></checkbox>
+                                    <checkbox v-model="technology.tech_3_1b92d86416361c3b7786555ba8f3a3f3"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_9b0962f78513067e7f5ebee29f0f8819"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_4e9c89595fdfbec8eea0d35d9b9e1587"></checkbox>
+                                </i-col>
+                            </row>
+                        </i-col>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_6a3ec74413d83f71569b801b5ffe1b73"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_120eab8ffbbdae6612935a330225fcd5"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24" class="visit-tr">
-                            <checkbox v-model="technology.tech_2_3045ee8f40f0416da50f7d1d9edb0961"></checkbox>
+                            <checkbox v-model="technology.tech_3_a7fe621869806ab654b59a1060f45387"></checkbox>
                         </i-col>
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_746972ed654b139b11bb4233edd7d001"></checkbox>
+                                    <checkbox v-model="technology.tech_3_746972ed654b139b11bb4233edd7d001"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_b0bd9c9e9df43d6d1929338d459e3427"></checkbox>
+                                    <checkbox v-model="technology.tech_3_88de033f0b976e7736b28a8247ed43e3"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_47fdc19c5cbb9cfcc53168ffa0889c9b"></checkbox>
+                                    <checkbox v-model="technology.tech_3_03e6c66a502fced69f6349253d99ea9b"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_74cc8dfdaa23811f3a3ba8ab0ad458c2"></checkbox>
+                                    <checkbox v-model="technology.tech_3_668c380ad56aa1fdadcbb57592efe90e"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
                         <i-col span="24">
                             <row>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_b57d2a5f7ac9692376d057cd81d37258"></checkbox>
+                                    <checkbox v-model="technology.tech_3_47fdc19c5cbb9cfcc53168ffa0889c9b"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_9adf853b0124231350edbc63b206040f"></checkbox>
+                                    <checkbox v-model="technology.tech_3_58eb95a1746bf374cbf7d724ddfb354a"></checkbox>
+                                </i-col>
+                            </row>
+                        </i-col>
+                        <i-col span="24">
+                            <row>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_b57d2a5f7ac9692376d057cd81d37258"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="physics-tr">
+                                    <checkbox v-model="technology.tech_3_9adf853b0124231350edbc63b206040f"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_d77d4e07ecfd02dca214aba2720f9b09"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_b0b199471b6794e49263437c498ab3d8"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_b757918196e2dd4ef7e24ea012d953f7"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_25ddcd8443f3c0bc0bd62073636117ff"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr-last">
-                                    <checkbox v-model="technology.tech_2_d77d4e07ecfd02dca214aba2720f9b09"></checkbox>
+                                    <checkbox v-model="technology.tech_3_9e792858130c71d38f5d2b773dc5b647"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
@@ -820,28 +1131,48 @@
                         <i-col span="4" class="back-up">数据安全及备份恢复</i-col>
                         <i-col span="20">
                             <row class="physics-type">
-                                <i-col span="24" class="visit-tr">数据完整性</i-col>
-                                <i-col span="24" class="visit-tr">数据保密性</i-col>
-                                <i-col span="24" class="network-structure-last">备份和恢复</i-col>
+                                <i-col span="24" class="network-structure">数据完整性</i-col>
+                                <i-col span="24" class="network-structure">数据保密性</i-col>
+                                <i-col span="24" class="network-design-last">备份和恢复</i-col>
                             </row>
                         </i-col>
                     </row>
                 </i-col>
                 <i-col span="15">
                     <row class="br">
-                        <i-col span="24" class="visit-tr text-left">
-                            应能够检测到重要用户数据在传输过程中完整性受到破坏
-                        </i-col>
-                        <i-col span="24" class="visit-tr text-left">
-                            应采用加密或其他保护措施实现鉴别信息的存储保密性
+                        <i-col span="24">
+                             <row>
+                                 <i-col span="24" class="visit-tr text-left">
+                                    应能够检测到系统管理数据、鉴别信息和重要业务数据在传输过程中完整性受到破坏，并在检测到完整性错误时采取必要的恢复措施
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应能够检测到系统管理数据、鉴别信息和重要业务数据在存储过程中完整性受到破坏，并在检测到完整性错误时采取必要的恢复措施
+                                </i-col>
+                            </row>
                         </i-col>
                         <i-col span="24">
                              <row>
                                  <i-col span="24" class="visit-tr text-left">
-                                    应能够对重要信息进行备份和恢复
+                                    应采用加密或其他有效措施实现系统管理数据、鉴别信息和重要业务数据传输保密性
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应采用加密或其他保护措施实现系统管理数据、鉴别信息和重要业务数据存储保密性
+                                </i-col>
+                            </row>
+                        </i-col>
+                        <i-col span="24">
+                             <row>
+                                 <i-col span="24" class="visit-tr text-left">
+                                    应提供本地数据备份与恢复功能，完全数据备份至少每天一次，备份介质场外存放
+                                </i-col>
+                                <i-col span="24" class="visit-tr text-left">
+                                    应提供异地数据备份功能，利用通信网络将关键数据定时批量传送至备用场地
+                                </i-col>
+                                 <i-col span="24" class="visit-tr text-left">
+                                    应采用冗余技术设计网络拓扑结构，避免关键节点存在单点故障
                                 </i-col>
                                 <i-col span="24" class="visit-tr-last text-left">
-                                    应提供关键网络设备、通信线路和数据处理系统的硬件冗余，保证系统的可用性
+                                    应提供主要网络设备、通信线路和数据处理系统的硬件冗余，保证系统的高可用性
                                 </i-col>
                             </row>
                         </i-col>
@@ -849,19 +1180,39 @@
                 </i-col>
                 <i-col span="3">
                    <row>
-                        <i-col span="24" class="visit-tr">
-                            <checkbox v-model="technology.tech_2_51746e012d87e064314eaa0130694d54"></checkbox>
-                        </i-col>
-                        <i-col span="24" class="visit-tr">
-                            <checkbox v-model="technology.tech_2_c9119ecbc285179f3e873dca3ec4cec0"></checkbox>
+                        <i-col span="24">
+                             <row>
+                                 <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_fdc03384a0fbdfef66af15d7b28993a7"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_b9f137837cd7b8340d141a33d9081226"></checkbox>
+                                </i-col>
+                            </row>
                         </i-col>
                         <i-col span="24">
                              <row>
                                  <i-col span="24" class="visit-tr">
-                                    <checkbox v-model="technology.tech_2_334d45b58242ec750d812cb1ad9a89ec"></checkbox>
+                                    <checkbox v-model="technology.tech_3_0b26ac6ea674596909269808eb7f8f75"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_cb327008b5fe201af9e484f9e3f270a6"></checkbox>
+                                </i-col>
+                            </row>
+                        </i-col>
+                        <i-col span="24">
+                             <row>
+                                 <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_551421c68b5a3448f7af164aa4d6a792"></checkbox>
                                 </i-col>
                                 <i-col span="24" class="visit-tr-last">
-                                    <checkbox v-model="technology.tech_2_8d84d13118222e1e483a66519f3da098"></checkbox>
+                                    <checkbox v-model="technology.tech_3_627503cf0dd303b232cad9896fb4ce28"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr">
+                                    <checkbox v-model="technology.tech_3_6eb7d7a4cae409663cd75ff3b3192ef2"></checkbox>
+                                </i-col>
+                                <i-col span="24" class="visit-tr-last">
+                                    <checkbox v-model="technology.tech_3_9a2ec752be402944c016d6ba9848912e"></checkbox>
                                 </i-col>
                             </row>
                         </i-col>
@@ -895,8 +1246,121 @@ export default {
               tech_3_afcf135789ccd6a479706cdf2436d88b:false,
               tech_3_1b51dc2d4ed3bbe71728c25d7f6d0f76:false,
               tech_3_54fa492902e364a6f551c0e093ec7729:false,
-             
-
+              tech_3_646a0c8b530e86fb0c537f6699235b0e:false,
+              tech_3_0882d21670d70557ef9c232e821ace4d:false,
+              tech_3_1c307f5f1915d547a7b71e985f91eb4c:false,
+              tech_3_efdb1ad253ca31c0970165319f6ee9f9:false,
+              tech_3_53eac9565188c5879453c491cbf92dde:false,
+              tech_3_8fc1d78fdcae8ff64757cdb234efd7ec:false,
+              tech_3_48f8e4aa7e35edba07c55aeaf4d229de:false,
+              tech_3_1caf718db55f75ddcede3e2783077008:false,
+              tech_3_b0ec67f86e688f88c33f17a5e0d87d60:false,
+              tech_3_41486591ac6545414b5c0403534cf98f:false,
+              tech_3_3dc981337dfcd8d4e20ec64d0026e5c4:false,
+              tech_3_729ada3391b3a61fef5f648a1fd3f91a:false,
+              tech_3_c5f4ac43417d67783b848281790712ad:false,
+              tech_3_19ce3ae25b3dadd910066c429bf2328e:false,
+              tech_3_0ab286f04a7c277bc572f46fdda61624:false,
+              tech_3_7ed7de822f3dbdfc439c0469086122e0:false,
+              tech_3_0b2e94a14886b2e2f246bc5557169e3f:false,
+              tech_3_1ad553f870d68087b2ca3f9ef2e5a7a8:false,
+              tech_3_e60d7bcd759c591e4b5daba040277cfe:false,
+              tech_3_0b0c45967439096c13eb3984ab080f08:false,
+              tech_3_ed0480999b5ab062393cf85ec653284c:false,
+              tech_3_7fc3befd6909ddb524b0bac0f79bd4a9:false,
+              tech_3_8d43756c40c7ef8506263e7d20e54138:false,
+              tech_3_9d4b2f83ed9091b91c13243de2862456:false,
+              tech_3_024559e738a2d273ffa0ce6418db1c4c:false,
+              tech_3_0cfe7f0258357519ef9101c41688f963:false,
+              tech_3_67c6dad22ece5fc258ba0ba263ac7348:false,
+              tech_3_22e40b9ed32d006b86f53730ba6ad0d4:false,
+              tech_3_6caa72249c287bb10ccf8fd1087f2761:false,
+              tech_3_e35b0a6add802f4d9ec781e0f1da1d04:false,
+              tech_3_c84029b29eeba53ac683f6827ec640a7:false,
+              tech_3_21ad3934a3978d92474f59d91e67e61d:false,
+              tech_3_779c3a9c539d63b10240ddfe5ae8afc8:false,
+              tech_3_02e22ef93ed2027c13cdcd2a4e56022f:false,
+              tech_3_9f08aa10be9f2752fb43e6fba87635c7:false,
+              tech_3_016b9d319fb231c13b4f6a04ec154ce9:false,
+              tech_3_23f84683475e6c3ffcd665e894d0471f:false,
+              tech_3_c2182b9a4318c0bcd5a8140b07b6daa8:false,
+              tech_3_87224ed46306cda7135226d668efaeef:false,
+              tech_3_8a29e81f6682e2ff4544fd845e5c5fc5:false,
+              tech_3_b7bacb714c295f8d5606acbbbe66d7b3:false,
+              tech_3_f51546c505fd011d35a7d971cd8ecc6a:false,
+              tech_3_59c8d49719b143604d2dcc7bf06ed03d:false,
+              tech_3_cbdf9f79e94b61844a7e8bb4e2036b7f:false,
+              tech_3_e0700418373bb6279d1bdc642c4c08c0:false,
+              tech_3_4cd45c449016cfeb62bca6909f9c3740:false,
+              tech_3_37243a4c0ffddca5e701abd4298addf5:false,
+              tech_3_3e830a8c146ed4e461ddc612f6878773:false,
+              tech_3_e8d0fee3e2a46b582ea400f0534f6112:false,
+              tech_3_48a9d9411b1fab9914530560f9bfe868:false,
+              tech_3_20a74ac007edf7779b84d446b5ef4910:false,
+              tech_3_b23df1a4fdde5ac9a1ffad076f3f12ae:false,
+              tech_3_49209471b0d321007c6801816fdbab09:false,
+              tech_3_a0cdb8142b5b65ef5ec79e62d0d5b171:false,
+              tech_3_b70559a65a607ae9c110a9b426889560:false,
+              tech_3_6a4e40e359ea8f75c8288d71184b8cd7:false,
+              tech_3_87b10f1d1f4e94477a0284d387d90508:false,
+              tech_3_375bef6f9b1824870d10fa126b7c0463:false,
+              tech_3_17aba70d2736236857f49ea87dd0a91a:false,
+              tech_3_b08e59e7db169b6496353f3e064240f3:false,
+              tech_3_708f8771cea17673b251daa09e2becf8:false,
+              tech_3_3b0d33942072c3e6af565c3640e0e006:false,
+              tech_3_6083ac262c3b067bd24877d0281665ad:false,
+              tech_3_b571845403091994600dace74ea09325:false,
+              tech_3_0c5b2ce703c07d3ff75e59d2fbb61d6e:false,
+              tech_3_c2aed29667653c002310699a7dc912fa:false,
+              tech_3_45d1b51805d9235fcda0e1adb04b219a:false,
+              tech_3_12803640cfd61acd1ecb018d66a483df:false,
+              tech_3_b5eab036092551401cf6c3424f2875cc:false,
+              tech_3_7d584df39c2e11ab18d0fa94748b2a07:false,
+              tech_3_aaca964b489e8696008ee34b405e0611:false,
+              tech_3_cd9ccba5a562f730096ab4c7f006bc42:false,
+              tech_3_22fb62899529e6c0e587967cd32880f2:false,
+              tech_3_e34235044f31e0f9c801c8cdde2f6f06:false,
+              tech_3_4b35880c8e4544a91d46eaaeb60bc829:false,
+              tech_3_52ae33837406384779b51a5ff53e9dc5:false,
+              tech_3_4fa58a449ac8013a231be49d012207af:false,
+              tech_3_8ec8bb169e944239d32283e88568c84d:false,
+              tech_3_3182b80f97e8de16dd21f8a944da8dda:false,
+              tech_3_ed5fe3e68332d195927b63971f82e704:false,
+              tech_3_73c851730a6a8616e3cd1764b8533a6a:false,
+              tech_3_708b59a0d66ba369efb784c476b923e4:false,
+              tech_3_849dde28910d5940e092fba7e3b648a6:false,
+              tech_3_f17e0e9a292268136dbaebef86badb7a:false,
+              tech_3_cbdbece0902e891474ff20a4cf883165:false,
+              tech_3_cedc6acb555c521964b6fbea5949eaec:false,
+              tech_3_bfe5068dcda314f156078eef4fc007cf:false,
+              tech_3_a0c114b247b805d08f81bbeb8b8583a4:false,
+              tech_3_1b92d86416361c3b7786555ba8f3a3f3:false,
+              tech_3_9b0962f78513067e7f5ebee29f0f8819:false,
+              tech_3_4e9c89595fdfbec8eea0d35d9b9e1587:false,
+              tech_3_6a3ec74413d83f71569b801b5ffe1b73:false,
+              tech_3_120eab8ffbbdae6612935a330225fcd5:false,
+              tech_3_a7fe621869806ab654b59a1060f45387:false,
+              tech_3_746972ed654b139b11bb4233edd7d001:false,
+              tech_3_88de033f0b976e7736b28a8247ed43e3:false,
+              tech_3_03e6c66a502fced69f6349253d99ea9b:false,
+              tech_3_668c380ad56aa1fdadcbb57592efe90e:false,
+              tech_3_47fdc19c5cbb9cfcc53168ffa0889c9b:false,
+              tech_3_58eb95a1746bf374cbf7d724ddfb354a:false,
+              tech_3_b57d2a5f7ac9692376d057cd81d37258:false,
+              tech_3_9adf853b0124231350edbc63b206040f:false,
+              tech_3_d77d4e07ecfd02dca214aba2720f9b09:false,
+              tech_3_b0b199471b6794e49263437c498ab3d8:false,
+              tech_3_b757918196e2dd4ef7e24ea012d953f7:false,
+              tech_3_25ddcd8443f3c0bc0bd62073636117ff:false,
+              tech_3_9e792858130c71d38f5d2b773dc5b647:false,
+              tech_3_fdc03384a0fbdfef66af15d7b28993a7:false,
+              tech_3_b9f137837cd7b8340d141a33d9081226:false,
+              tech_3_0b26ac6ea674596909269808eb7f8f75:false,
+              tech_3_cb327008b5fe201af9e484f9e3f270a6:false,
+              tech_3_551421c68b5a3448f7af164aa4d6a792:false,
+              tech_3_627503cf0dd303b232cad9896fb4ce28:false,
+              tech_3_6eb7d7a4cae409663cd75ff3b3192ef2:false,
+              tech_3_9a2ec752be402944c016d6ba9848912e:false
           }
       }
   }
