@@ -13,25 +13,25 @@
                 <div class="form-con">
                     <Form ref="loginForm" :model="form" :rules="rules">
                         <FormItem prop="userName">
-                            <Input v-model="form.userName" placeholder="请输入用户名">
+                            <i-input v-model="form.userName" placeholder="请输入用户名">
                                 <span slot="prepend">
                                     <Icon :size="16" type="person"></Icon>
                                 </span>
-                            </Input>
+                            </i-input>
                         </FormItem>
                         <FormItem prop="password">
-                            <Input type="password" v-model="form.password" placeholder="请输入密码">
+                            <i-input type="password" v-model="form.password" placeholder="请输入密码">
                                 <span slot="prepend">
                                     <Icon :size="14" type="locked"></Icon>
                                 </span>
-                            </Input>
+                            </i-input>
                         </FormItem>
                         <FormItem prop="auth_code">
-                            <Input type="text" v-model="form.auth_code" placeholder="请输入验证码">
+                            <i-input type="text" v-model="form.auth_code" placeholder="请输入验证码">
                                 <span slot="prepend">
                                     <Icon :size="14" type="locked"></Icon>
                                 </span>
-                            </Input>
+                            </i-input>
                             <img :src="src" alt="">
                         </FormItem>
                         <FormItem>
