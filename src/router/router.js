@@ -60,7 +60,68 @@ export const otherRouter = {
         { path: 'ownspace', title: '个人中心', name: 'ownspace_index', component: () => import('@/views/own-space/own-space.vue') },
         { path: 'order/:order_id', title: '订单详情', name: 'order-info', component: () => import('@/views/advanced-router/component/order-info.vue') }, // 用于展示动态路由
         { path: 'shopping', title: '购物详情', name: 'shopping', component: () => import('@/views/advanced-router/component/shopping-info.vue') }, // 用于展示带参路由
-        { path: 'message', title: '消息中心', name: 'message_index', component: () => import('@/views/message/message.vue') }
+        { path: 'message', title: '消息中心', name: 'message_index', component: () => import('@/views/message/message.vue') },
+        /*******************tec   manager***********************/
+        {
+            path: '/gradeProtectaion',
+            title: '等保系统创建', 
+            name: 'gradeProtectaion', 
+            component: () => import('@/views/vocation/grade-protectaion/gradeProtectaion.vue') 
+        },
+        {
+            path: '/networkSafe',
+            title: '等保系统自评', 
+            name: 'networkSafe', 
+            component: () => import('@/views/vocation/network-safe/networkSafe.vue') 
+        },
+        {
+            path: '/manage1',
+            title: '管理一', 
+            name: 'manage1', 
+            component: () => import('@/views/vocation/key-basics/manage1.vue') 
+        },
+        {
+            path: '/manage2',
+            title: '管理二', 
+            name: 'manage2', 
+            component: () => import('@/views/vocation/key-basics/manage2.vue') 
+        },
+        {
+            path: '/manage3',
+            title: '管理三', 
+            name: 'manage3', 
+            component: () => import('@/views/vocation/key-basics/manage3.vue') 
+        },
+        {
+            path: '/manage4',
+            title: '管理四', 
+            name: 'manage4', 
+            component: () => import('@/views/vocation/key-basics/manage4.vue') 
+        },
+        {
+            path: '/technology1',
+            title: '技术一', 
+            name: 'technology1', 
+            component: () => import('@/views/vocation/key-basics/technology1.vue') 
+        },
+        {
+            path: '/technology2',
+            title: '技术二', 
+            name: 'technology2', 
+            component: () => import('@/views/vocation/key-basics/technology2.vue') 
+        },
+        {
+            path: '/technology3',
+            title: '技术三', 
+            name: 'technology3', 
+            component: () => import('@/views/vocation/key-basics/technology3.vue') 
+        },
+        {
+            path: '/technology4',
+            title: '技术四', 
+            name: 'technology4', 
+            component: () => import('@/views/vocation/key-basics/technology4.vue') 
+        }
     ]
 };
 
@@ -142,66 +203,6 @@ export const appRouter = [
                 title: '等保系统列表', 
                 name: 'protectaionList', 
                 component: () => import('@/views/vocation/list/list.vue') 
-            },
-            {
-                path: '/gradeProtectaion',
-                title: '等保系统创建', 
-                name: 'gradeProtectaion', 
-                component: () => import('@/views/vocation/grade-protectaion/gradeProtectaion.vue') 
-            },
-            {
-                path: '/networkSafe',
-                title: '等保系统自评', 
-                name: 'networkSafe', 
-                component: () => import('@/views/vocation/network-safe/networkSafe.vue') 
-            },
-            {
-                path: '/manage1',
-                title: '管理一', 
-                name: 'manage1', 
-                component: () => import('@/views/vocation/key-basics/manage1.vue') 
-            },
-            {
-                path: '/manage2',
-                title: '管理二', 
-                name: 'manage2', 
-                component: () => import('@/views/vocation/key-basics/manage2.vue') 
-            },
-            {
-                path: '/manage3',
-                title: '管理三', 
-                name: 'manage3', 
-                component: () => import('@/views/vocation/key-basics/manage3.vue') 
-            },
-            {
-                path: '/manage4',
-                title: '管理四', 
-                name: 'manage4', 
-                component: () => import('@/views/vocation/key-basics/manage4.vue') 
-            },
-            {
-                path: '/technology1',
-                title: '技术一', 
-                name: 'technology1', 
-                component: () => import('@/views/vocation/key-basics/technology1.vue') 
-            },
-            {
-                path: '/technology2',
-                title: '技术二', 
-                name: 'technology2', 
-                component: () => import('@/views/vocation/key-basics/technology2.vue') 
-            },
-            {
-                path: '/technology3',
-                title: '技术三', 
-                name: 'technology3', 
-                component: () => import('@/views/vocation/key-basics/technology3.vue') 
-            },
-            {
-                path: '/technology4',
-                title: '技术四', 
-                name: 'technology4', 
-                component: () => import('@/views/vocation/key-basics/technology4.vue') 
             },
             {
                 path: '/mainframe',

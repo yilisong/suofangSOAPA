@@ -29,16 +29,19 @@
                             </div>
                         </el-popover>
                         <el-button type="primary" size="small" v-popover:popover5 @click="showVisible(scope.row.deleteVisible)">删除</el-button>
-                        <el-dropdown>
+                        <el-button type="primary" size="small" @click="handleLevel(scope.row.security_level, scope.row.id)">等级自评详情</el-button>
+                        <el-button type="primary" size="small" @click="handleTec(scope.row.security_level, scope.row.id)">技术自评详情</el-button>
+                        <el-button type="primary" size="small" @click="handleManage(scope.row.security_level, scope.row.id)">管理自评详情</el-button>
+                        <!-- <el-dropdown  @command="handleLevel(scope.row.security_level, scope.row.id)">
                             <el-button size="small" type="primary">
                                 自评<i class="el-icon-caret-bottom el-icon--right"></i>
                             </el-button>
                             <el-dropdown-menu slot="dropdown">
-                                <el-dropdown-item  @click="handleLevel(scope.row.security_level, scope.row.id)">等级自评详情</el-dropdown-item>
-                                <el-dropdown-item  @click="handleTec(scope.row.security_level, scope.row.id)">技术自评详情</el-dropdown-item>
-                                <el-dropdown-item  @click="handleManage(scope.row.security_level, scope.row.id)">管理自评详情</el-dropdown-item>
+                                <el-dropdown-item command="a">等级自评详情</el-dropdown-item>
+                                <el-dropdown-item command="b" @click="handleTec(scope.row.security_level, scope.row.id)">技术自评详情</el-dropdown-item>
+                                <el-dropdown-item command="c" @click="handleManage(scope.row.security_level, scope.row.id)">管理自评详情</el-dropdown-item>
                             </el-dropdown-menu>
-                        </el-dropdown>
+                        </el-dropdown> -->
                     </template>
                 </el-table-column>
             </el-table>
@@ -136,19 +139,42 @@ export default {
             window.location.href = '/#/gradeProtectaion'
         },
         handleLevel(level, id) {
-            console.log(level, id)
-            localStorage.inspId = id
-            window.location.href = '/#/networkSafe'
+            // console.log(name, id, index)
+            // return false
+            // switch (name) {
+            //     case 'a':
+                    localStorage.inspId = id
+                    window.location.href = '/#/networkSafe'
+            //     break
+            //     case 'b':
+            //     console.log('修改密码')
+            //     break
+            //     case 'c':
+                
+            //     break
+            //     default:
+            // }
+            
         },
         handleTec(level, id) {
-            console.log(level, id)
             localStorage.inspId = id
-            window.location.href = '/#/technology'
+            if(level > 4) {
+                level = 4
+            }
+            if(level < 1) {
+                level = 1
+            }
+            window.location.href = '/#/technology' + level
         },
         handleManage(level, id) {
-            console.log(level, id)
             localStorage.inspId = id
-            window.location.href = '/#/keyBasics'
+            if(level == 5) {
+                level = 4
+            }
+            if(level < 1) {
+                level = 1
+            }
+            window.location.href = '/#/manage' + level
         }
     }
 }

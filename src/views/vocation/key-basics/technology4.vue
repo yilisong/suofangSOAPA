@@ -1500,6 +1500,48 @@ export default {
              tech_4_ed6c22ce560dc69a9786a88ba9233400:false
           }
       }
+  },
+  computed: {
+    url () {
+        return this.$store.state.userCode.url
+    }
+  },
+  created() {
+      if(localStorage.inspId) {
+          this.queryList()
+      }
+  },
+  methods: {
+      queryList() {
+        const url = this.url + '/insp/api/v1.0/tech/assess/' + localStorage.inspId
+        axios({
+            method:'get',
+            url: url
+        })
+        .then(response => {
+            if(response.data.status) {
+                const res = response.data
+                this.technology = res.tech_assess
+            } else {
+                this.$Message.error(response.data.desc)
+            }
+        })
+      },
+      submitAssess() {
+        const url = this.url + '/insp/api/v1.0/tech/assess/' + localStorage.inspId
+        axios({
+            method:'post',
+            url: url,
+            data: this.technology
+        })
+        .then(response => {
+            if(response.data.status) {
+                this.$Message.info('添加成功')
+            } else {
+                this.$Message.error(response.data.desc)
+            }
+        })
+      }
   }
 }
 </script>

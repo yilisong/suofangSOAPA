@@ -79,41 +79,28 @@ export default {
     },
     methods: {
         getAuthCode() {
-            const url = this.url + '/users/code'
-            axios({
-                method: "get",
-                url: url
-            })
-            .then(response => {
-                console.log(response)
-                this.src = response.data
-                // if(response.data.status) {
-                //     console.log(response.data)
-                // } else {
-                //     this.$Message.error(response.data.desc)
-                // }
-            })
+            this.src = this.url + '/users/code'
         },
         handleSubmit () {
             this.$refs.loginForm.validate((valid) => {
                 if (valid) {
                     const url = this.url + '/api/login'
-                    // axios({
-                    //     method: "post",
-                    //     url: url,
-                    //     data: this.form
-                    // })
-                    // .then(response => {
-                    //     if(response.data.status) {
+                    axios({
+                        method: "post",
+                        url: url,
+                        data: this.form
+                    })
+                    .then(response => {
+                        if(response.data.status) {
                             this.$router.push({
                                 name: 'home_index'
                             })
                             Cookies.set('user', this.form.userName);
                             Cookies.set('password', this.form.password);
-                        // } else {
-                        //     this.$Message.error(response.data.desc)
-                        // }
-                    // })
+                        } else {
+                            this.$Message.error(response.data.desc)
+                        }
+                    })
                 }
             });
         }
