@@ -189,9 +189,10 @@ export default {
             return this.$store.state.userCode.url
         }
     },
-    created() {
-        if(localStorage.inspId) {
+    mounted () {
+        if(localStorage.inspId > 0) {
             this.queryList()
+        } else {
         }
     },
     methods: {
@@ -225,6 +226,7 @@ export default {
             .then(response => {
                 if(response.data.status) {
                     this.$Message.info('保存成功')
+                    window.location.href = '/#/protectaionList'
                 } else {
                     this.$Message.error(response.data.desc)
                 }

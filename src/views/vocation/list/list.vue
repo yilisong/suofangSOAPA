@@ -30,8 +30,8 @@
                         </el-popover>
                         <el-button type="primary" size="small" v-popover:popover5 @click="showVisible(scope.row.deleteVisible)">删除</el-button>
                         <el-button type="primary" size="small" @click="handleLevel(scope.row.security_level, scope.row.id)">等级自评详情</el-button>
-                        <el-button type="primary" size="small" @click="handleTec(scope.row.security_level, scope.row.id)">技术自评详情</el-button>
-                        <el-button type="primary" size="small" @click="handleManage(scope.row.security_level, scope.row.id)">管理自评详情</el-button>
+                        <el-button type="primary" size="small" @click="handleTec(scope.row.security_level, scope.row.id)" v-if="scope.row.security_level_name && scope.row.security_level_name !== ''">技术自评详情</el-button>
+                        <el-button type="primary" size="small" @click="handleManage(scope.row.security_level, scope.row.id)" v-if="scope.row.security_level_name && scope.row.security_level_name !== ''">管理自评详情</el-button>
                         <!-- <el-dropdown  @command="handleLevel(scope.row.security_level, scope.row.id)">
                             <el-button size="small" type="primary">
                                 自评<i class="el-icon-caret-bottom el-icon--right"></i>

@@ -39,11 +39,11 @@
                         <Row type="flex" justify="end" align="middle" class="user-dropdown-innercon">
                             <Dropdown transfer trigger="click" @on-click="handleClickUserDropdown">
                                 <a href="javascript:void(0)">
-                                    <span class="main-user-name">test</span>
+                                    <span class="main-user-name">{{userName}}</span>
                                     <Icon type="arrow-down-b"></Icon>
                                 </a>
                                 <DropdownMenu slot="list">
-                                    <DropdownItem name="ownSpace">个人中心</DropdownItem>
+                                    <!-- <DropdownItem name="ownSpace">个人中心</DropdownItem> -->
                                     <DropdownItem name="loginout" divided>退出登录</DropdownItem>
                                 </DropdownMenu>
                             </Dropdown>
@@ -146,6 +146,9 @@
                     // 退出登录
                     this.$store.commit('logout', this);
                     this.$store.commit('clearOpenedSubmenu');
+                    Cookies.remove('user')
+                    Cookies.remove('password')
+                    Cookies.remove('user_suofangsoapa')
                     this.$router.push({
                         name: 'login'
                     });
@@ -194,6 +197,7 @@
             this.init();
         },
         created () {
+            this.userName = Cookies.get('user_suofangsoapa')
             // 显示打开的页面的列表
             this.$store.commit('setOpenedList');
         }

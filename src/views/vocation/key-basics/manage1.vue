@@ -4,10 +4,10 @@
 <template>
     <div class="self-assessment">
         <div class="service-header"> 
-            <span>提示：</span>
-            系统的业务信息安全保护等级为1级，系统服务安全保护等级为
-            <span>1</span>级，安全保护等级为
-            <span>1</span>级
+            <span>{{system_name}}</span>
+            系统的业务信息安全保护等级为<span>{{business_level}}</span>级，系统服务安全保护等级为
+            <span>{{system_level}}</span>级，安全保护等级为
+            <span>{{security_level}}</span>级
         </div>
         <div class="service-header">一等级管理要求：</div>
         <div class="technology-table">
@@ -532,7 +532,11 @@ import axios from 'axios'
 export default {
   data () {
       return  {
-         management: {
+          system_name: '',
+          business_level: '',
+          system_level: '',
+          security_level: '',
+        management: {
             manage_1_3081e48da42de1a396f8dda358d693fa:false,
             manage_1_14cdd5aad050d35790f96d974af2649c:false,
             manage_1_d70335f3e47765777e97a6df470954f0:false,
@@ -585,7 +589,7 @@ export default {
             manage_1_bbf6746909a10ea06b5bf90da3febe75:false,
             manage_1_411923a861d031194161faf46e18bbc6:false,
             manage_1_8db141fd5e8dddb3594bed79ee674186:false,
-         }
+        }
       }
   },
   computed: {
@@ -593,11 +597,12 @@ export default {
         return this.$store.state.userCode.url
     }
   },
-  created() {
-      if(localStorage.inspId) {
-          this.queryList()
-      }
-  },
+  mounted () {
+        if(localStorage.inspId > 0) {
+            this.queryList()
+        } else {
+        }
+    },
   methods: {
       queryList() {
         const url = this.url + '/insp/api/v1.0/manage/assess/' + localStorage.inspId
@@ -609,6 +614,10 @@ export default {
             if(response.data.status) {
                 const res = response.data
                 this.management = res.manage_assess
+                this.system_name = res.system_name,
+                this.business_level = res.business_level,
+                this.system_level = res.system_level
+                this.security_level = res.security_level
             } else {
                 this.$Message.error(response.data.desc)
             }
@@ -624,6 +633,7 @@ export default {
         .then(response => {
             if(response.data.status) {
                 this.$Message.info('添加成功')
+                window.location.href = '/#/protectaionList'
             } else {
                 this.$Message.error(response.data.desc)
             }

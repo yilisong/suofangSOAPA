@@ -96,6 +96,7 @@ export default {
                                 name: 'home_index'
                             })
                             Cookies.set('user', this.form.userName);
+                            Cookies.set('user_suofangsoapa', this.form.userName);
                             Cookies.set('password', this.form.password);
                             //  Cookies.set('auth_code', this.form.auth_code);
                         } else {

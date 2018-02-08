@@ -4,10 +4,10 @@
 <template>
     <div class="self-assessment">
         <div class="service-header"> 
-            <span>提示：</span>
-            系统的业务信息安全保护等级为4级，系统服务安全保护等级为
-            <span>4</span>级，安全保护等级为
-            <span>4</span>级
+            <span>{{system_name}}</span>
+            系统的业务信息安全保护等级为<span>{{business_level}}</span>级，系统服务安全保护等级为
+            <span>{{system_level}}</span>级，安全保护等级为
+            <span>{{security_level}}</span>级
         </div>
         <div class="service-header">四等级管理要求：</div>
         <div class="technology-table">
@@ -1466,6 +1466,9 @@
                 </i-col>
             </row>
         </div>
+        <div style="width: 100%;text-align: center;margin-top: 5px;">
+            <i-button type="primary" @click="submitAssess">提交</i-button>
+        </div>
     </div>
 </template>
 <script>
@@ -1473,6 +1476,10 @@ import axios from 'axios'
 export default{
      data () {
       return  {
+          system_name: '',
+          business_level: '',
+          system_level: '',
+          security_level: '',
           management: {
               manage_4_1784702f03a7a2deb07cc38a4e6a7676:false,
               manage_4_1b2fa800469f72920e553be8f0f0050a:false,
@@ -1651,9 +1658,10 @@ export default{
             return this.$store.state.userCode.url
         }
     },
-    created() {
-        if(localStorage.inspId) {
+    mounted () {
+        if(localStorage.inspId > 0) {
             this.queryList()
+        } else {
         }
     },
     methods: {
@@ -1667,6 +1675,10 @@ export default{
                 if(response.data.status) {
                     const res = response.data
                     this.management = res.manage_assess
+                    this.system_name = res.system_name,
+                    this.business_level = res.business_level,
+                    this.system_level = res.system_level
+                    this.security_level = res.security_level
                 } else {
                     this.$Message.error(response.data.desc)
                 }
@@ -1682,6 +1694,7 @@ export default{
             .then(response => {
                 if(response.data.status) {
                     this.$Message.info('添加成功')
+                    window.location.href = '/#/protectaionList'
                 } else {
                     this.$Message.error(response.data.desc)
                 }
