@@ -159,36 +159,36 @@ export const appRouter = [
         title: '系统管理',
         component: Main,
         children: [
-            { 
-                path: '/menu-preserve',
-                title: '菜单维护', 
-                name: 'menu-preserve', 
-                component: () => import('@/views/preserve/menu-preserve/menu.vue') 
-            },
+            // { 
+            //     path: '/menu-preserve',
+            //     title: '菜单维护', 
+            //     name: 'menu-preserve', 
+            //     component: () => import('@/views/preserve/menu-preserve/menu.vue') 
+            // },
             {
                 path: '/user-perserve',
-                title: '用户维护', 
+                title: '用户权限', 
                 name: 'user-preserve', 
                 component: () => import('@/views/preserve/user-preserve/user.vue') 
             },
-            {
-                path: '/section-perserve',
-                title: '部门维护', 
-                name: 'section-preserve', 
-                component: () => import('@/views/preserve/section-preserve/section.vue') 
-            },
-            {
-                path: '/post-perserve',
-                title: '岗位维护', 
-                name: 'post-preserve', 
-                component: () => import('@/views/preserve/post-preserve/post.vue') 
-            },
-            {
-                path: '/news-perserve',
-                title: '消息模板维护', 
-                name: 'news-preserve', 
-                component: () => import('@/views/preserve/news-preserve/news.vue') 
-            },
+            // {
+            //     path: '/section-perserve',
+            //     title: '部门维护', 
+            //     name: 'section-preserve', 
+            //     component: () => import('@/views/preserve/section-preserve/section.vue') 
+            // },
+            // {
+            //     path: '/post-perserve',
+            //     title: '岗位维护', 
+            //     name: 'post-preserve', 
+            //     component: () => import('@/views/preserve/post-preserve/post.vue') 
+            // },
+            // {
+            //     path: '/news-perserve',
+            //     title: '消息模板维护', 
+            //     name: 'news-preserve', 
+            //     component: () => import('@/views/preserve/news-preserve/news.vue') 
+            // },
         ]
     },
     {
@@ -204,12 +204,12 @@ export const appRouter = [
                 name: 'protectaionList', 
                 component: () => import('@/views/vocation/list/list.vue') 
             },
-            {
-                path: '/mainframe',
-                title: 'windows主机安全', 
-                name: 'mainframe', 
-                component: () => import('@/views/vocation/windows-mainframe/mainframe.vue') 
-            },
+            // {
+            //     path: '/mainframe',
+            //     title: 'windows主机安全', 
+            //     name: 'mainframe', 
+            //     component: () => import('@/views/vocation/windows-mainframe/mainframe.vue') 
+            // },
         ]
     }
     // {

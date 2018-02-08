@@ -4,10 +4,10 @@
 <template>
     <div class="self-assessment">
         <div class="service-header"> 
-            <span>XXX</span>
-            系统的业务信息安全保护等级为X级，系统服务安全保护等级为
+            <span>提示：</span>
+            系统的业务信息安全保护等级为1级，系统服务安全保护等级为
             <span>1</span>级，安全保护等级为
-            <span>2</span>级
+            <span>1</span>级
         </div>
         <div class="service-header">一等级技术要求：</div>
         <div class="technology-table">
