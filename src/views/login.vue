@@ -97,6 +97,7 @@ export default {
                             })
                             Cookies.set('user', this.form.userName);
                             Cookies.set('password', this.form.password);
+                             Cookies.set('auth_code', this.form.auth_code);
                         } else {
                             this.$Message.error(response.data.desc)
                         }
