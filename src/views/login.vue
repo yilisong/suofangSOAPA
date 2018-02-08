@@ -26,14 +26,14 @@
                                 </span>
                             </i-input>
                         </FormItem>
-                        <FormItem prop="auth_code">
+                        <!-- <FormItem prop="auth_code">
                             <i-input type="text" v-model="form.auth_code" placeholder="请输入验证码">
                                 <span slot="prepend">
                                     <Icon :size="14" type="locked"></Icon>
                                 </span>
                             </i-input>
                             <img :src="src" alt="">
-                        </FormItem>
+                        </FormItem> -->
                         <FormItem>
                             <Button @click="handleSubmit" type="primary" long>登录</Button>
                         </FormItem>
@@ -53,7 +53,7 @@ export default {
             form: {
                 userName: '',
                 password: '',
-                auth_code: ''
+                // auth_code: ''
             },
             rules: {
                 userName: [
@@ -61,9 +61,9 @@ export default {
                 ],
                 password: [
                     { required: true, message: '密码不能为空', trigger: 'blur' }
-                ],
-                auth_code: [
-                    { required: true, message: '验证码不能为空', trigger: 'blur' }
+                // ],
+                // auth_code: [
+                //     { required: true, message: '验证码不能为空', trigger: 'blur' }
                 ]
             },
             src: ''
@@ -75,7 +75,7 @@ export default {
         }
     },
     created() {
-        this.getAuthCode()
+        // this.getAuthCode()
     },
     methods: {
         getAuthCode() {
@@ -97,7 +97,7 @@ export default {
                             })
                             Cookies.set('user', this.form.userName);
                             Cookies.set('password', this.form.password);
-                             Cookies.set('auth_code', this.form.auth_code);
+                            //  Cookies.set('auth_code', this.form.auth_code);
                         } else {
                             this.$Message.error(response.data.desc)
                         }
