@@ -900,7 +900,7 @@ export default {
         axios({
             method:'post',
             url: url,
-            data: this.technology
+            data: { tech_assessz: this.technology }
         })
         .then(response => {
             if(response.data.status) {

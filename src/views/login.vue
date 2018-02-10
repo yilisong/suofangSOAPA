@@ -95,6 +95,7 @@ export default {
                             this.$router.push({
                                 name: 'home_index'
                             })
+                            // window.location.href = '/#/home'
                             Cookies.set('user', this.form.userName);
                             Cookies.set('user_suofangsoapa', this.form.userName);
                             Cookies.set('password', this.form.password);
