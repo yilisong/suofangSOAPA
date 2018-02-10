@@ -1544,7 +1544,7 @@ export default {
         axios({
             method:'post',
             url: url,
-            data: { tech_assessz: this.technology }
+            data: { tech_assess: this.technology }
         })
         .then(response => {
             if(response.data.status) {
