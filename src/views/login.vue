@@ -92,14 +92,14 @@ export default {
                     })
                     .then(response => {
                         if(response.data.status) {
-                            this.$router.push({
-                                name: 'home_index'
-                            })
                             // window.location.href = '/#/home'
                             Cookies.set('user', this.form.userName);
                             Cookies.set('user_suofangsoapa', this.form.userName);
                             Cookies.set('password', this.form.password);
                             //  Cookies.set('auth_code', this.form.auth_code);
+                            this.$router.push({
+                                name: 'home_index'
+                            })
                         } else {
                             this.$Message.error(response.data.desc)
                         }
