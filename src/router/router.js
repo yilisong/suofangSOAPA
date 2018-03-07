@@ -211,7 +211,37 @@ export const appRouter = [
             //     component: () => import('@/views/vocation/windows-mainframe/mainframe.vue') 
             // },
         ]
-    }
+    },
+    {
+        path: '/blogs',
+        icon: 'key',
+        name: 'blogs',
+        title: '日志管理',
+        component: Main,
+        children: [
+            {
+                path: 'index',
+                title: '日志管理', 
+                name: 'blog-manage', 
+                component: () => import('@/views/blogs/blog-manage/blog.vue') 
+            }
+        ]
+    },
+    {
+        path: '/rules-manage',
+        icon: 'key',
+        name: 'rules-manage',
+        title: '规则管理',
+        component: Main,
+        children: [
+            {
+                path: 'index',
+                title: '规则管理', 
+                name: 'regulation', 
+                component: () => import('@/views/rules-manage/rules-manage/regulation.vue') 
+            }
+        ]
+    },
     // {
     //     path: '/component',
     //     icon: 'social-buffer',
