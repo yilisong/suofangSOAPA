@@ -20,7 +20,7 @@
                     </template>
                 </el-table-column>
                 <el-table-column label="操作">
-                    <template scope="scope">
+                    <template scope="scope" class="clearfix">
                         <el-button type="primary" class="editor_btn" size="small" @click="handleEdit(scope.$index, scope.row.id)">编辑</el-button>
                         <el-popover ref="popover5" class="editor_btn" placement="top" width="160" v-model="scope.row.deleteVisible">
                             <p>您确定删除当前信息么？</p>
