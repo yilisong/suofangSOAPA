@@ -84,15 +84,14 @@ export default {
         handleSubmit () {
             this.$refs.loginForm.validate((valid) => {
                 if (valid) {
-                //     const url = this.url + '/api/login'
-                //     axios({
-                //         method: "post",
-                //         url: url,
-                //         data: this.form
-                //     })
-                //     .then(response => {
-                //         if(response.data.status) {
-                //             // window.location.href = '/#/home'
+                    const url = this.url + '/api/login'
+                    axios({
+                        method: "post",
+                        url: url,
+                        data: this.form
+                    })
+                    .then(response => {
+                        if(response.data.status) {
                             Cookies.set('user', this.form.userName);
                             Cookies.set('user_suofangsoapa', this.form.userName);
                             Cookies.set('password', this.form.password);
@@ -101,10 +100,10 @@ export default {
                                 name: 'home_index'
                             })
                             window.location.href = '/#/home'
-                //         } else {
-                //             this.$Message.error(response.data.desc)
-                //         }
-                //     })
+                        } else {
+                            this.$Message.error(response.data.desc)
+                        }
+                    })
                 }
             });
         }
