@@ -242,8 +242,31 @@ export default {
             })
             .then(response => {
                 if(response.data.status) {
-                    console.log(response.data)
-                    // this.details = response.data
+                    const res = response.data
+                    const logs = res.logs
+                    let logsList = []
+                    let dealing
+                    logs.forEach((v, i) => {
+
+                        if (v.dealing == 1) {
+                            dealing = '未处置'
+                        } else if (v.dealing == 2) {
+                            dealing = '应急处置'
+                        } else {
+                            dealing = '安全处置'
+                        }
+                        logsList.push({
+                            log_id: v.log_id,
+                            host: v.host,
+                            describe: v.describe,
+                            attack_time: v.attack_time,
+                            level: v.level,
+                            dstip: v.dstip,
+                            dealing: dealing
+                        })
+                    });
+                    this.dataRegulation = logsList
+                    this.total = parseInt(res.total)
                 } else {
                     this.$Message.error(response.data.desc)
                 }
