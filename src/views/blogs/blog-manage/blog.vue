@@ -3,7 +3,85 @@
 </style>
 <template>
     <div class="blog-manage">
-        <i-table border :columns="regulations" :data="dataRegulation"></i-table>
+        <div class="threat_level clearfix">
+            <div class="level_name">威胁等级：</div>
+            <div class="level_name">
+                <checkbox-group v-model="levelOptions">
+                    <checkbox label="1"></checkbox>
+                    <checkbox label="2"></checkbox>
+                    <checkbox label="3"></checkbox>
+                    <checkbox label="4"></checkbox>
+                    <checkbox label="5"></checkbox>
+                    <checkbox label="6"></checkbox>
+                </checkbox-group>
+            </div>
+        </div>
+        <div class="threat_level clearfix">
+            <div class="level_name">时间范围：</div>
+            <div class="level_name">
+                <date-picker type="datetime" placeholder="Select date and time" style="width: 200px"></date-picker>
+            </div>
+        </div>
+        <div class="threat_level clearfix">
+            <div class="level_name">处理情况：</div>
+            <div class="level_name">
+                <checkbox-group v-model="handlInformation">
+                    <checkbox label="已应急处置"></checkbox>
+                    <checkbox label="已安全处置"></checkbox>
+                    <checkbox label="未处置"></checkbox>
+                </checkbox-group>
+            </div>
+        </div>
+        <div class="threat_level clearfix">
+            <div class="level_name">应用系统：</div>
+            <div class="level_name">
+                <checkbox-group v-model="utilitySystem ">
+                    <checkbox label="IIS"></checkbox>
+                    <checkbox label="OA"></checkbox>
+                    <checkbox label="APACHE"></checkbox>
+                    <checkbox label="MYSQL"></checkbox>
+                    <checkbox label="OA"></checkbox>
+                </checkbox-group>
+            </div>
+        </div>
+        <div class="threat_level clearfix">
+            <div class="level_name">操作系统：</div>
+            <div class="level_name">
+                <checkbox-group v-model=" operatingSystem">
+                    <checkbox label="Windows"></checkbox>
+                    <checkbox label="Centos Redhat Ubuntu"></checkbox>
+                    <checkbox label="MACOS"></checkbox>
+                </checkbox-group>
+            </div>
+        </div>
+        <div class="threat_level clearfix">
+            <div class="level_name">威胁名称：</div>
+            <div class="level_name">
+                <i-input v-model="threatValue" style="width: 300px"></i-input>
+            </div>
+            <div class="level_name margin_left">
+                <i-button type="primary">查询</i-button>
+            </div>
+        </div>
+        <div class="threat_level clearfix">
+            <div class="level_name">攻击来源：</div>
+            <div class="level_name">
+                <i-input v-model="attackValue" style="width: 300px"></i-input>
+            </div>
+            <div class="level_name margin_left">
+                <i-button type="primary">查询</i-button>
+            </div>
+        </div>
+        <div class="threat_level clearfix">
+            <div class="level_name">被攻击主机：</div>
+            <div class="level_name">
+                <i-input v-model="hostValue" style="width: 300px"></i-input>
+            </div>
+            <div class="level_name margin_left">
+                <i-button type="primary">查询</i-button>
+            </div>
+        </div>
+        <i-table class="table_blog" border :columns="regulations" :data="dataRegulation"></i-table>
         <div>
             <div class="block page_position" v-if="total > pageSize">
                 <el-pagination @size-change="handleSizeChange" :current-page.sync="currentPage1" :page-size="pageSize" layout="prev, pager, next" :total="total">
@@ -11,8 +89,23 @@
             </div>
         </div>
         <modal v-model="modalDetail" title="详情" :mask-closable="false">
-            <div>
-                <input type="text" v-model="modalDetaildata.name">
+            <div class="modal_content clearfix">
+                <div class="level_name">
+                    <label>城市：</label>
+                    <i-input type="text" v-model="cityData" style="width:180px;"></i-input>
+                </div>
+                <div class="level_right">
+                    <label>国家：</label>
+                    <i-input type="text" v-model="stateData" style="width:180px;"></i-input>
+                </div>
+            </div>
+            <div class="modal_content clearfix">
+                <label>详情：</label>
+                <i-input v-model="value6" type="textarea" :rows="4"></i-input>
+            </div>
+            <div class="modal_content clearfix">
+                <label style="width:60px;">解决方案：</label>
+                <i-input v-model="value6" disabled type="textarea" :rows="4"></i-input>
             </div>
             <div slot="footer">
             </div>
@@ -26,7 +119,14 @@ import axios from 'axios'
 export default {
     data() {
         return {
-            modalDetail: false,
+            levelOptions:[],
+            handlInformation:[],
+            utilitySystem:[],
+            operatingSystem:[],
+            threatValue:'',
+            attackValue:'',
+            hostValue:'',
+            modalDetail: true,
             pageSize: 10,
             total: 0,
             pageNum: 1,
