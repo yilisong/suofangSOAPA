@@ -3,84 +3,91 @@
 </style>
 <template>
     <div class="blog-manage">
-        <div class="threat_level clearfix">
-            <div class="level_name">威胁等级：</div>
-            <div class="level_name">
-                <checkbox-group v-model="levelOptions">
-                    <checkbox label="1"></checkbox>
-                    <checkbox label="2"></checkbox>
-                    <checkbox label="3"></checkbox>
-                    <checkbox label="4"></checkbox>
-                    <checkbox label="5"></checkbox>
-                    <checkbox label="6"></checkbox>
-                </checkbox-group>
-            </div>
-        </div>
-        <div class="threat_level clearfix">
-            <div class="level_name">时间范围：</div>
-            <div class="level_name">
-                <date-picker type="datetime" placeholder="Select date and time" style="width: 200px"></date-picker>
-            </div>
-        </div>
-        <div class="threat_level clearfix">
-            <div class="level_name">处理情况：</div>
-            <div class="level_name">
-                <checkbox-group v-model="handlInformation">
-                    <checkbox label="已应急处置"></checkbox>
-                    <checkbox label="已安全处置"></checkbox>
-                    <checkbox label="未处置"></checkbox>
-                </checkbox-group>
-            </div>
-        </div>
-        <div class="threat_level clearfix">
-            <div class="level_name">应用系统：</div>
-            <div class="level_name">
-                <checkbox-group v-model="utilitySystem ">
-                    <checkbox label="IIS"></checkbox>
-                    <checkbox label="OA"></checkbox>
-                    <checkbox label="APACHE"></checkbox>
-                    <checkbox label="MYSQL"></checkbox>
-                    <checkbox label="OA"></checkbox>
-                </checkbox-group>
-            </div>
-        </div>
-        <div class="threat_level clearfix">
-            <div class="level_name">操作系统：</div>
-            <div class="level_name">
-                <checkbox-group v-model=" operatingSystem">
-                    <checkbox label="Windows"></checkbox>
-                    <checkbox label="Centos Redhat Ubuntu"></checkbox>
-                    <checkbox label="MACOS"></checkbox>
-                </checkbox-group>
-            </div>
-        </div>
-        <div class="threat_level clearfix">
-            <div class="level_name">威胁名称：</div>
-            <div class="level_name">
-                <i-input v-model="threatValue" style="width: 300px"></i-input>
-            </div>
-            <div class="level_name margin_left">
-                <i-button type="primary">查询</i-button>
-            </div>
-        </div>
-        <div class="threat_level clearfix">
-            <div class="level_name">攻击来源：</div>
-            <div class="level_name">
-                <i-input v-model="attackValue" style="width: 300px"></i-input>
-            </div>
-            <div class="level_name margin_left">
-                <i-button type="primary">查询</i-button>
-            </div>
-        </div>
-        <div class="threat_level clearfix">
-            <div class="level_name">被攻击主机：</div>
-            <div class="level_name">
-                <i-input v-model="hostValue" style="width: 300px"></i-input>
-            </div>
-            <div class="level_name margin_left">
-                <i-button type="primary">查询</i-button>
-            </div>
-        </div>
+        <row>
+            <i-col span="20">
+                <collapse v-model="value1">
+                    <panel name="1">
+                        展开搜索条件
+                        <div slot="content">
+                            <div class="threat_level clearfix">
+                                <div class="level_name">威胁等级：</div>
+                                <div class="level_name">
+                                    <checkbox-group v-model="searchData.level">
+                                        <checkbox label="1"></checkbox>
+                                        <checkbox label="2"></checkbox>
+                                        <checkbox label="3"></checkbox>
+                                        <checkbox label="4"></checkbox>
+                                        <checkbox label="5"></checkbox>
+                                        <checkbox label="6"></checkbox>
+                                    </checkbox-group>
+                                </div>
+                            </div>
+                            <div class="threat_level clearfix">
+                                <div class="level_name">时间范围：</div>
+                                <div class="level_name">
+                                    <date-picker type="date" placeholder="开始时间" style="width: 200px" @on-change='getStartTime'></date-picker>
+                                    <date-picker type="date" placeholder="截止时间" style="width: 200px" @on-change='getEndtTime'></date-picker>
+                                </div>
+                            </div>
+                            <div class="threat_level clearfix">
+                                <div class="level_name">处理情况：</div>
+                                <div class="level_name">
+                                    <radio-group v-model="searchData.dealing">
+                                        <radio label="1">未处置</radio>
+                                        <radio label="2">应急处置</radio>
+                                        <radio label="3">安全处置</radio>
+                                    </radio-group>
+                                </div>
+                            </div>
+                            <div class="threat_level clearfix">
+                                <div class="level_name">应用系统：</div>
+                                <div class="level_name">
+                                    <checkbox-group v-model="searchData.asset_type">
+                                        <checkbox label="IIS"></checkbox>
+                                        <checkbox label="OA"></checkbox>
+                                        <checkbox label="APACHE"></checkbox>
+                                        <checkbox label="MYSQL"></checkbox>
+                                    </checkbox-group>
+                                </div>
+                            </div>
+                            <div class="threat_level clearfix">
+                                <div class="level_name">操作系统：</div>
+                                <div class="level_name">
+                                    <checkbox-group v-model="searchData.server_os">
+                                        <checkbox label="Windows"></checkbox>
+                                        <checkbox label="Centos Redhat Ubuntu"></checkbox>
+                                        <checkbox label="MACOS"></checkbox>
+                                    </checkbox-group>
+                                </div>
+                            </div>
+                            <div class="threat_level clearfix">
+                                <div class="level_name">威胁名称：</div>
+                                <div class="level_name">
+                                    <i-input v-model="searchData.describe" style="width: 300px"></i-input>
+                                </div>
+                            </div>
+                            <div class="threat_level clearfix">
+                                <div class="level_name">攻击来源：</div>
+                                <div class="level_name">
+                                    <i-input v-model="searchData.srcip" style="width: 300px"></i-input>
+                                </div>
+                            </div>
+                            <div class="threat_level clearfix">
+                                <div class="level_name">被攻击主机：</div>
+                                <div class="level_name">
+                                    <i-input v-model="searchData.dstip" style="width: 300px"></i-input>
+                                </div>
+                            </div>
+                        </div>
+                    </panel>
+                </collapse>
+            </i-col>
+            <i-col span="4">
+                <div>
+                    <i-button type="primary" @click="searchInfo">查询</i-button>
+                </div>
+            </i-col>
+        </row>
         <i-table class="table_blog" border :columns="regulations" :data="dataRegulation"></i-table>
         <div>
             <div class="block page_position" v-if="total > pageSize">
@@ -92,20 +99,26 @@
             <div class="modal_content clearfix">
                 <div class="level_name">
                     <label>城市：</label>
-                    <i-input type="text" v-model="cityData" style="width:180px;"></i-input>
+                    <i-input type="text" v-model="details.city_name" style="width:150px;"></i-input>
                 </div>
                 <div class="level_right">
                     <label>国家：</label>
-                    <i-input type="text" v-model="stateData" style="width:180px;"></i-input>
+                    <i-input type="text" v-model="details.country_name" style="width:150px;"></i-input>
+                </div>
+            </div>
+            <div class="modal_content clearfix">
+                <div class="level_name">
+                    <label>源ip/域名：</label>
+                    <i-input v-model="details.srcip" type="text" style="width:150px;"></i-input>
                 </div>
             </div>
             <div class="modal_content clearfix">
                 <label>详情：</label>
-                <i-input v-model="value6" type="textarea" :rows="4"></i-input>
+                <i-input v-model="details.full_log" type="textarea" :rows="4"></i-input>
             </div>
             <div class="modal_content clearfix">
                 <label style="width:60px;">解决方案：</label>
-                <i-input v-model="value6" disabled type="textarea" :rows="4"></i-input>
+                <i-input v-model="details.solution" disabled type="textarea" :rows="4"></i-input>
             </div>
             <div slot="footer">
             </div>
@@ -119,14 +132,19 @@ import axios from 'axios'
 export default {
     data() {
         return {
-            levelOptions:[],
-            handlInformation:[],
-            utilitySystem:[],
-            operatingSystem:[],
-            threatValue:'',
-            attackValue:'',
-            hostValue:'',
-            modalDetail: true,
+            value1: '',
+            searchData: {
+                dstip: '',
+                level: ['4', '5', '6'],
+                dealing: '',
+                start_time: '',
+                end_time: '',
+                describe: '',
+                server_os: ['Windows', 'Centos Redhat Ubuntu', 'MACOS'],
+                srcip: '',
+                asset_type: ['IIS', 'OA', 'APACHE', 'MYSQL']
+            },
+            modalDetail: false,
             pageSize: 10,
             total: 0,
             pageNum: 1,
@@ -142,7 +160,7 @@ export default {
                 },
                 {
                     title:'名称',
-                    key:'dealing',
+                    key:'describe',
                 },
                 {
                     title:'等级',
@@ -150,19 +168,18 @@ export default {
                 },
                 {
                     title: 'IP/主机名',
-                    key: 'host'
+                    key: 'dstip'
                 },
                 {
                     title: '应用系统',
-                    key: 'dstip'
+                    key: 'host'
                 },
                  {
                     title: '处理情况',
-                    key: 'describe'
+                    key: 'dealing'
                 },
                 {
                     title: '详情',
-                    key: 'log_id',
                     width: 150,
                     align: 'center',
                     render: (h, params) => {
@@ -187,10 +204,13 @@ export default {
                 
             ],
             dataRegulation: [],
-            modalDetaildata: {
-                name: '',
+            details: {
+                solution: '',
+                full_log: '',
+                srcip: '',
                 id: null,
-
+                country_name: '',
+                city_name: ''
             }
         }
     },
@@ -203,13 +223,46 @@ export default {
         }
     },
     methods: {
+        getStartTime(date) {
+            this.searchData.start_time = date
+        },
+        getEndtTime(date) {
+            this.searchData.end_time = date
+        },
+        searchInfo() {
+            if(this.searchData.end_time < this.searchData.start_time) {
+                this.$Message.error('截止时间不能小于开始时间')
+                return false
+            }
+            const url = this.url + '/log_an/api/v1.0/log/logs?page=' + this.pageNum + '&per_page=10'
+            axios({
+                method:'post',
+                url: url,
+                data: this.searchData
+            })
+            .then(response => {
+                if(response.data.status) {
+                    console.log(response.data)
+                    // this.details = response.data
+                } else {
+                    this.$Message.error(response.data.desc)
+                }
+            })
+        },
         show(id, name) {
             this.modalDetail = true
-            this.modalDetaildata = {
-                name,
-                id 
-            }
-            console.log(id,name)
+            const url = this.url + '/log_an/api/v1.0/log/logs/' + id
+            axios({
+                method:'get',
+                url: url
+            })
+            .then(response => {
+                if(response.data.status) {
+                    this.details = response.data.log_detail
+                } else {
+                    this.$Message.error(response.data.desc)
+                }
+            })
         },
         handleSizeChange(num) {
             this.pageNum = num
@@ -241,24 +294,33 @@ export default {
                 if(response.data.status) {
                     const res = response.data
                     const logs = res.logs
-                    // let logsList = []
-                    // logs.forEach((v, i) => {
-                    //     logsList.push({
-                    //         log_id: v.log_id,
-                    //         host: v.host,
-                    //         describe: v.describe,
-                    //         attack_time: v.attack_time,
-                    //         level: v.level,
-                    //     })
-                    // });
-                    this.dataRegulation = logs
+                    let logsList = []
+                    let dealing
+                    logs.forEach((v, i) => {
+
+                        if (v.dealing == 1) {
+                            dealing = '未处置'
+                        } else if (v.dealing == 2) {
+                            dealing = '应急处置'
+                        } else {
+                            dealing = '安全处置'
+                        }
+                        logsList.push({
+                            log_id: v.log_id,
+                            host: v.host,
+                            describe: v.describe,
+                            attack_time: v.attack_time,
+                            level: v.level,
+                            dstip: v.dstip,
+                            dealing: dealing
+                        })
+                    });
+                    this.dataRegulation = logsList
                     this.total = parseInt(res.total)
                 } else {
                     this.$Message.error(response.data.desc)
                 }
             })
-
-            
         }
     }
 }
