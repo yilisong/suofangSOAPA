@@ -3,32 +3,30 @@
 </style>
 <template>
     <div class="blog-manage">
-        <i-table class="table_blog" border :columns="regulations" :data="dataRegulation"></i-table>
-        <div>
-            <div class="block page_position" v-if="total > pageSize">
-                <el-pagination @size-change="handleSizeChange" :current-page.sync="currentPage1" :page-size="pageSize" layout="prev, pager, next" :total="total">
-                </el-pagination>
-            </div>
-        </div>
+        <row style="padding-top:10px;">
+            <i-col span="24">
+                类型：<i-input type="text" v-model="type_name" style="width:100px;"></i-input>
+                描述：<i-input type="text" v-model="describe" style="width:100px;"></i-input>
+                <i-button @click="addRulls">新增</i-button>
+            </i-col>
+        </row>
+        <el-table :data="dataRegulation" border style="width: 100%">
+            <el-table-column label="ID" prop="id"></el-table-column>
+            <el-table-column label="类型" width="" prop="type_name"></el-table-column>
+            <!-- 业务描述 -->
+            <el-table-column label="描述" width="" prop="describe"></el-table-column>
+            <el-table-column label="操作">
+                <template scope="scope" class="clearfix">
+                    <el-button type="primary" class="down_btn" size="small" @click="download(scope.row.id, scope.row.rule_file)">下载</el-button>
+                    <el-upload class="upload-demo down_btn" :action="rule_file_info" list-type="text">
+                        <el-button type="primary" size="small" @click="upload(scope.row.id, scope.row.rule_file)" >上传</el-button>
+                    </el-upload>
+                    <el-button type="primary" class="down_btn" size="small" @click="show(scope.row.id, scope.row.rule_file)">查看</el-button>
+                </template>
+            </el-table-column>
+        </el-table>
         <modal v-model="modalDetail" title="详情" :mask-closable="false">
-            <div class="modal_content clearfix">
-                <div class="level_name">
-                    <label>城市：</label>
-                    <i-input type="text" v-model="cityData" style="width:180px;"></i-input>
-                </div>
-                <div class="level_right">
-                    <label>国家：</label>
-                    <i-input type="text" v-model="stateData" style="width:180px;"></i-input>
-                </div>
-            </div>
-            <div class="modal_content clearfix">
-                <label>详情：</label>
-                <i-input v-model="value6" type="textarea" :rows="4"></i-input>
-            </div>
-            <div class="modal_content clearfix">
-                <label style="width:60px;">解决方案：</label>
-                <i-input v-model="value6" disabled type="textarea" :rows="4"></i-input>
-            </div>
+            <i-table border :columns="modalDetails " :data="modalData"></i-table>
             <div slot="footer">
             </div>
         </modal>
@@ -41,79 +39,31 @@ import axios from 'axios'
 export default {
     data() {
         return {
-            levelOptions:[],
-            handlInformation:[],
-            utilitySystem:[],
-            operatingSystem:[],
-            threatValue:'',
-            attackValue:'',
-            hostValue:'',
-            modalDetail: true,
-            pageSize: 10,
-            total: 0,
-            pageNum: 1,
-            currentPage1: 1,
-            regulations: [
-                {
-                    title: 'ID',
-                    key: 'log_id'
-                },
-                {
-                    title:'时间',
-                    key:'attack_time',
-                },
-                {
-                    title:'名称',
-                    key:'dealing',
-                },
-                {
-                    title:'等级',
-                    key:'level',
-                },
-                {
-                    title: 'IP/主机名',
-                    key: 'host'
-                },
-                {
-                    title: '应用系统',
-                    key: 'dstip'
-                },
-                 {
-                    title: '处理情况',
-                    key: 'describe'
-                },
-                {
-                    title: '详情',
-                    key: 'log_id',
-                    width: 150,
-                    align: 'center',
-                    render: (h, params) => {
-                        return h('div', [
-                            h('Button', {
-                                props: {
-                                    type: 'primary',
-                                    size: 'small'
-                                },
-                                style: {
-                                    marginRight: '5px'
-                                },
-                                on: {
-                                    click: () => {
-                                        this.show(params.row.log_id, params.row.dealing)
-                                    }
-                                }
-                            }, '详情'),
-                        ]);
-                    }
-                }
-                
-            ],
+            type_name:'',
+            describe:'',
+            modalDetail: false,
             dataRegulation: [],
             modalDetaildata: {
                 name: '',
                 id: null,
 
-            }
+            },
+            modalDetails:[
+                {
+                    title:'rule_id',
+                    key:'rule_id'
+                },
+                {
+                    title:'级别',
+                    key:'level'
+                },
+                {
+                    title:'描述',
+                    key:'describe'
+                }
+            ],
+            modalData:[],
+            rule_file_info: ''
         }
     },
     created() {
@@ -127,60 +77,69 @@ export default {
     methods: {
         show(id, name) {
             this.modalDetail = true
-            this.modalDetaildata = {
-                name,
-                id 
-            }
-            console.log(id,name)
-        },
-        handleSizeChange(num) {
-            this.pageNum = num
-            this.queryAboutList()
-        },
-        showVisible(deleteVisible) {
-            deleteVisible = true
-        },
-        formatDate(now) {     
-            const year = now.getYear();     
-            const month = now.getMonth()+1;     
-            const date = now.getDate();     
-            const hour = now.getHours();     
-            const minute = now.getMinutes();     
-            const second = now.getSeconds();     
-            return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second     
-        },
-        queryAboutList() {
-            const params = {
-                page: this.pageNum,
-                per_page: this.pageSize
-            }
             axios({
                 method:'get',
-                url: this.url + '/log_an/api/v1.0/log/logs',
-                params:params
+                url: this.url + '/log_an/api/v1.0/rule/rules/' + id
             })
             .then(response => {
                 if(response.data.status) {
                     const res = response.data
-                    const logs = res.logs
-                    // let logsList = []
-                    // logs.forEach((v, i) => {
-                    //     logsList.push({
-                    //         log_id: v.log_id,
-                    //         host: v.host,
-                    //         describe: v.describe,
-                    //         attack_time: v.attack_time,
-                    //         level: v.level,
-                    //     })
-                    // });
-                    this.dataRegulation = logs
-                    this.total = parseInt(res.total)
+                    const rules = res.rules
+                    this.modalData = rules
+                } else {
+                    this.$Message.error(response.data.desc)
+                }
+            })
+        },
+        download(id, file) {
+            if(file) {
+                window.location.href = file
+            }else {
+                this.$Message.error('当前没有下载链接')
+            }
+        },
+        upload(id) {
+            this.rule_file_info = this.url + '/log_an/api/v1.0/rule/types/file/' + id
+        },
+        showVisible(deleteVisible) {
+            deleteVisible = true
+        },
+        addRulls(){
+            const params = {
+                type_name: this.type_name,
+                describe: this.describe
+            }
+            axios({
+                method:'post',
+                url: this.url + '/log_an/api/v1.0/rule/types',
+                data: params
+            })
+            .then(response => {
+                if(response.data.status) {
+                    this.$Message.success(response.data.desc)
+                    this.type_name = ''
+                    this.describe = ''
+                    this.queryAboutList()
                 } else {
                     this.$Message.error(response.data.desc)
                 }
             })
 
-            
+        },
+        queryAboutList() {
+            axios({
+                method:'get',
+                url: this.url + '/log_an/api/v1.0/rule/types',
+            })
+            .then(response => {
+                if(response.data.status) {
+                    const res = response.data
+                    const logs = res.rule_type_list
+                    this.dataRegulation = logs
+                } else {
+                    this.$Message.error(response.data.desc)
+                }
+            })   
         }
     }
 }
