@@ -22,6 +22,7 @@
                         <el-button type="primary" size="small" @click="upload(scope.row.id, scope.row.rule_file)" >上传</el-button>
                     </el-upload>
                     <el-button type="primary" class="down_btn" size="small" @click="show(scope.row.id, scope.row.rule_file)">查看</el-button>
+                    <el-button type="primary" class="down_btn" size="small" @click="deleteRuls(scope.row.id, scope.row.rule_file)">删除</el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -75,6 +76,20 @@ export default {
         }
     },
     methods: {
+        deleteRuls(id, name) {
+            axios({
+                method: 'delete',
+                url: this.url + '/log_an/api/v1.0/rule/types/' + id
+            })
+            .then(response => {
+                if(response.data.status) {
+                    this.queryAboutList()
+                    this.$Message.info(response.data.desc)
+                } else {
+                    this.$Message.error(response.data.desc)
+                }
+            })
+        },
         show(id, name) {
             this.modalDetail = true
             axios({
