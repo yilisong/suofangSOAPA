@@ -44,7 +44,7 @@
                                 <div class="level_name">
                                     <checkbox-group v-model="searchData.asset_type">
                                         <checkbox label="IIS"></checkbox>
-                                        <checkbox label="OA"></checkbox>
+                                        <checkbox label="EXCHAHANGE"></checkbox>
                                         <checkbox label="APACHE"></checkbox>
                                         <checkbox label="MYSQL"></checkbox>
                                     </checkbox-group>
@@ -55,8 +55,8 @@
                                 <div class="level_name">
                                     <checkbox-group v-model="searchData.server_os">
                                         <checkbox label="Windows"></checkbox>
-                                        <checkbox label="Centos Redhat Ubuntu"></checkbox>
-                                        <checkbox label="MACOS"></checkbox>
+                                        <checkbox label="linux"></checkbox>
+                                        <checkbox label="unix"></checkbox>
                                     </checkbox-group>
                                 </div>
                             </div>
